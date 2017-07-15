@@ -1,0 +1,135 @@
+<!-- ***************************************************************************
+* Copyright (c) 2017 Square Panda Inc.                                         *
+* All Rights Reserved.                                                         *
+* Dissemination, use, or reproduction of this material is strictly forbidden   *
+* unless prior written permission is obtained from Square Panda Inc.           *
+**************************************************************************** -->
+<!doctype html>
+<html data-ng-app="app" data-ng-controller="appCtrl">
+
+<head>
+    <meta charset="utf-8">
+    <title page-title=""></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css assets/styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="assets/libs/AngularJS-Toaster/toaster.css" />
+    <link rel="stylesheet" href="assets/libs/ng-img-crop/compile/minified/ng-img-crop.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) assets/styles/main.css -->
+    <link rel="stylesheet" href="assets/styles/main.css">
+    <!-- endbuild -->
+    <!-- <base href="/"> -->
+</head>
+
+<body>
+    <!--[if lte IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+  your browser</a> to improve your experience.</p>
+<![endif]-->
+    <div class="load-overlay" data-ng-show="$root.ajaxProgress">
+        <img src="assets/images/icon-load.gif" width="100">
+    </div>
+    <div id="wrapper" ng-class="{'content-bg': enableBg(), 'wrapper-height': !isFooterFix}">
+        <div data-ng-include=" 'layout/header.html' "></div>
+        <div id="app" class="app" ui-view=""></div>
+        <div data-ng-include=" 'layout/footer.html' "></div>
+    </div>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="assets/libs/jquery/dist/jquery.js"></script>
+    <script src="assets/libs/angular/angular.js"></script>
+    <script src="assets/libs/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <script src="assets/libs/angular-animate/angular-animate.js"></script>
+    <script src="assets/libs/angular-cookies/angular-cookies.js"></script>
+    <script src="assets/libs/angular-resource/angular-resource.js"></script>
+    <script src="assets/libs/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="assets/libs/angular-sanitize/angular-sanitize.js"></script>
+    <script src="assets/libs/angular-touch/angular-touch.js"></script>
+    <script src="assets/libs/angular-translate/angular-translate.js"></script>
+    <script src="assets/libs/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+    <script src="assets/libs/underscore/underscore.js"></script>
+    <script src="assets/libs/angular-underscore-module/angular-underscore-module.js"></script>
+    <script src="assets/libs/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="assets/libs/angular-base64/angular-base64.js"></script>
+    <script src="assets/libs/moment/moment.js"></script>
+    <script src="assets/libs/angular-moment/angular-moment.js"></script>
+    <script src="assets/libs/ngstorage/ngStorage.js"></script>
+    <script src="assets/libs/highcharts-ng/dist/highcharts-ng.js"></script>
+    <script src="assets/libs/highcharts/highcharts.js"></script>
+    <script src="assets/libs/highcharts/highcharts-more.js"></script>
+    <script src="assets/libs/highcharts/modules/exporting.js"></script>
+    <script src="assets/libs/AngularJS-Toaster/toaster.js"></script>
+    <script src="assets/libs/angular-audio/app/angular.audio.js"></script>
+    <script src="assets/libs/ng-img-crop/compile/minified/ng-img-crop.js"></script>
+    <script src="assets/libs/ng-csv/build/ng-csv.min.js"></script>
+    <script src="assets/libs/moment-timezone/builds/moment-timezone-with-data-2012-2022.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->    
+    <script src="app.module.js"></script>
+    <script src="app.router.js"></script>
+    <script src="app.config.js"></script>
+    <script src="app.controller.js"></script>
+    <script src="common/env-config.js" />
+    <script src="common/app-directives/page-title.directive.js"></script>
+    <script src="common/app-directives/external-html-loader-directive.js"></script>
+    <script src="common/app-directives/file-upload.directive.js"></script>
+    <script src="common/app-directives/image-preloader-directive.js"></script>
+    <script src="common/app-directives/modal/modal.directive.js"></script>
+    <script src="common/app-directives/button-spinner.directive.js"></script>
+    <script src="common/app-directives/sidebar.directive.js"></script>
+    <script src="common/app-directives/dob/dob.directive.js"></script>
+    <script src="common/app-directives/fix-onscroll.directive.js"></script>
+    <script src="common/app-directives/text-capitalize.directive.js"></script>
+      <script src="common/app-directives/restrict-spacebar.directive.js"></script>
+    <script src="common/app-factories/remember-me.js"></script>
+    <script src="common/app-factories/messages.factory.js"></script>
+    <script src="common/app-services/flash.service.js"></script>
+    <script src="common/app-services/app.service.js"></script>
+    <script src="common/app-factories/utils-factory.js"></script>
+    <script src="components/account/curriculum/curriculum.controller.js"></script>
+    <script src="components/account/curriculum/curriculum-action.controller.js"></script>
+    <script src="components/account/curriculum/curriculum.service.js"></script>
+    <script src="components/account/dashboard/dashboard.controller.js"></script>
+    <script src="components/account/dashboard/dashboard.service.js"></script>
+    <script src="components/home/home.controller.js"></script>
+    <script src="components/account/player/player.controller.js"></script>
+    <script src="components/account/player/player.service.js"></script>
+    <script src="components/account/player/player-badge.directive.js"></script>
+    <script src="components/account/settings/settings.controller.js"></script>
+    <script src="components/account/settings/settings.service.js"></script>
+    <script src="components/account/player/player-action.controller.js"></script>
+    <script src="components/static/static.controller.js"></script>
+    <script src="components/static/static.service.js"></script>
+    <script src="components/user/login/login.controller.js"></script>
+    <script src="components/user/register/register.controller.js"></script>
+    <script src="components/user/forgot-password/forgot-password.controller.js"></script>
+    <script src="components/user/reset-password/reset-password.controller.js"></script>
+    <script src="components/user/authentication.service.js"></script>
+    <script src="components/user/user.service.js"></script>
+    <!-- endbuild -->
+    <script src="https://platform.twitter.com/widgets.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    </script>
+
+</body>
+
+</html>

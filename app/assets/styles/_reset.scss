@@ -1,0 +1,453 @@
+/********************************************************************************
+* Copyright (c) 2017 Square Panda Inc.                                          *
+* All Rights Reserved.                                                          *
+* Dissemination, use, or reproduction of this material is strictly forbidden    *
+* unless prior written permission is obtained from Square Panda Inc.            *
+*********************************************************************************/
+body,
+html {
+    height: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    background: #f6f6f6;
+    // font-family: 'Open Sans', sans-serif;
+}
+
+.reset-padding-margin {
+    padding: 0px;
+    margin: 0px !important;
+}
+
+.nopadding {
+    padding: 0px;
+}
+.normal-font{
+    font-weight: normal !important;
+}
+.nopadding-right {
+    padding-right: 0px;
+}
+
+.nomargin {
+    margin: 0px !important;
+}
+
+.noborders {
+    border: 0px!important;
+}
+
+.no-visible {
+    visibility: hidden!important;
+}
+
+.no-display {
+    display: none;
+}
+
+.nofloat {
+    float: none !important;
+}
+
+.center-align {
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: $sp-green;
+    border: 0px;
+    font-size: 18px;
+}
+
+.btn-secondary {
+    background-color: $sp-gray;
+    border: 0px;
+    color: #fff !important;
+    font-size: 18px;
+    &:hover {
+        background-color: darken($sp-gray, 10%);
+        color: #fff !important;
+    }
+}
+
+.btn-transarent {
+    background: transparent;
+    box-shadow: none;
+    font-size: 20px;
+    padding:0;
+    outline:none;
+    &:focus {
+        outline: none;
+    }
+}
+
+.custom-disabled-button {
+    cursor: not-allowed;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    &:focus {
+        background-color: #3a9b7a;
+    }
+    &:active {
+        background-color:#3a9b7a;
+    }
+}
+
+.margin-right-20 {
+    margin-right: 20px;
+}
+
+.p-l-50 {
+    padding-left: 50px !important;
+}
+
+.text-decoration{
+    text-decoration: underline;
+}
+
+.navbar {
+    border-radius: 0px;
+}
+
+.navbar-default {
+    background-color: transparent;
+    border: none;
+}
+
+.has-error .help-block {
+    color: #FF8D8B !important;
+}
+
+.spinner {
+    display: inline-block;
+    opacity: 0;
+    width: 0;
+    -webkit-transition: opacity 0.25s, width 0.25s;
+    -moz-transition: opacity 0.25s, width 0.25s;
+    -o-transition: opacity 0.25s, width 0.25s;
+    transition: opacity 0.25s, width 0.25s;
+}
+
+.has-spinner.active {
+    cursor: progress;
+}
+
+.has-spinner.active .spinner {
+    opacity: 1;
+    width: auto;
+    /* This doesn't work, just fix for unkown width elements */
+}
+
+.has-spinner.btn-mini.active .spinner {
+    width: 10px;
+}
+
+.has-spinner.btn-small.active .spinner {
+    width: 13px;
+}
+
+.has-spinner.btn.active .spinner {
+    width: 16px;
+}
+
+.has-spinner.btn-large.active .spinner {
+    width: 19px;
+}
+
+.alert-danger {
+    background-color: #D62C29;
+    border: none;
+    border-radius: 0px;
+    text-align: center;
+    color: #fff;
+    margin: 0px !important;
+}
+
+.alert-success {
+    background-color: #3c763d;
+    color: #fff;
+    border: 0px;
+    margin-bottom: 0px;
+    border-radius: 0px;
+    text-align: center;
+}
+
+.width50-per {
+    width: 50%;
+}
+
+.form-control-feedback {
+    top: 0;
+    left: 0px;
+    line-height: 40px;
+    color: #222;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.has-feedback .form-control {
+    padding-right: 10px;
+    padding-left: 30px;
+    font-size: 15px;
+    color: #222;
+}
+
+.btn-primary.disabled:hover,
+.btn-primary.disabled:focus {
+    background-color: darken($sp-green, 10%);
+}
+
+.btn-primary:hover {
+    background-color: darken($sp-green, 10%) !important;
+}
+
+.text-capitalize {
+    text-transform: uppercase !important;
+}
+
+.navbar-toggle {
+    border: none;
+    margin-right: 0px;
+    margin-left: -14px;
+    margin-top: 11px;
+    span.icon-bar {
+        background-color: #ffffff;
+    }
+}
+
+.container-min-height {
+    min-height: 520px;
+}
+
+.has-feedback {
+    color: whitesmoke;
+    margin-bottom: 20px;
+}
+
+.alert-danger {
+    margin-top: -31px;
+}
+
+.success-padding {
+    margin-top: -31px;
+}
+
+.accordion-classes,
+.accordion-word {
+    a:focus {
+        outline: none;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+}
+
+.accordion-word {
+    a:focus {
+        outline: none;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+}
+
+.cancel-button {        
+        padding: 5px 50px; 
+    }
+
+.pagination li a,
+.pagination li span {
+    border: none;
+}
+
+.pagination li a:hover,
+.pagination .active a {
+    background-color: $sp-green !important;
+}
+
+.thumbnail {
+    padding: 0px;
+    border: 1px solid #E9EEF1;
+    img {
+        margin-bottom: -43px;
+        border-radius: 5px;
+    }
+}
+
+.radio+.radio,
+.checkbox+.checkbox {
+    margin-top: 16px;
+}
+
+.panel {
+    border: none;
+}
+
+.form-control {
+    box-shadow: none;
+}
+
+.sp-common-panel-header {
+    background-color: #f7ab31;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+}
+
+.sp-green-common-btn {
+    background-color: #4cbc96;
+    border: 0px;
+    font-size: 18px;
+}
+
+.sp-purple-common-btn {
+    background-color: #7e49e9;
+    color: #fff;
+    min-width: 75px;
+    &:hover {
+        background-color: darken(#7e49e9, 10%);
+        color: #fff;
+    }
+    &:active {
+        background-color: darken(#7e49e9, 10%) !important;
+        color: #fff !important;
+    }
+    &:focus {
+        background-color: darken(#7e49e9, 10%) !important;
+        color: #fff !important;
+    }
+}
+
+.sp-cancel-common-btn {
+    min-width: 75px;
+    color: #fff;
+    background-color: #a5a5a5;
+    border-color: none;
+    &:hover {
+        background-color: darken(#a5a5a5, 10%);
+        color: #fff;
+    }
+}
+
+.sp-confirm-modal {
+    z-index: 1;
+    .modal-body {
+        padding: 28px;
+        color: #8C8B8B;
+    }
+    .modal-header {
+        background: #efefef;
+        border-radius: 5px 5px 0px 0px;
+        .modal-title {
+            font-size: 18px;
+            margin-left: 10px;
+        }
+    }
+    .modal-footer {
+        padding: 9px;
+    }
+}
+
+.margin-top-bootom-20 {
+    margin-bottom: 20px !important;
+    margin-top: 0px !important;
+}
+
+margin-top-20-bootom-20 {
+    margin-bottom: 20px !important;
+    margin-top: 20px !important;
+}
+
+.fix-to-top {
+    position: fixed;
+    z-index: 9999;
+    top: 0px;
+}
+
+#toast-container {
+    position: relative;
+    z-index: 0;
+    margin-bottom: 10px;
+    top: 0px;
+    margin-top: 10px;
+    .toast {
+        padding: 10px;
+        opacity: 1;
+        width: auto;
+        margin: 0 20px!important;
+    }
+    .toast-title {
+        display: none;
+    }
+    .toast-success {
+        background-image: none!important;
+        background-color: #DFF0D9;
+        color: #709263;
+        border: solid 1px #709263;
+        .toast-close-button {
+            color: #709263;
+            margin: 5px 5px 0 0;
+        }
+        .toast-close-button:hover,
+         :focus {
+            outline: none;
+            color: darken(#709263, 10%)!important;
+            opacity: 1;
+        }
+    }
+    .toast-error {
+        background-image: none!important;
+        background-color: #f2dede;
+        color: #a94442;
+        border: solid 1px #a94442;
+        .toast-close-button {
+            color: #a94442;
+            margin: 5px 5px 0 0;
+        }
+        .toast-close-button:hover,
+         :focus {
+            outline: none;
+            color: darken(#a94442, 10%)!important;
+            opacity: 1;
+        }
+    }
+    .toast-message {
+        text-align: center;
+        line-height: 30px;
+    }
+}
+
+.dob {
+    select {
+        padding-right: 0;
+    }
+
+    .clear-btn {
+        font-size: 15px;
+        padding: 6px 8px;
+    }
+}
+
+.no-data {
+    text-align: center!important;
+    padding-left: 0px !important;
+}
+
+.no-animation-modal {
+  opacity: 1 !important;
+}
+
+.modal-backdrop {
+   opacity: 0.8 !important;
+}
+
+.modal-open {
+    overflow: auto !important;
+}

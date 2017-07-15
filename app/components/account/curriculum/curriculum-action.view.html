@@ -1,0 +1,134 @@
+<!-- ***************************************************************************
+* Copyright (c) 2017 Square Panda Inc.                                         *
+* All Rights Reserved.                                                         *
+* Dissemination, use, or reproduction of this material is strictly forbidden   *
+* unless prior written permission is obtained from Square Panda Inc.           *
+**************************************************************************** -->
+<div class="col-lg-2"></div>
+<div class="container container-min-height addpalyer-container">
+    <div set-class-when-at-top="fix-to-top container row">
+        <toaster-container class="custom-toaster-conatiner" toaster-options="{'position-class': 'toast-top-center', 'close-button':true}"></toaster-container>
+    </div>
+    <div class="panel">
+        <div class="panel-heading sp-common-panel-header text-center">
+            <span data-translate="nav.add_custom_word.header" data-ng-if="!curriculum.isView && !curriculum.isUpdate">Add Custom Word</span>
+            <span data-translate="nav.edit_custom_word.header" data-ng-if="!curriculum.isView && curriculum.isUpdate">Edit Custom Word</span>
+            <span data-translate="nav.view_custom_word.header" data-ng-if="curriculum.isView">View Custom Word</span>
+
+        </div>
+        <div class="panel-body">
+            <form name="playerForm" ng-submit="curriculum.submitForm(playerForm)" novalidate>
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-2">
+                            <label class=" control-label" data-translate="curriculum.wordlabel">Word</label>
+                        </div>
+                        <div class="col-md-3 ">
+                            <div class="display-flex">
+
+                                <input ng-disabled="curriculum.isView" type="text" name="word" class="form-control" data-ng-model="curriculum.model.wordItem.wordName" placeholder="{{ 'curriculum.word' | translate }}" required ng-pattern="/^[A-z][A-z]*$/" ng-minlength="1" ng-maxlength="8"
+                                    autocomplete="off">
+
+                                <span class="btn btn-default custom-search-button" ng-click="curriculum.searchWord(true)" data-ng-if="!curriculum.isView && curriculum.model.wordItem.wordName"><i
+                  class="fa fa-search"></i></span>
+                            </div>
+                            <div ng-class="curriculum.model.isWordExit===true?'error-mesasage':'custom-message-color'" ng-show="curriculum.model.message">
+                                {{curriculum.model.message}}
+                            </div>
+                            <div class="error-mesasage" ng-show="curriculum.submitted && playerForm.word.$error.required">
+                                <i class="fa fa-exclamation-circle"></i>
+                                <span data-translate="curriculum.messages.word_name_require"> Word is required. </span>
+                            </div>
+                            <div ng-show="playerForm.word.$error.pattern" class="error-mesasage">
+                                <i class="fa fa-exclamation-circle"></i>
+                                <span data-translate="common.messages.only_alphabets">Allow only Alphabets</span>
+                            </div>
+                            <div ng-show="!playerForm.word.$error.pattern && !playerForm.word.$error.required && (playerForm.word.$error.minlength || playerForm.word.$error.maxlength) && playerForm.word.$dirty" class="error-mesasage">
+                                <i class="fa fa-exclamation-circle"></i>
+                                <span data-translate="common.messages.word_length"> Must be between 1 and 8 characters.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-3"></div>
+                        <label class="col-md-2 control-label add-profile-pic" data-translate="curriculum.pronunciation">Pronunciation</label>
+
+                        <div class="col-md-3 curriculum-custom-audio">
+                            <span ng-click='curriculum.model.wordItem.audioURL.paused ? curriculum.model.wordItem.audioURL.play() : curriculum.model.wordItem.audioURL.pause()' ng-disabled="!curriculum.isAudioUploaded" class="btn  custom-audio-button custom-volume-button"><i
+                class="fa fa-volume-up"></i> </span>
+
+                            <div class=" btn custom-audio-button custom-audio-file" data-ng-if="!curriculum.isView">
+                                <input type="file" id="audio" name="file" file-model="curriculum.myAudioFile" class="img-rectangle img-border-radius " accept="audio/*" onchange="angular.element(this).scope().audioFileChanged(this.files)">
+                                <span data-translate="curriculum.browse">Browse</span>
+                            </div>
+                            <span data-ng-if="!curriculum.isView" ng-disabled="!curriculum.isAudioUploaded" ng-click="curriculum.refreshFile()" class="btn btn-default custom-audio-button repeat-button"><i class="glyphicon glyphicon-repeat"></i></span>
+                        </div>
+
+                        <div ng-show="!curriculum.audioFileError" class="error-mesasage">
+                            <i class="fa fa-exclamation-circle"></i>
+                            <span data-translate="common.messages.file_type_wrong"> File Type is Wrong</span>
+                        </div>
+                        <div ng-show="!curriculum.audioFilesize" class="error-mesasage">
+                            <i class="fa fa-exclamation-circle"></i>
+                            <span data-translate="curriculum.messages.file_size_large"> File size is too large, Try to upload below 2mb.</span>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-3 clearfix"></div>
+                        <label class="col-md-2 col-sm-2 control-label add-profile-pic" data-translate="curriculum.picture">Picture</label>
+
+
+                        <div class="col-md-2 col-sm-3 clearfix">
+                            <div class="thumbnail ">
+                                <img class="apply-margin-bottom" ng-src="{{curriculum.model.wordItem.imageURL}}">
+                            </div>
+                            <div>
+                                <div class="myLabel text-center" href="" data-ng-if="!curriculum.isView">
+                                    <input type="file" name="file" file-model="curriculum.myImageFile" accept="image/*" class="img-rectangle img-border-radius  " onchange="angular.element(this).scope().photoChanged(this.files); ">
+                                    <span data-translate="player.change_picture">Change Picture</span>
+                                </div>
+                                <div ng-show="curriculum.showSizeLimitError" class="error-mesasage clearfix">
+                                    <i class="fa fa-exclamation-circle"></i>
+                                    <span data-translate="curriculum.messages.file_selection_wrong"> Please select image with 2MB or Lesser size. </span>
+                                </div>
+                            </div>
+                            <div ng-show="!curriculum.imageFileError" class="error-mesasage">
+                                <i class="fa fa-exclamation-circle"></i>
+                                <span data-translate="common.messages.file_type_wrong"> File Type is Wrong</span>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-7 margin-top20 center-align submit-clear-parent-div ">
+                            <button type="submit" ng-if="!curriculum.isUpdate" class="btn btn-primary add-word-save-button submit-clear-all-padding" data-translate="curriculum.addword">Add Word
+                </button>
+                            <button class="btn btn-primary addword-submit-button submit-clear-all-padding" type="submit" data-translate="common.buttons.save">Save
+                </button>
+                            <button class="btn btn-primary cancel-button submit-clear-all-padding" type="button" data-translate="common.buttons.cancel" ui-sref="account.curriculum">Cancel
+                </button>
+                        </div>
+                    </div>
+
+                    <div class="form-group clearfix" data-ng-if="curriculum.isView">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-2"></div>
+                        <div class="col-md-6 ">
+                            <a class="btn  add-word-cancel-margin" ui-sref="account.curriculum" data-translate="common.buttons.back">Back
+              </a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

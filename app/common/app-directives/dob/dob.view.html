@@ -1,0 +1,28 @@
+<!-- ***************************************************************************
+* Copyright (c) 2017 Square Panda Inc.                                         *
+* All Rights Reserved.                                                         *
+* Dissemination, use, or reproduction of this material is strictly forbidden   *
+* unless prior written permission is obtained from Square Panda Inc.           *
+**************************************************************************** -->
+<div class="row dob">
+    <div class="col-md-4 col-lg-4 col-sm-4">       
+        <select class="form-control dob p-l-r" data-ng-model="dob.month" data-ng-options="month.id as month.name | translate for month in months">
+            <option value='' data-translate="common.month">Month</option>
+        </select>
+    </div>
+    <div class="col-md-3 col-lg-3 col-sm-3" data-ng-model="dob.day">
+        <select class="form-control dob" data-ng-model="dob.day" data-ng-options='day for day in days'>
+            <option value='' data-translate="common.day">Day</option>
+         </select>
+    </div>
+    <div class="col-md-3 col-lg-3 col-sm-3">
+        <select class="form-control dob" data-ng-model='dob.year' data-ng-options='year for year in getYears()'>
+            <option value='' data-translate="common.year">Year</option>
+        </select>
+    </div>
+    <div class="col-md-2 col-lg-2 col-sm-2 nopadding">
+        <a type="button" class="btn btn-secondary clear-btn" data-translate="common.buttons.clear" ng-click="clear()">
+            Clear
+        </a>
+    </div>
+</div>

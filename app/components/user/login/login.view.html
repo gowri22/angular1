@@ -1,0 +1,50 @@
+<!-- ***************************************************************************
+* Copyright (c) 2017 Square Panda Inc.                                         *
+* All Rights Reserved.                                                         *
+* Dissemination, use, or reproduction of this material is strictly forbidden   *
+* unless prior written permission is obtained from Square Panda Inc.           *
+**************************************************************************** -->
+<div class="bg-img"></div>
+<div class="content clearfix">
+    <div class="text-center">
+        <!--<div class="teacher-link-class desktop-view">
+            <button class="btn btn-transarent" ng-click="navigateTeacher()">
+                <div class="teacher-link-text">TEACHERS!</div>
+                <span class="teacher-link">Click here</span>
+            </button>
+        </div>-->
+        <h2 class="login-form-heading center-align" data-translate="user.login.log_in">Log In</h2>
+        <div class="login-error-message" data-ng-if="globals.flash && globals.flash.type !== 'success'">
+            {{globals.flash.message}} <a data-ng-if="login.showResendOption" href="" data-ng-click="login.onResendEmail()" data-translate="user.login.resend_email">Resend Email</a>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-3 col-sm-3"></div>
+    <div class="col-lg-4 col-md-6 col-sm-6 login-top-margin">
+        <form name="signinForm" class="user-form-container" data-ng-submit="login.submitForm(signinForm)" novalidate>
+            <div class="form-group has-feedback">
+                <input type="text" name="email" class="form-control" data-ng-model="login.model.email" placeholder="{{ 'user.email' | translate }}" required>
+                <i class="fa fa-user form-control-feedback "></i>
+            </div>
+            <div class="form-group has-feedback" data-ng-class="{ 'has-error' : (submitted && !login.model.password) || (signinForm.name.$invalid && !signinForm.name.$pristine) }">
+                <input type="password" name="password" class="form-control " data-ng-model="login.model.password" placeholder="{{ 'user.password' | translate }}" required>
+                <i class="fa fa-unlock-alt form-control-feedback "></i>
+            </div>
+            <div class="form-group remember-me">
+                <label>
+          <input type="checkbox" data-ng-disabled="!login.model.email || !login.model.password"
+                 data-ng-model="login.model.remember" />
+          <span data-translate="user.login.remember_password">Remember password</span>
+        </label>
+            </div>
+            <div class="center-align signin-button">
+                <button class="btn btn-large  btn-primary apply-margin login-button" type="submit" 
+                    data-ng-disabled="!login.model.email || !login.model.password"
+                    data-ng-class="{'custom-disabled-button': (!login.model.email || !login.model.password)}"
+                    data-translate="common.buttons.submit">Submit
+        </button>
+            </div>
+
+        </form>
+    </div>
+    <div class="col-lg-4 col-md-3 col-sm-3"></div>
+</div>

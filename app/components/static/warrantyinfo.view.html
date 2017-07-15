@@ -1,0 +1,19 @@
+<!-- ***************************************************************************
+* Copyright (c) 2017 Square Panda Inc.                                         *
+* All Rights Reserved.                                                         *
+* Dissemination, use, or reproduction of this material is strictly forbidden   *
+* unless prior written permission is obtained from Square Panda Inc.           *
+**************************************************************************** -->
+<div class="container content warrenty-container">
+    <div set-class-when-at-top="fix-to-top container row">
+        <toaster-container class="custom-toaster-conatiner" toaster-options="{'position-class': 'toast-top-center', 'close-button':true}"></toaster-container>
+    </div>
+    <div translate="nav.warranty_info.header" class="warranty-header">Warrenty Information</div>
+    <h4 class="text-center warranty-semiheader" translate="nav.warranty_info.subheader">(One year limited warranty for parts and labor)</h4>
+    <hr/>
+    <div id="extrnalHtmlViewId" data-ng-if="self.isDataLoaded" external-html-page-loader-dir html-page-url="self.contentFrameURL" is-external-html-data-loaded="self.isDataLoaded" style="width: 100%; height: auto;">
+        <span style="padding: 40% 45%; display: block;">
+          <img src="assets/images/img-loader.gif"/>
+    </span>
+    </div>
+</div>

@@ -1,0 +1,831 @@
+{
+  "Parent": [
+    {
+      "Module": "SIGN UP",
+      "Title": "Validate user email",
+      "URL": "&lt;baseUrl&gt;/portal/:role/validate/email",
+      "Method": "POST",
+      "URL Params": "Required: role = ['user']",
+      "Data Params": "Required:['email'], Eaxmple:{\"email\":\"mounica.kokkerlapati@mtuity.com\"}",
+      "Success Response": "Code: 200, Content: {\"message\":\"Email Acceptable\"}",
+      "Error Response": "ERR31,ERR32",
+      "Notes": "To verify user email is unique. "
+    },
+    {
+      "Module": "SIGN UP",
+      "Title": "Content management",
+      "URL": "&lt;baseUrl&gt;/cms/listCmsbyCategory/:category",
+      "Method": "GET",
+      "URL Params": "Required: category= ['terms','privacy']",
+      "Success Response": "Code: 200, Content: {\"category\":\"terms\",\"content_url\":\"https://squarepanda-dev.s3.amazonaws.com/termsandservice_01072016U.html\",\"createdAt\":\"2016-07-01T11:02:48.910Z\",\"description\":\"Terms and Conditions\",\"status\":\"ACTIVE\",\"title\":\"Terms and conditions\",\"updatedAt\":\"2016-07-01T11:02:48.910Z\",\"version\":\"2.0\",\"htmlView\":\"https://squarepanda-dev.s3.amazonaws.com/termsandservice_01072016U.html\",\"id\":\"5776424ed0509f1354757faa\"}",
+      "Error Response": "ERR42",
+      "Notes": "To get latest CMS data."
+    },
+    {
+      "Module": "SIGN UP",
+      "Title": "User sign up",
+      "URL": "&lt;baseUrl&gt;/user/register",
+      "Method": "POST",
+      "Data Params": "Required:['firstName','email','password','role'], Eaxmple:{\"firstName\":\"mounica\",\"lastName\":\"k\",\"email\":\"mounica.kokkerlapati@mtuity.com\",\"password\":\"parent1234\",\"role\":\"PARENT\"}",
+      "Success Response": "Code: 200, Content: {\"message\":\"Thank you for registering with us. Soon you will get a confirmation email to verify your account\"}",
+      "Error Response": "ERR1,ERR12,ERR14,ERR2,ERR3,ERR4,ERR5,ERR27,ERR35",
+      "Notes": "Takes input as user email and sends an email to user inorder active the account."
+    },
+    {
+      "Module": "FORGOT PASSWORD",
+      "Title": "User account forgot password",
+      "URL": "&lt;baseUrl&gt;/portal/:role/forgot-password",
+      "Method": "POST",
+      "URL Params": "Required: role = ['user']",
+      "Data Params": "Required:['email'], Eaxmple:{\"email\":\"mounica.kokkerlapati@mtuity.com\"}",
+      "Success Response": "Code: 200, Content: {\"message\":\"Successfully sent new generated password to mounica.kokkerlapati@mtuity.com with further instructions.\"}",
+      "Error Response": "ERR12,ERR36,ERR13",
+      "Notes": "User gets email notification with an url to change password. "
+    },
+    {
+      "Module": "RESEND EMAIL",
+      "Title": "Resend email notification",
+      "URL": "&lt;baseUrl&gt;/:role/resendemail",
+      "Method": "POST",
+      "URL Params": "Required: role = ['user']",
+      "Data Params": "Required:['email'], Eaxmple:{\"email\":\"mounica.kokkerlapati@mtuity.com\"}",
+      "Success Response": "Code: 200, Content: {\"message\":\"Thank you for registering with us. Soon you will get a confirmation email to verify your account\"}",
+      "Error Response": "ERR12,ERR37",
+      "Notes": "User gets email notification with an url to activate the account. This api used for signup module and \"resendemail\" for forgot password will be the same api which is used for forgot password.  "
+    },
+    {
+      "Module": "CONFIRMATION LINK",
+      "Title": "Activate account",
+      "URL": "&lt;baseUrl&gt;/user/confirmation/:token",
+      "Method": "GET",
+      "URL Params": "Required: token = ['JWT Token']",
+      "Success Response": "Code: 200, Content: {\"message\": \"success\"}",
+      "Error Response": "ERR61",
+      "Notes": "To activate account through a token which is assigned in registeration process."
+    },
+    {
+      "Module": "RESET PASSWORD LINK",
+      "Title": "Reset password",
+      "URL": "&lt;baseUrl&gt;/:role/reset-password",
+      "Method": "POST",
+      "URL Params": "Required: role = ['user']",
+      "Data Params": "Required:['password','confirmPassword'], Eaxmple:{\"password\":\"parent1234\",\"confirmPassword\":\"parent1234\"}",
+      "Success Response": "Code: 200, Content: {\"message\": \"successfully reset your password.\"}",
+      "Error Response": "ERR2,ERR15,ERR16,ERR17",
+      "Notes": "To reset password."
+    },
+    {
+      "Module": "SIGN IN",
+      "Title": "Application login",
+      "URL": "&lt;baseUrl&gt;/portal/:role/login",
+      "Method": "POST",
+      "URL Params": "Required: role = ['user']",
+      "Data Params": "Required:['identifier','password'], Eaxmple:{\"identifier\":\"mounica.kokkerlapati@mtuity.com\",\"password\":\"parent1234\"}",
+      "Success Response": "Code: 200, Content:{\"owner\":\"57679cbf2941c3a238b9ae5b\",\"email\":\"mounica.kokkerlapati@mtuity.com\",\"role\":\"PARENT\",\"..\",\"player\":[{}],\"tokenId\":\"eyJ0eXAiOiJKV1J9...\"}",
+      "Error Response": "ERR8,ERR11,ERR2,ERR16,ERR9,ERR25,ERR10",
+      "Notes": "User sign in to application and this api generates a token with an expireTime."
+    },
+    {
+      "Module": "SIGN IN",
+      "Title": "Content management",
+      "URL": "&lt;baseUrl&gt;/user/:parentId/cms/:type",
+      "Method": "PUT",
+      "URL Params": "Required: type= ['terms','privacy'], parentId = [ObjectID]",
+      "Data Params": "Required:['version'], Eaxmple:{\"version\":\"1.1\"}",
+      "Success Response": "Code: 200, Content:{\"message\":\"Data updated successfully.\"}",
+      "Error Response": "ERR22,ERR38",
+      "Notes": "To update user's content management data."
+    },
+    {
+      "Module": "TERMS OF SERVICE",
+      "Title": "Application's terms",
+      "URL": "&lt;baseUrl&gt;/cms/listCmsbyCategory/terms",
+      "Method": "GET",
+      "Success Response": "Code: 200, Content:{\"category\":\"terms\",\"description\":\"Terms and Conditions\",\"status\":\"ACTIVE\",\"title\":\"Terms and conditions\",\"version\":\"1.1\",\"htmlView\":\"https://squarepanda-dev.s3.amazonaws.com/html/1480409703325_file.html\",\"content_url\":\"https://squarepanda-dev.s3.amazonaws.com/html/1480409703325_file.html\",\"createdAt\":\"2016-11-29T08:55:03.401Z\",\"updatedAt\":\"2017-01-17T08:42:41.470Z\",\"id\":\"583d426737d8e88c119777fb\"}",
+      "Error Response": " ",
+      "Notes": "To get application's updated terms of service."
+    },
+    {
+      "Module": "PRIVACY POLICY",
+      "Title": "Application's privacy",
+      "URL": "&lt;baseUrl&gt;/cms/listCmsbyCategory/privacy",
+      "Method": "GET",
+      "Success Response": "Code: 200,\r\nContent:{\"category\":\"privacy\",\"description\":\"Privacy Policy\",\"status\":\"ACTIVE\",\"title\":\"Privacy Policy\",\"version\":\"457\",\"htmlView\":\"https://squarepanda-dev.s3.amazonaws.com/html/1479191619488_file.html\",\"content_url\":\"https://squarepanda-dev.s3.amazonaws.com/html/1479191619488_file.html\",\"createdAt\":\"2016-11-15T06:33:39.575Z\",\"updatedAt\":\"2017-01-17T08:43:09.985Z\",\"id\":\"582aac430374948f25b99b37\"}",
+      "Error Response": " ",
+      "Notes": "To get application's updated privacy policy."
+    },
+    {
+      "Module": "WARRANTY INFORMATION",
+      "Title": "Application's Warranty",
+      "URL": "&lt;baseUrl&gt;/cms/listCmsbyCategory/warranty",
+      "Method": "GET",
+      "Success Response": "Code: 200,\nContent:{\"category\":\"warranty\",\"content_url\":\"https://squarepanda-dev.s3.amazonaws.com/8e99e8d3-f11b-40c0-a7a2-53f5455b6785.docx\",\"createdAt\":\"2016-03-17T11:02:48.910Z\",\"description\":\"warranty\",\"status\":\"ACTIVE\",\"title\":\"Warranty Card\",\"updatedAt\":\"2016-03-17T11:02:48.910Z\",\"version\":\"1.0\",\"htmlView\":\"https://squarepanda-dev.s3.amazonaws.com/warranty.html\",\"id\":\"56ea8ed8d7ddfb380ecf2531\"}",
+      "Error Response": " ",
+      "Notes": "To get application's updated warranty information."
+    },
+    {
+      "Module": "SIGN OUT",
+      "Title": "Application logout",
+      "URL": "&lt;baseUrl&gt;/user/:userId/logout",
+      "Method": "GET",
+      "URL Params": "Required: userId = [ObjectID]",
+      "Success Response": "Code: 200",
+      "Notes": "This api removes user's token and session data."
+    },
+    {
+      "Module": "DASHBOARD",
+      "Title": "User news feeds",
+      "URL": "&lt;baseUrl&gt;/newsfeeds/:parentId/listallnewsfeeds",
+      "Method": "GET",
+      "URL Params": "Required: parentId = [ObjectID]",
+      "Success Response": "Code: 200, Content:[{\"title\":\"discovers shape and letter recognition\",\"description\":\"Square Panda is a hit with kids, parents, and grandparents!  Play at home or play at school.  The options are limitless.  \\n\\nUpload photos to the Square Panda playground, and see them appear in your games.  Your child will delight at seeing your face when he plays MOM or DAD.\",\"full_view\":\"Square Panda is a hit with kids, parents, and grandparents!  Play at home or play at school.  The options are limitless.  \\n\\nUpload photos to the Square Panda playground, and see them appear in your games.  Your child will delight at seeing your face when he plays MOM or DAD.\",\"category\":\"SP_PRODUCTS\",\"image_url\":\"https://squarepanda-dev.s3.amazonaws.com/78bf90e4-5148-4fba-a0ab-5b930d02483f.jpg\",\"status\":\"PUBLISH\",\"user_id\":\"ADMIN\",\"createdAt\":\"2016-06-23T06:44:50.758Z\",\"updatedAt\":\"2016-11-18T05:22:01.883Z\",\"id\":\"576b8562abfaad3e6c3b3b5a\"}]",
+      "Error Response": "ERR22",
+      "Notes": "To get all user achievements and application related news data."
+    },
+    {
+      "Module": "PLAYERS",
+      "Title": "All players",
+      "URL": "&lt;baseUrl&gt;/user/:parentId/child/portal",
+      "Method": "GET",
+      "URL Params": "Required: parentId = [ObjectID], childId = [ObjectID]",
+      "Data Params": " ",
+      "Success Response": "Code: 200, Content:[{\"firstName\":\"jo\",\"dateofBirth\":\"2016-07-14T00:00:00.000Z\",\"gender\":\"F\",\"owner\":\"57679cbf2941c3a238b9ae5b\",\"status\":\"ACTIVE\",\"createdAt\":\"2016-07-18T10:39:11.452Z\",\"updatedAt\":\"2016-11-18T05:28:56.811Z\",\"imgbase64\":null,\"profileURL\":\"https://squarepanda-dev.s3.amazonaws.com/images/1468838397818_file.png\",\"id\":\"578cb1cfffc031562f8c0212\",\"currentLevel\":\"\",\"activityDate\":\"\"},{\"firstName\":\"swathi\",\"dateofBirth\":\"2016-05-29T00:00:00.000Z\",\"gender\":\"F\",\"owner\":\"57679cbf2941c3a238b9ae5b\",\"status\":\"ACTIVE\",\"createdAt\":\"2016-07-18T05:34:34.438Z\",\"updatedAt\":\"2016-12-29T07:09:43.904Z\",\"imgbase64\":null,\"profileURL\":\"https://squarepanda-dev.s3.amazonaws.com/images/1468841713813_file.png\",\"id\":\"578c6a6af1f8ba3d20654dc0\",\"currentLevel\":\"\",\"activityDate\":\"\"},{\"firstName\":\"test_player\",\"profileURL\":\"https://squarepanda-dev.s3.amazonaws.com/tiger1x.png\",\"dateofBirth\":\"2016-01-01T00:00:00.000Z\",\"gender\":\"F\",\"imgbase64\":\"\",\"owner\":\"57679cbf2941c3a238b9ae5b\",\"status\":\"ACTIVE\",\"createdAt\":\"2016-12-12T06:55:56.845Z\",\"updatedAt\":\"2016-12-12T06:55:56.845Z\",\"id\":\"584e49fcde70194546dd74b3\",\"currentLevel\":\"\",\"activityDate\":\"\"}]",
+      "Error Response": "ERR22",
+      "Notes": "To get all players for a particular user."
+    },
+    {
+      "Module": "PLAYERS",
+      "Title": "Single player data",
+      "URL": "&lt;baseUrl&gt;/user/:parentId/child/:childId",
+      "Method": "GET",
+      "URL Params": "Required: parentId = [ObjectID], childId = [ObjectID]",
+      "Data Params": " ",
+      "Success Response": "Code: 200, Content:{\"owner\":\"57679cbf2941c3a238b9ae5b\",\"firstName\":\"jo\",\"dateofBirth\":\"2016-07-14T00:00:00.000Z\",\"gender\":\"F\",\"status\":\"ACTIVE\",\"createdAt\":\"2016-07-18T10:39:11.452Z\",\"updatedAt\":\"2016-11-18T05:28:56.811Z\",\"imgbase64\":null,\"profileURL\":\"https://squarepanda-dev.s3.amazonaws.com/images/1468838397818_file.png\",\"id\":\"578cb1cfffc031562f8c0212\",\"activities\":[{}]}",
+      "Error Response": "ERR22,ERR23",
+      "Notes": "To get player data."
+    },
+    {
+      "Module": "PLAYERS",
+      "Title": "Player highlights",
+      "URL": "&lt;baseUrl&gt;/activity/:parentId/:childid/highlights",
+      "Method": "GET",
+      "URL Params": "Required: parentId = [ObjectID], childId = [ObjectID]",
+      "Data Params": " ",
+      "Success Response": "Code: 200, Content:{\"favourites\":{\"word\":\"CAT\",\"count\":2},\"correctWord\":\"HAT\",\"totalPlayedTime\":0,\"earnedBadges\":6}",
+      "Error Response": "ERR22,ERR23",
+      "Notes": "To get player's highlights such as most recent word, played time and favorite word."
+    },
+    {
+      "Module": "PLAYERS",
+      "SubModule": "BigBadges",
+      "Title": "Grid view of bigbadges",
+      "URL": "&lt;baseUrl&gt;/activity/:parentId/:childid/bigbadges",
+      "Method": "GET",
+      "URL Params": "Required: parentId = [ObjectID], childId = [ObjectID]",
+      "Data Params": " ",
+      "Success Response": "Code: 200, Content:[{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"badgeName\":\"Letters and Phonemes\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/8aa2afb8-c053-4f28-810d-f8fdc4a77d8b.png\",\"disabledassetURL\":\"https://squarepanda-dev.s3.amazonaws.com/80ce35f6-4764-40c9-b95f-f20bde8603fa.png\",\"createdAt\":\"2016-04-11T05:56:16.925Z\",\"updatedAt\":\"2016-04-11T05:56:16.925Z\",\"description\":\"After phonological awareness (awareness of the auditory sounds of words), letter recognition and phonemic awareness are the first steps to reading readiness! Your child will learn all 26 letters of the alphabet and the 44 individual phonemic sounds those letters and letter combinations create.\",\"tabwords\":[\"a\",\"b\",\"c\",\"d\",\"e\"],\"colorCode\":\"#ad84ff\",\"incrementflag\":1,\"milestoneIds\":[\"1\"],\"id\":\"570b3c801df04f0c123c93bc\",\"percentage\":80.76923076923077,\"status\":\"Active\",\"starflag\":false},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"badgeName\":\"Rhymes\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/75798d45-afad-4b1d-a100-33e91ee62711.png\",\"disabledassetURL\":\"https://squarepanda-dev.s3.amazonaws.com/1cd01dc7-15db-4eac-b39d-ecb290ade98f.png\",\"createdAt\":\"2016-04-11T06:31:49.314Z\",\"updatedAt\":\"2016-04-11T06:31:49.314Z\",\"description\":\"This badge represents a crucial step in phonemic awareness and reading readiness as your child learns about rhymes and word families! This badge means your child is also now identifying words with the same rime (yes, this skill is spelled rime!) The rime is the part of the word after the initial consonant sound - so the \\\"AT\\\" sound in CAT and BAT. Help your child swap out the onset (beginning consonant letter sound) and watch how the word changes!\",\"tabwords\":[\"at\",\"in\",\"an\",\"ub\",\"ow\"],\"colorCode\":\"#65b3eb\",\"incrementflag\":2,\"milestoneIds\":[\"2\"],\"id\":\"570b44d51df04f0c123c93da\",\"percentage\":0,\"status\":\"Active\",\"starflag\":false},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"badgeName\":\"CVC\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/741a332d-1572-4c17-8fc1-82bc6ed26d1f.png\",\"disabledassetURL\":\"https://squarepanda-dev.s3.amazonaws.com/e3240ad9-b43a-494a-aacc-15ccecc2cf87.png\",\"description\":\"This badge is for words that follow this pattern: consonant, vowel, consonant! This pattern is the basic building block of English word construction.\",\"tabwords\":[\"cat\",\"bed\",\"pig\",\"cow\",\"hut\"],\"colorCode\":\"#ff8b65\",\"createdAt\":\"2016-04-11T06:25:31.039Z\",\"updatedAt\":\"2016-04-11T06:25:31.039Z\",\"incrementflag\":3,\"milestoneIds\":[\"3\"],\"id\":\"570b435b1df04f0c123c93c8\",\"percentage\":0,\"status\":\"Active\",\"starflag\":false},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"badgeName\":\"Sight\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/62374ee9-3730-41e0-b425-94e70a4464f3.png\",\"disabledassetURL\":\"https://squarepanda-dev.s3.amazonaws.com/c54afdde-c4dd-4447-8af0-149e8c6dbe03.png\",\"createdAt\":\"2016-04-11T06:29:14.853Z\",\"updatedAt\":\"2016-04-11T06:29:14.853Z\",\"description\":\"As you know, the English language is tricky! There are some words that your child has to learn to memorize because they don't follow traditional rules and conventions. These words are called sight words and include the ever popular 'the,\\\" \\\"to\\\" and \\\"want.\\\"\",\"tabwords\":[\"the\",\"to\",\"want\",\"was\",\"give\"],\"colorCode\":\"#e86bcb\",\"incrementflag\":4,\"milestoneIds\":[\"4.1\",\"4.2\",\"4.3\",\"4.4\"],\"id\":\"570b443a1df04f0c123c93d2\",\"percentage\":2.515723270440252,\"status\":\"Active\",\"starflag\":false},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"badgeName\":\"Compound\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/e4594caf-0d81-42b1-9327-b7860c6bc9e0.png\",\"disabledassetURL\":\"https://squarepanda-dev.s3.amazonaws.com/ea651c71-adaa-4bbc-98eb-dd782380b250.png\",\"createdAt\":\"2016-04-11T06:28:29.582Z\",\"updatedAt\":\"2016-04-11T06:28:29.582Z\",\"description\":\"This badge is for when your child learns to combine two words together create one longer word. This is called a compound word! Words in this group include cupcake, hotdog and upset.\",\"tabwords\":[\"sunset\",\"hotdog\",\"upset\",\"cupcake\",\"jigsaw\"],\"colorCode\":\"#6bc3c3\",\"incrementflag\":5,\"milestoneIds\":[\"5\"],\"id\":\"570b440d1df04f0c123c93d0\",\"percentage\":null,\"status\":\"Active\",\"starflag\":false},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"badgeName\":\"Digraphs\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/b1457d93-ef70-4928-b287-424d0edec0f1.png\",\"disabledassetURL\":\"https://squarepanda-dev.s3.amazonaws.com/5c56ef9b-8a58-4a13-8713-65a0c1451eb0.png\",\"description\":\"Digraphs are when two letters combine to create a brand new sound! Your child is learning these new phonemic sounds, including fish (shhhh!) and chip (chhh!)\",\"tabwords\":[\"chip\",\"shop\",\"fish\",\"thorn\",\"third\"],\"colorCode\":\"#4cbbe4\",\"createdAt\":\"2016-04-11T06:23:40.825Z\",\"updatedAt\":\"2016-04-11T06:23:40.825Z\",\"incrementflag\":6,\"milestoneIds\":[\"6\"],\"id\":\"570b42ec1df04f0c123c93c6\",\"percentage\":null,\"status\":\"Active\",\"starflag\":false},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"badgeName\":\"Blends\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/4172a5b7-1445-4099-9534-9e644224ea4f.png\",\"disabledassetURL\":\"https://squarepanda-dev.s3.amazonaws.com/4712acb1-5a7d-4b0b-a10e-1b87ec3fe38d.png\",\"description\":\"Blends are when two letters combine and still create their individual sounds. Such as 'brick,' 'trip' (tuh, rrr!) and 'star' (suhh, tuh!)\",\"tabwords\":[\"brick\",\"trip\",\"star\",\"blur\",\"land\"],\"colorCode\":\"#efd157\",\"createdAt\":\"2016-04-11T06:00:33.114Z\",\"updatedAt\":\"2016-04-11T06:00:33.114Z\",\"incrementflag\":7,\"milestoneIds\":[\"7.1\"],\"id\":\"570b3d811df04f0c123c93c2\",\"percentage\":null,\"status\":\"Active\",\"starflag\":false},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"badgeName\":\"Floss Rule\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/7a7934dd-9180-416e-8642-b404c0e20d28.png\",\"disabledassetURL\":\"https://squarepanda-dev.s3.amazonaws.com/244cc84b-d55d-4ae0-9535-39ea5f96f8c7.png\",\"description\":\"When a /f/, /l/ /s/ (or /z/) follows a short vowel at the end of a one-syllable word, the consonant is doubled “ff”, “ll”, “ss” or “zz”.\",\"tabwords\":[\"hill\",\"mess\",\"moss\",\"buzz\",\"riff\"],\"colorCode\":\"#90b868\",\"createdAt\":\"2016-04-11T06:26:29.537Z\",\"updatedAt\":\"2016-04-11T06:26:29.537Z\",\"incrementflag\":8,\"milestoneIds\":[\"7.2\",\"7.3\",\"7.4\"],\"id\":\"570b43951df04f0c123c93ca\",\"percentage\":92.5925925925926,\"status\":\"Active\",\"starflag\":false},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"badgeName\":\"Silent E\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/Silent_E_Web.png\",\"disabledassetURL\":\"https://squarepanda-dev.s3.amazonaws.com/Silent_E_WebDisabled.png\",\"description\":\"Long vowels are vowels (A, E, I, O, U) that make the same phonemic sound as their name. So the letter 'a' makes\\r\\nthe sound 'Aye!' in 'day' rather than 'Aaa' in 'cat!' Children are typically taught short vowel sounds before they learn long vowel sounds because\\r\\nthey tend to follow more traditional conventions. When an 'e' is added to a word with a vowel, it changes the vowel sound to a long vowel\",\"tabwords\":[\"like\",\"bike\",\"lake\",\"bake\",\"snake\"],\"colorCode\":\"#ad84ff\",\"createdAt\":\"4/11/2016 5:56:06 AM\",\"updatedAt\":\"4/11/2016 5:56:06 AM\",\"incrementflag\":9,\"milestoneIds\":[\"8.1\",\"8.2\",\"8.3\",\"8.4\"],\"id\":\"570b3d561df04f0c123c93c0\",\"percentage\":null,\"status\":\"Active\",\"starflag\":false},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"badgeName\":\"Y as a Vowel\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/7c48930f-b6e2-4aa1-97c7-eb48ebb20521.png\",\"disabledassetURL\":\"https://squarepanda-dev.s3.amazonaws.com/113ca738-051c-47ee-a47d-f3e5e30579f7.png\",\"createdAt\":\"2016-04-11T06:29:49.439Z\",\"updatedAt\":\"2016-04-11T06:29:49.439Z\",\"description\":\"The letter 'Y' is sometimes used as a vowel sound. In the word 'sky' the 'y' makes the 'i' sound. Check back with Square Panda later for a special 'Y' letter set!\",\"tabwords\":[\"sky\",\"copy\",\"daddy\",\"baby\",\"cycle\"],\"colorCode\":\"#4cbbe4\",\"incrementflag\":10,\"milestoneIds\":[\"9.2\"],\"id\":\"570b445d1df04f0c123c93d4\",\"percentage\":15.789473684210526,\"status\":\"Active\",\"starflag\":false},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"badgeName\":\"Double Vowel\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/b042007e-4620-4775-a55c-e04ce945c6d4.png\",\"disabledassetURL\":\"https://squarepanda-dev.s3.amazonaws.com/9b35540b-bc9a-460c-8458-ece68dd52704.png\",\"description\":\"Common double vowel combinations can be tricky because they create a new sound that is not always a match to the vowels. One trick for your child to remember is 'when two vowels go walking the first does the talking.' This means we pronounce the first vowel and the second is silent.\",\"tabwords\":[\"bear\",\"bee\",\"tree\",\"day\",\"boat\"],\"colorCode\":\"#efd157\",\"createdAt\":\"2016-06-08T07:44:27.142Z\",\"updatedAt\":\"2016-06-08T07:44:27.142Z\",\"incrementflag\":10,\"milestoneIds\":[\"8.2\",\"8.3\"],\"id\":\"5757ccdb7c8337141e4e9a8a\",\"percentage\":null,\"status\":\"Active\",\"starflag\":false},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"badgeName\":\"R Control\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/e9303129-acd3-4d4a-bf17-db994502ef67.png\",\"disabledassetURL\":\"https://squarepanda-dev.s3.amazonaws.com/f62b8d17-0f2b-4538-9ade-56c754f43771.png\",\"description\":\"That 'R' can be so controlling! Did you know that words with 'r's' often change the vowel sounds in words? An example is the word 'car.' Because of the 'r' at the\\r\\nend of the word, the 'a' sound becomes a short vowel sound.\",\"tabwords\":[\"car\",\"bird\",\"yard\",\"part\",\"bar\"],\"colorCode\":\"#90b868\",\"createdAt\":\"2016-04-11T06:01:06.842Z\",\"updatedAt\":\"2016-04-11T06:01:06.842Z\",\"incrementflag\":11,\"milestoneIds\":[\"10\"],\"id\":\"570b3da21df04f0c123c93c4\",\"percentage\":null,\"status\":\"Active\",\"starflag\":false},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"badgeName\":\"OO\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/OO_Web.png\",\"disabledassetURL\":\"https://squarepanda-dev.s3.amazonaws.com/OO_WebDisabled.png\",\"description\":\"When you combine two vowels like 'oo' in 'food,' it also creates a new sound 'ew!' \",\"tabwords\":[\"food\",\"mood\",\"good\",\"school\"],\"colorCode\":\"#65b3eb\",\"createdAt\":\"2016-06-08T07:24:59.114Z\",\"updatedAt\":\"2016-06-08T07:24:59.114Z\",\"incrementflag\":11.5,\"milestoneIds\":[\"10\"],\"id\":\"5757c84b7c8337141e4e9a78\",\"percentage\":null,\"status\":\"Active\",\"starflag\":false},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"badgeName\":\"IGH\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/ebecb2f8-968a-4810-9e32-dba2e6ceb746.png\",\"disabledassetURL\":\"https://squarepanda-dev.s3.amazonaws.com/0c7d298f-a1d2-4fee-8d9d-02b416e5097e.png\",\"description\":\"The letter combination 'igh' makes the long 'i' sound. The words 'night' 'light' and 'fight' sound exactly like: n-i-t-e, l-i-t-e, and f-i-t-e.\",\"tabwords\":[\"light\",\"mighty\",\"flight\",\"right\",\"sight\"],\"colorCode\":\"#e86bcb\",\"createdAt\":\"2016-04-11T06:27:40.802Z\",\"updatedAt\":\"2016-04-11T06:27:40.802Z\",\"incrementflag\":12,\"milestoneIds\":[\"11.1\",\"11.2\"],\"id\":\"570b43dc1df04f0c123c93ce\",\"percentage\":0,\"status\":\"Active\",\"starflag\":false},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"badgeName\":\"Double Vowel + R Control\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/49abf0bc-bee8-4792-915e-3ffd55c1569b.png\",\"disabledassetURL\":\"https://squarepanda-dev.s3.amazonaws.com/c928a9c6-7ac1-4287-aa38-7a9a44403883.png\",\"description\":\"When you have two vowels next to one another, letter r's next to one another, it changes the vowel sounds.\",\"tabwords\":[\"bear\",\"dear\",\"pear\",\"tear\",\"hear\"],\"colorCode\":\"#ad84ff\",\"createdAt\":\"2016-04-11T05:58:50.107Z\",\"updatedAt\":\"2016-04-11T05:58:50.107Z\",\"incrementflag\":13,\"milestoneIds\":[\"10\"],\"id\":\"570b3d1a1df04f0c123c93be\",\"percentage\":null,\"status\":\"Active\",\"starflag\":false},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"badgeName\":\"OW Ending\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/OW_Ending_Web.png\",\"disabledassetURL\":\"https://squarepanda-dev.s3.amazonaws.com/OW_Ending_WebDisabled.png\",\"description\":\"The combination of 'O' and 'W' at the end of the word can be tricky! Sometimes the 'O' makes the short 'O' sound as in 'cow' and other times it makes the long 'O' sound as in row!\",\"tabwords\":[\"cow\",\"bow\",\"row\",\"blow\",\"plow\"],\"colorCode\":\"#90b868\",\"createdAt\":\"2016-06-08T07:19:09.427Z\",\"updatedAt\":\"2016-06-08T07:19:09.427Z\",\"incrementflag\":15,\"milestoneIds\":[\"15+\"],\"id\":\"5757c6ed7c8337141e4e9a72\",\"percentage\":null,\"status\":\"Active\",\"starflag\":false}]",
+      "Error Response": "ERR22,ERR23",
+      "Notes": "Player's bigbadges data."
+    },
+    {
+      "Module": "PLAYERS",
+      "SubModule": "BigBadges",
+      "Title": "Graph view of bigbadges",
+      "URL": "<baseUrl]/bigbadge/graphs/:badgeId/:playerId/:type",
+      "Method": "POST",
+      "URL Params": "Required: badgeId= [ObjectID], playerId = [ObjectID], type = ['day','month','year']",
+      "Data Params": "Required:['fromDate','toDate','currentDate'], Eaxmple:{\"fromDate\":\"Sun Jan 01 2017 00:00:00 GMT+0530 (India Standard Time)\",\"toDate\":\"Tue Jan 31 2017 00:00:00 GMT+0530 (India Standard Time)\",\"currentDate\":\"2017-01-17T06:42:09.800Z\"}",
+      "Success Response": "Code: 200, Content:[[1483209000000,80.76923076923077],[1483473090000,80.76923076923077],[1483747725000,80.76923076923077],[1484635329800,80.76923076923077],[1485801000000,null]]",
+      "Error Response": "ERR23,ERR39,ERR40,ERR41",
+      "Notes": "Player's bigbadges data for graph representation. "
+    },
+    {
+      "Module": "PLAYERS",
+      "SubModule": "MiniBadges",
+      "Title": "Grid view of minibadges",
+      "URL": "&lt;baseUrl&gt;/activity/:parentId/:childid/minibadges",
+      "Method": "GET",
+      "URL Params": "Required: parentId = [ObjectID], childId = [ObjectID]",
+      "Data Params": " ",
+      "Success Response": "Code: 200, Content:[{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"badgeName\":\"Alphabet Badge\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/alphabet-badgex.png\",\"disabledassetURL\":\"https://squarepanda-dev.s3.amazonaws.com/alphabet-badgerx.png\",\"description\":\"Use every letter of the alphabet once\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/alphabet-badge2x.png\",\"r2x\":\"https://squarepanda-dev.s3.amazonaws.com/alphabet-badger2x.png\",\"createdAt\":\"2016-03-31T11:25:39.567Z\",\"updatedAt\":\"2016-03-31T11:25:39.567Z\",\"id\":\"56fd093357141a2818eee0a1\",\"status\":\"Disabled\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"badgeName\":\"Name Badge\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/Name-badgex.png\",\"disabledassetURL\":\"https://squarepanda-dev.s3.amazonaws.com/Name-badgerx.png\",\"description\":\"Spell your name!\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/Name-badge2x.png\",\"r2x\":\"https://squarepanda-dev.s3.amazonaws.com/Name-badger2x.png\",\"createdAt\":\"2016-03-31T11:26:42.280Z\",\"updatedAt\":\"2016-03-31T11:26:42.280Z\",\"id\":\"56fd097257141a2818eee0a3\",\"status\":\"Disabled\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"badgeName\":\"Number Badge\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/number-badgex.png\",\"disabledassetURL\":\"https://squarepanda-dev.s3.amazonaws.com/number-badgerx.png\",\"description\":\"Spell the numbers ONE through TEN\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/number-badge2x.png\",\"r2x\":\"https://squarepanda-dev.s3.amazonaws.com/number-badger2x.png\",\"createdAt\":\"2016-03-31T11:28:00.258Z\",\"updatedAt\":\"2016-03-31T11:28:00.258Z\",\"id\":\"56fd09c057141a2818eee0a5\",\"status\":\"Disabled\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"badgeName\":\"Square Panda Badge\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/squarepanda-badgex.png\",\"disabledassetURL\":\"https://squarepanda-dev.s3.amazonaws.com/squarepanda-badgerx.png\",\"description\":\"Play the words SQUARE and PANDA\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/squarepanda-badge2x.png\",\"r2x\":\"https://squarepanda-dev.s3.amazonaws.com/squarepanda-badger2x.png\",\"createdAt\":\"2016-03-31T11:29:27.465Z\",\"updatedAt\":\"2016-03-31T11:29:27.465Z\",\"id\":\"56fd0a1757141a2818eee0a9\",\"status\":\"Disabled\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"badgeName\":\"Bowling Step One\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/bowling-easy-badgex.png\",\"disabledassetURL\":\"https://squarepanda-dev.s3.amazonaws.com/bowling-easy-badgerx.png\",\"description\":\"Complete Step 1 of Square Panda Bowling\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/bowling-easy-badge2x.png\",\"r2x\":\"https://squarepanda-dev.s3.amazonaws.com/bowling-easy-badger2x.png\",\"createdAt\":\"2016-03-31T11:30:29.474Z\",\"updatedAt\":\"2016-03-31T11:30:29.474Z\",\"id\":\"56fd0a5557141a2818eee0ab\",\"status\":\"Disabled\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"badgeName\":\"Bowling Step Two\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/bowling-medium-badgex.png\",\"disabledassetURL\":\"https://squarepanda-dev.s3.amazonaws.com/bowling-medium-badgerx.png\",\"description\":\"Complete Step 2 of Square Panda Bowling\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/bowling-medium-badge2x.png\",\"r2x\":\"https://squarepanda-dev.s3.amazonaws.com/bowling-medium-badger2x.png\",\"createdAt\":\"2016-03-31T11:31:10.964Z\",\"updatedAt\":\"2016-03-31T11:31:10.964Z\",\"id\":\"56fd0a7e57141a2818eee0ad\",\"status\":\"Disabled\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"badgeName\":\"Bowling Step Three\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/bowling-hard-badgex.png\",\"disabledassetURL\":\"https://squarepanda-dev.s3.amazonaws.com/bowling-hard-badgerx.png\",\"description\":\"Complete Step 3 of Square Panda Bowling\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/bowling-hard-badge2x.png\",\"r2x\":\"https://squarepanda-dev.s3.amazonaws.com/bowling-hard-badger2x.png\",\"createdAt\":\"2016-03-31T11:31:41.680Z\",\"updatedAt\":\"2016-03-31T11:31:41.680Z\",\"id\":\"56fd0a9d57141a2818eee0af\",\"status\":\"Disabled\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"badgeName\":\"3 Letter Word Badge\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/3-ltr-wrdx.png\",\"disabledassetURL\":\"https://squarepanda-dev.s3.amazonaws.com/3-ltr-wrdrx.png\",\"description\":\"Play a 3 letter word\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/3-ltr-wrd2x.png\",\"r2x\":\"https://squarepanda-dev.s3.amazonaws.com/3-ltr-wrdr2x.png\",\"createdAt\":\"2016-03-31T11:25:39.567Z\",\"updatedAt\":\"2016-03-31T11:25:39.567Z\",\"id\":\"5718d4e4d0509f12b84e4612\",\"status\":\"Active\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"badgeName\":\"4 Letter Word Badge\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/4-ltr-wrdx.png\",\"disabledassetURL\":\"https://squarepanda-dev.s3.amazonaws.com/4-ltr-wrdrx.png\",\"description\":\"Play a 4 letter word\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/4-ltr-wrd2x.png\",\"r2x\":\"https://squarepanda-dev.s3.amazonaws.com/4-ltr-wrdr2x.png\",\"createdAt\":\"2016-03-31T11:25:39.567Z\",\"updatedAt\":\"2016-03-31T11:25:39.567Z\",\"id\":\"5718d4eed0509f12b84e4613\",\"status\":\"Active\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"badgeName\":\"5 Letter Word Badge\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/5-ltr-wrdx.png\",\"disabledassetURL\":\"https://squarepanda-dev.s3.amazonaws.com/5-ltr-wrdrx.png\",\"description\":\"Play a 5 letter word\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/5-ltr-wrd2x.png\",\"r2x\":\"https://squarepanda-dev.s3.amazonaws.com/5-ltr-wrdr2x.png\",\"createdAt\":\"2016-03-31T11:25:39.567Z\",\"updatedAt\":\"2016-03-31T11:25:39.567Z\",\"id\":\"5718d574d0509f12b84e4614\",\"status\":\"Active\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"badgeName\":\"6 Letter Word Badge\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/six-ltr-wrdx.png\",\"disabledassetURL\":\"https://squarepanda-dev.s3.amazonaws.com/6-ltr-wrdrx.png\",\"description\":\"Play a 6 letter word\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/six-ltr-wrd2x.png\",\"r2x\":\"https://squarepanda-dev.s3.amazonaws.com/6-ltr-wrdr2x.png\",\"createdAt\":\"2016-03-31T11:25:39.567Z\",\"updatedAt\":\"2016-03-31T11:25:39.567Z\",\"id\":\"5718d57ed0509f12b84e4615\",\"status\":\"Active\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"badgeName\":\"7 Letter Word Badge\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/7-ltr-wrdx.png\",\"disabledassetURL\":\"https://squarepanda-dev.s3.amazonaws.com/7-ltr-wrdrx.png\",\"description\":\"Play a 7 letter word\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/7-ltr-wrd2x.png\",\"r2x\":\"https://squarepanda-dev.s3.amazonaws.com/7-ltr-wrdr2x.png\",\"createdAt\":\"2016-03-31T11:25:39.567Z\",\"updatedAt\":\"2016-03-31T11:25:39.567Z\",\"id\":\"5718d586d0509f12b84e4616\",\"status\":\"Active\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"badgeName\":\"Rainbow Badge\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/Rainbow-badgex.png\",\"disabledassetURL\":\"https://squarepanda-dev.s3.amazonaws.com/Rainbow-badgerx.png\",\"description\":\"Spell all the colors: RED, ORANGE, YELLOW, GREEN, BLUE, PURPLE, BLACK, and WHITE\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/Rainbow-badge2x.png\",\"r2x\":\"https://squarepanda-dev.s3.amazonaws.com/Rainbow-badger2x.png\",\"createdAt\":\"2016-03-31T11:28:45.188Z\",\"updatedAt\":\"2016-03-31T11:28:45.188Z\",\"id\":\"56fd09ed57141a2818eee0a7\",\"status\":\"Disabled\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"badgeName\":\"8 Letter Word Badge\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/d4fd051e-0d82-4542-8378-d786a4716570.png\",\"disabledassetURL\":\"https://squarepanda-dev.s3.amazonaws.com/8-ltr-wrd-x-dis.png\",\"description\":\"Play a 8 letter word\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/5effd98e-8aeb-4ab2-a3cb-7696c01150a5.png\",\"r2x\":\"https://squarepanda-dev.s3.amazonaws.com/7-ltr-wrdr2x.png\",\"createdAt\":\"2016-03-31T11:25:39.567Z\",\"updatedAt\":\"2016-03-31T11:25:39.567Z\",\"id\":\"575fa3a6d0509f1b78194263\",\"status\":\"Active\"}]",
+      "Error Response": "ERR22,ERR23",
+      "Notes": "Player's minibadges data."
+    },
+    {
+      "Module": "PLAYERS",
+      "SubModule": "Words-ALL",
+      "Title": "Player's activity",
+      "URL": "&lt;baseUrl&gt;/activity/:parentId/:childid",
+      "Method": "GET",
+      "URL Params": "Required: parentId = [ObjectID], childId = [ObjectID]",
+      "Data Params": " ",
+      "Success Response": "Code: 200, Content:[{\"_id\":\"A\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1483473090\"},{\"_id\":\"B\",\"count\":1,\"gamescore\":\"0\",\"gameAttempts\":[\"0\"],\"endtime\":\"1483747725\"},{\"_id\":\"LUFFY\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1479464210\"},{\"_id\":\"APPLE\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1468841566\"},{\"_id\":\"ADD\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1468841592\"},{\"_id\":\"HELLO\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1468841169\"},{\"_id\":\"RATTLE\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1468841467\"},{\"_id\":\"ELL\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1468841402\"},{\"_id\":\"MISS\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1468840837\"},{\"_id\":\"WALL\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1468841273\"},{\"_id\":\"FALL\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1468841217\"},{\"_id\":\"BALL\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1468841191\"},{\"_id\":\"SUNNY\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1468841512\"},{\"_id\":\"KISS\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1468841535\"},{\"_id\":\"TEACHER\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1468838963\"},{\"_id\":\"TALL\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1468841121\"},{\"_id\":\"SMALL\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1468841098\"},{\"_id\":\"FELL\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1468841435\"},{\"_id\":\"PULL\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1468841035\"},{\"_id\":\"CALL\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1468841380\"},{\"_id\":\"BOTTLE\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1468840711\"},{\"_id\":\"FULL\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1468841239\"},{\"_id\":\"ICE\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1468838864\"},{\"_id\":\"MOMMY\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1468840669\"},{\"_id\":\"MUDDY\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1468841344\"},{\"_id\":\"ASK\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1468840804\"},{\"_id\":\"HAT\",\"count\":1,\"gamescore\":\"0\",\"gameAttempts\":[\"0\"],\"endtime\":\"1478086506\"},{\"_id\":\"HAPPY\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1468841625\"},{\"_id\":\"BELL\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1468841415\"},{\"_id\":\"CAT\",\"count\":2,\"gamescore\":\"1\",\"gameAttempts\":[\"1\",\"0\"],\"endtime\":\"1478086433\"},{\"_id\":\"EGG\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1468841592\"},{\"_id\":\"END\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1468841311\"},{\"_id\":\"MOON\",\"count\":2,\"gamescore\":\"1\",\"gameAttempts\":[\"1\",\"0\"],\"endtime\":\"1468841653\"},{\"_id\":\"MOUNIKA\",\"count\":1,\"gamescore\":\"0\",\"gameAttempts\":[\"0\"],\"endtime\":\"1468838773\"},{\"_id\":\"ACT\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1468838993\"},{\"_id\":\"ALL\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"endtime\":\"1468841142\"}]",
+      "Error Response": "ERR22,ERR23",
+      "Notes": "Player's activity for all games."
+    },
+    {
+      "Module": "PLAYERS",
+      "SubModule": "Words-realWords",
+      "Title": "Player's activity",
+      "URL": "&lt;baseUrl&gt;/word/:childid/realwords",
+      "Method": "GET",
+      "URL Params": "Required: childId = [ObjectID]",
+      "Success Response": "Code: 200, Content:[{\"_id\":\"A\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1483473055\",\"endtime\":\"1483473090\",\"activity\":[{\"letter\":\" \",\"time\":\"1483473061\",\"slot\":\"5\",\"ms_time\":\"1483473061784\"}]},{\"_id\":\"LUFFY\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1479464179\",\"endtime\":\"1479464210\",\"activity\":[{\"slot\":\"5\",\"time\":\"1479464179\",\"letter\":\" \",\"ms_time\":\"1479464179727\"},{\"slot\":\"4\",\"time\":\"1479464181\",\"letter\":\" \",\"ms_time\":\"1479464181189\"},{\"slot\":\"3\",\"time\":\"1479464183\",\"letter\":\" \",\"ms_time\":\"1479464183441\"},{\"slot\":\"2\",\"time\":\"1479464185\",\"letter\":\" \",\"ms_time\":\"1479464185388\"},{\"slot\":\"1\",\"time\":\"1479464187\",\"letter\":\" \",\"ms_time\":\"1479464187207\"},{\"slot\":\"1\",\"time\":\"1479464190\",\"letter\":\"M\",\"ms_time\":\"1479464190220\"},{\"slot\":\"2\",\"time\":\"1479464193\",\"letter\":\"U\",\"ms_time\":\"1479464193521\"},{\"slot\":\"2\",\"time\":\"1479464194\",\"letter\":\" \",\"ms_time\":\"1479464194421\"},{\"slot\":\"4\",\"time\":\"1479464196\",\"letter\":\"U\",\"ms_time\":\"1479464196220\"},{\"slot\":\"1\",\"time\":\"1479464197\",\"letter\":\" \",\"ms_time\":\"1479464197120\"},{\"slot\":\"3\",\"time\":\"1479464197\",\"letter\":\"L\",\"ms_time\":\"1479464197989\"},{\"slot\":\"5\",\"time\":\"1479464202\",\"letter\":\"l\",\"ms_time\":\"1479464202054\"},{\"slot\":\"6\",\"time\":\"1479464204\",\"letter\":\"F\",\"ms_time\":\"1479464204921\"},{\"slot\":\"5\",\"time\":\"1479464207\",\"letter\":\"F\",\"ms_time\":\"1479464207456\"},{\"slot\":\"7\",\"time\":\"1479464210\",\"letter\":\"Y\",\"ms_time\":\"1479464210755\"}]},{\"_id\":\"ADD\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1468841592\",\"endtime\":\"1468841592\",\"activity\":[{\"slot\":\"2\",\"time\":\"1468841592\",\"letter\":\"D\"},{\"slot\":\"3\",\"time\":\"1468841592\",\"letter\":\"D\"}]},{\"_id\":\"HELLO\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1468841161\",\"endtime\":\"1468841169\",\"activity\":[{\"slot\":\"3\",\"time\":\"1468841161\",\"letter\":\"E\"},{\"slot\":\"6\",\"time\":\"1468841161\",\"letter\":\"O\"},{\"slot\":\"2\",\"time\":\"1468841167\",\"letter\":\"E\"},{\"slot\":\"2\",\"time\":\"1468841169\",\"letter\":\"H\"}]},{\"_id\":\"RATTLE\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1468841462\",\"endtime\":\"1468841467\",\"activity\":[{\"slot\":\"1\",\"time\":\"1468841462\",\"letter\":\"R\"},{\"slot\":\"2\",\"time\":\"1468841462\",\"letter\":\"A\"},{\"slot\":\"3\",\"time\":\"1468841462\",\"letter\":\"T\"},{\"slot\":\"4\",\"time\":\"1468841462\",\"letter\":\"W\"},{\"slot\":\"5\",\"time\":\"1468841462\",\"letter\":\"L\"},{\"slot\":\"6\",\"time\":\"1468841462\",\"letter\":\"E\"},{\"slot\":\"4\",\"time\":\"1468841467\",\"letter\":\"T\"}]},{\"_id\":\"ELL\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1468841402\",\"endtime\":\"1468841402\",\"activity\":[{\"slot\":\"1\",\"time\":\"1468841402\",\"letter\":\" \"},{\"slot\":\"2\",\"time\":\"1468841402\",\"letter\":\"E\"}]},{\"_id\":\"MISS\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1468840824\",\"endtime\":\"1468840837\",\"activity\":[{\"slot\":\"1\",\"time\":\"1468840824\",\"letter\":\" \"},{\"slot\":\"2\",\"time\":\"1468840824\",\"letter\":\"W\"},{\"slot\":\"3\",\"time\":\"1468840824\",\"letter\":\"S\"},{\"slot\":\"4\",\"time\":\"1468840824\",\"letter\":\"S\"},{\"slot\":\"2\",\"time\":\"1468840828\",\"letter\":\"I\"},{\"slot\":\"1\",\"time\":\"1468840837\",\"letter\":\"M\"}]},{\"_id\":\"WALL\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1468841269\",\"endtime\":\"1468841273\",\"activity\":[{\"slot\":\"2\",\"time\":\"1468841269\",\"letter\":\" \"},{\"slot\":\"3\",\"time\":\"1468841269\",\"letter\":\"A\"},{\"slot\":\"2\",\"time\":\"1468841273\",\"letter\":\"W\"}]},{\"_id\":\"FALL\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1468841212\",\"endtime\":\"1468841217\",\"activity\":[{\"slot\":\"2\",\"time\":\"1468841212\",\"letter\":\" \"},{\"slot\":\"2\",\"time\":\"1468841217\",\"letter\":\"F\"}]},{\"_id\":\"BALL\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1468841191\",\"endtime\":\"1468841191\",\"activity\":[{\"slot\":\"2\",\"time\":\"1468841191\",\"letter\":\"B\"},{\"slot\":\"3\",\"time\":\"1468841191\",\"letter\":\"A\"},{\"slot\":\"6\",\"time\":\"1468841191\",\"letter\":\" \"}]},{\"_id\":\"SUNNY\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1468841491\",\"endtime\":\"1468841512\",\"activity\":[{\"slot\":\"1\",\"time\":\"1468841491\",\"letter\":\"S\"},{\"slot\":\"2\",\"time\":\"1468841491\",\"letter\":\"U\"},{\"slot\":\"3\",\"time\":\"1468841491\",\"letter\":\" \"},{\"slot\":\"4\",\"time\":\"1468841491\",\"letter\":\" \"},{\"slot\":\"5\",\"time\":\"1468841491\",\"letter\":\" \"},{\"slot\":\"6\",\"time\":\"1468841491\",\"letter\":\" \"},{\"slot\":\"5\",\"time\":\"1468841496\",\"letter\":\"a\"},{\"slot\":\"5\",\"time\":\"1468841497\",\"letter\":\"Y\"},{\"slot\":\"4\",\"time\":\"1468841498\",\"letter\":\"N\"},{\"slot\":\"3\",\"time\":\"1468841498\",\"letter\":\"M\"},{\"slot\":\"5\",\"time\":\"1468841499\",\"letter\":\"a\"},{\"slot\":\"3\",\"time\":\"1468841501\",\"letter\":\" \"},{\"slot\":\"5\",\"time\":\"1468841504\",\"letter\":\"Y\"},{\"slot\":\"3\",\"time\":\"1468841509\",\"letter\":\"N\"},{\"slot\":\"3\",\"time\":\"1468841510\",\"letter\":\"M\"},{\"slot\":\"3\",\"time\":\"1468841512\",\"letter\":\"N\"}]},{\"_id\":\"KISS\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1468841535\",\"endtime\":\"1468841535\",\"activity\":[{\"slot\":\"1\",\"time\":\"1468841535\",\"letter\":\"K\"},{\"slot\":\"2\",\"time\":\"1468841535\",\"letter\":\"I\"},{\"slot\":\"3\",\"time\":\"1468841535\",\"letter\":\"S\"},{\"slot\":\"4\",\"time\":\"1468841535\",\"letter\":\"S\"},{\"slot\":\"5\",\"time\":\"1468841535\",\"letter\":\" \"}]},{\"_id\":\"TEACHER\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1468838888\",\"endtime\":\"1468838963\",\"activity\":[{\"slot\":\"3\",\"time\":\"1468838888\",\"letter\":\" \"},{\"slot\":\"2\",\"time\":\"1468838889\",\"letter\":\" \"},{\"slot\":\"1\",\"time\":\"1468838891\",\"letter\":\" \"},{\"slot\":\"1\",\"time\":\"1468838899\",\"letter\":\"T\"},{\"slot\":\"3\",\"time\":\"1468838910\",\"letter\":\"v\"},{\"slot\":\"2\",\"time\":\"1468838913\",\"letter\":\"E\"},{\"slot\":\"3\",\"time\":\"1468838922\",\"letter\":\" \"},{\"slot\":\"3\",\"time\":\"1468838923\",\"letter\":\"v\"},{\"slot\":\"3\",\"time\":\"1468838925\",\"letter\":\" \"},{\"slot\":\"3\",\"time\":\"1468838929\",\"letter\":\"A\"},{\"slot\":\"4\",\"time\":\"1468838935\",\"letter\":\"C\"},{\"slot\":\"5\",\"time\":\"1468838939\",\"letter\":\"r\"},{\"slot\":\"6\",\"time\":\"1468838943\",\"letter\":\"E\"},{\"slot\":\"7\",\"time\":\"1468838947\",\"letter\":\"X\"},{\"slot\":\"7\",\"time\":\"1468838951\",\"letter\":\" \"},{\"slot\":\"5\",\"time\":\"1468838953\",\"letter\":\"H\"},{\"slot\":\"5\",\"time\":\"1468838955\",\"letter\":\" \"},{\"slot\":\"5\",\"time\":\"1468838956\",\"letter\":\"H\"},{\"slot\":\"6\",\"time\":\"1468838957\",\"letter\":\" \"},{\"slot\":\"6\",\"time\":\"1468838960\",\"letter\":\"E\"},{\"slot\":\"7\",\"time\":\"1468838963\",\"letter\":\"R\"}]},{\"_id\":\"TALL\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1468841121\",\"endtime\":\"1468841121\",\"activity\":[{\"slot\":\"1\",\"time\":\"1468841121\",\"letter\":\" \"},{\"slot\":\"2\",\"time\":\"1468841121\",\"letter\":\"T\"}]},{\"_id\":\"SMALL\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1468841056\",\"endtime\":\"1468841098\",\"activity\":[{\"slot\":\"1\",\"time\":\"1468841056\",\"letter\":\"S\"},{\"slot\":\"2\",\"time\":\"1468841056\",\"letter\":\" \"},{\"slot\":\"3\",\"time\":\"1468841056\",\"letter\":\"A\"},{\"slot\":\"5\",\"time\":\"1468841056\",\"letter\":\"L\"},{\"slot\":\"2\",\"time\":\"1468841098\",\"letter\":\"M\"}]},{\"_id\":\"FELL\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1468841435\",\"endtime\":\"1468841435\",\"activity\":[{\"slot\":\"1\",\"time\":\"1468841435\",\"letter\":\"F\"}]},{\"_id\":\"PULL\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1468840857\",\"endtime\":\"1468841035\",\"activity\":[{\"slot\":\"1\",\"time\":\"1468840857\",\"letter\":\"P\"},{\"slot\":\"2\",\"time\":\"1468840857\",\"letter\":\"U\"},{\"slot\":\"3\",\"time\":\"1468840857\",\"letter\":\" \"},{\"slot\":\"4\",\"time\":\"1468840857\",\"letter\":\"L\"},{\"slot\":\"1\",\"time\":\"1468840932\",\"letter\":\" \"},{\"slot\":\"2\",\"time\":\"1468840932\",\"letter\":\" \"},{\"slot\":\"4\",\"time\":\"1468840932\",\"letter\":\" \"},{\"slot\":\"1\",\"time\":\"1468841013\",\"letter\":\"P\"},{\"slot\":\"2\",\"time\":\"1468841016\",\"letter\":\"U\"},{\"slot\":\"2\",\"time\":\"1468841017\",\"letter\":\"K\"},{\"slot\":\"3\",\"time\":\"1468841017\",\"letter\":\"M\"},{\"slot\":\"4\",\"time\":\"1468841019\",\"letter\":\"L\"},{\"slot\":\"2\",\"time\":\"1468841030\",\"letter\":\"U\"},{\"slot\":\"3\",\"time\":\"1468841031\",\"letter\":\" \"},{\"slot\":\"3\",\"time\":\"1468841031\",\"letter\":\"M\"},{\"slot\":\"3\",\"time\":\"1468841035\",\"letter\":\"L\"}]},{\"_id\":\"CALL\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1468841365\",\"endtime\":\"1468841380\",\"activity\":[{\"slot\":\"2\",\"time\":\"1468841365\",\"letter\":\" \"},{\"slot\":\"3\",\"time\":\"1468841365\",\"letter\":\" \"},{\"slot\":\"4\",\"time\":\"1468841365\",\"letter\":\" \"},{\"slot\":\"5\",\"time\":\"1468841365\",\"letter\":\" \"},{\"slot\":\"6\",\"time\":\"1468841365\",\"letter\":\" \"},{\"slot\":\"2\",\"time\":\"1468841366\",\"letter\":\"A\"},{\"slot\":\"4\",\"time\":\"1468841374\",\"letter\":\"L\"},{\"slot\":\"3\",\"time\":\"1468841374\",\"letter\":\"L\"},{\"slot\":\"1\",\"time\":\"1468841380\",\"letter\":\"C\"}]},{\"_id\":\"BOTTLE\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1468840711\",\"endtime\":\"1468840711\",\"activity\":[{\"slot\":\"1\",\"time\":\"1468840711\",\"letter\":\"B\"},{\"slot\":\"3\",\"time\":\"1468840711\",\"letter\":\"T\"},{\"slot\":\"4\",\"time\":\"1468840711\",\"letter\":\"T\"},{\"slot\":\"5\",\"time\":\"1468840711\",\"letter\":\"L\"},{\"slot\":\"6\",\"time\":\"1468840711\",\"letter\":\"E\"}]},{\"_id\":\"FULL\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1468841237\",\"endtime\":\"1468841239\",\"activity\":[{\"slot\":\"2\",\"time\":\"1468841237\",\"letter\":\"l\"},{\"slot\":\"3\",\"time\":\"1468841237\",\"letter\":\"U\"},{\"slot\":\"2\",\"time\":\"1468841239\",\"letter\":\"F\"}]},{\"_id\":\"ICE\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1468838846\",\"endtime\":\"1468838864\",\"activity\":[{\"slot\":\"4\",\"time\":\"1468838846\",\"letter\":\" \"},{\"slot\":\"3\",\"time\":\"1468838847\",\"letter\":\" \"},{\"slot\":\"2\",\"time\":\"1468838848\",\"letter\":\" \"},{\"slot\":\"1\",\"time\":\"1468838849\",\"letter\":\" \"},{\"slot\":\"1\",\"time\":\"1468838851\",\"letter\":\"M\"},{\"slot\":\"1\",\"time\":\"1468838852\",\"letter\":\" \"},{\"slot\":\"1\",\"time\":\"1468838855\",\"letter\":\"I\"},{\"slot\":\"2\",\"time\":\"1468838860\",\"letter\":\"C\"},{\"slot\":\"3\",\"time\":\"1468838864\",\"letter\":\"E\"}]},{\"_id\":\"MOMMY\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1468840622\",\"endtime\":\"1468840669\",\"activity\":[{\"slot\":\"4\",\"time\":\"1468840622\",\"letter\":\" \"},{\"slot\":\"4\",\"time\":\"1468840628\",\"letter\":\"E\"},{\"slot\":\"4\",\"time\":\"1468840628\",\"letter\":\" \"},{\"slot\":\"4\",\"time\":\"1468840628\",\"letter\":\"E\"},{\"slot\":\"4\",\"time\":\"1468840628\",\"letter\":\" \"},{\"slot\":\"1\",\"time\":\"1468840629\",\"letter\":\" \"},{\"slot\":\"1\",\"time\":\"1468840629\",\"letter\":\"M\"},{\"slot\":\"1\",\"time\":\"1468840630\",\"letter\":\" \"},{\"slot\":\"1\",\"time\":\"1468840630\",\"letter\":\"M\"},{\"slot\":\"1\",\"time\":\"1468840630\",\"letter\":\" \"},{\"slot\":\"1\",\"time\":\"1468840632\",\"letter\":\"M\"},{\"slot\":\"1\",\"time\":\"1468840632\",\"letter\":\" \"},{\"slot\":\"1\",\"time\":\"1468840632\",\"letter\":\"M\"},{\"slot\":\"1\",\"time\":\"1468840633\",\"letter\":\" \"},{\"slot\":\"1\",\"time\":\"1468840633\",\"letter\":\"M\"},{\"slot\":\"1\",\"time\":\"1468840633\",\"letter\":\" \"},{\"slot\":\"1\",\"time\":\"1468840633\",\"letter\":\"M\"},{\"slot\":\"1\",\"time\":\"1468840634\",\"letter\":\" \"},{\"slot\":\"1\",\"time\":\"1468840634\",\"letter\":\"M\"},{\"slot\":\"1\",\"time\":\"1468840634\",\"letter\":\" \"},{\"slot\":\"1\",\"time\":\"1468840634\",\"letter\":\"M\"},{\"slot\":\"1\",\"time\":\"1468840634\",\"letter\":\" \"},{\"slot\":\"1\",\"time\":\"1468840634\",\"letter\":\"M\"},{\"slot\":\"1\",\"time\":\"1468840634\",\"letter\":\" \"},{\"slot\":\"1\",\"time\":\"1468840635\",\"letter\":\"M\"},{\"slot\":\"4\",\"time\":\"1468840638\",\"letter\":\"E\"},{\"slot\":\"4\",\"time\":\"1468840639\",\"letter\":\" \"},{\"slot\":\"4\",\"time\":\"1468840657\",\"letter\":\"N\"},{\"slot\":\"4\",\"time\":\"1468840660\",\"letter\":\" \"},{\"slot\":\"4\",\"time\":\"1468840665\",\"letter\":\"E\"},{\"slot\":\"4\",\"time\":\"1468840669\",\"letter\":\"M\"}]},{\"_id\":\"MUDDY\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1468841330\",\"endtime\":\"1468841344\",\"activity\":[{\"slot\":\"2\",\"time\":\"1468841330\",\"letter\":\"M\"},{\"slot\":\"3\",\"time\":\"1468841330\",\"letter\":\"U\"},{\"slot\":\"4\",\"time\":\"1468841330\",\"letter\":\" \"},{\"slot\":\"4\",\"time\":\"1468841334\",\"letter\":\"D\"},{\"slot\":\"5\",\"time\":\"1468841341\",\"letter\":\"D\"},{\"slot\":\"6\",\"time\":\"1468841344\",\"letter\":\"Y\"}]},{\"_id\":\"ASK\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1468840789\",\"endtime\":\"1468840804\",\"activity\":[{\"slot\":\"1\",\"time\":\"1468840789\",\"letter\":\" \"},{\"slot\":\"2\",\"time\":\"1468840789\",\"letter\":\" \"},{\"slot\":\"3\",\"time\":\"1468840789\",\"letter\":\" \"},{\"slot\":\"4\",\"time\":\"1468840789\",\"letter\":\" \"},{\"slot\":\"5\",\"time\":\"1468840789\",\"letter\":\" \"},{\"slot\":\"6\",\"time\":\"1468840790\",\"letter\":\" \"},{\"slot\":\"2\",\"time\":\"1468840795\",\"letter\":\"S\"},{\"slot\":\"1\",\"time\":\"1468840795\",\"letter\":\"A\"},{\"slot\":\"3\",\"time\":\"1468840804\",\"letter\":\"K\"}]},{\"_id\":\"HAT\",\"count\":1,\"gamescore\":\"0\",\"gameAttempts\":[\"0\"],\"starttime\":\"1478086452\",\"endtime\":\"1478086506\",\"activity\":[{\"slot\":\"1\",\"time\":\"1478086474\",\"letter\":\"r\"},{\"slot\":\"1\",\"time\":\"1478086482\",\"letter\":\"H\"},{\"slot\":\"2\",\"time\":\"1478086490\",\"letter\":\"A\"},{\"slot\":\"3\",\"time\":\"1478086503\",\"letter\":\"W\"},{\"slot\":\"1\",\"time\":\"1478086506\",\"letter\":\"R\"},{\"slot\":\"1\",\"time\":\"1478086506\",\"letter\":\"H\"},{\"slot\":\"3\",\"time\":\"1478086506\",\"letter\":\"T\"}]},{\"_id\":\"HAPPY\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1468841622\",\"endtime\":\"1468841625\",\"activity\":[{\"slot\":\"1\",\"time\":\"1468841622\",\"letter\":\"H\"},{\"slot\":\"2\",\"time\":\"1468841622\",\"letter\":\" \"},{\"slot\":\"3\",\"time\":\"1468841622\",\"letter\":\"P\"},{\"slot\":\"4\",\"time\":\"1468841622\",\"letter\":\"P\"},{\"slot\":\"5\",\"time\":\"1468841622\",\"letter\":\"Y\"},{\"slot\":\"6\",\"time\":\"1468841622\",\"letter\":\" \"},{\"slot\":\"7\",\"time\":\"1468841622\",\"letter\":\" \"},{\"slot\":\"2\",\"time\":\"1468841625\",\"letter\":\"A\"}]},{\"_id\":\"BELL\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1468841415\",\"endtime\":\"1468841415\",\"activity\":[{\"slot\":\"1\",\"time\":\"1468841415\",\"letter\":\"B\"}]},{\"_id\":\"CAT\",\"count\":2,\"gamescore\":\"1\",\"gameAttempts\":[\"1\",\"0\"],\"starttime\":\"1478086364\",\"endtime\":\"1478086433\",\"activity\":[{\"slot\":\"5\",\"time\":\"1468839080\",\"letter\":\" \"},{\"slot\":\"3\",\"time\":\"1468839083\",\"letter\":\" \"},{\"slot\":\"5\",\"time\":\"1468839084\",\"letter\":\"A\"},{\"slot\":\"6\",\"time\":\"1468839088\",\"letter\":\"W\"},{\"slot\":\"6\",\"time\":\"1468839092\",\"letter\":\" \"},{\"slot\":\"6\",\"time\":\"1468839093\",\"letter\":\"T\"}]},{\"_id\":\"EGG\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1468841592\",\"endtime\":\"1468841592\",\"activity\":[{\"slot\":\"4\",\"time\":\"1468841592\",\"letter\":\" \"},{\"slot\":\"6\",\"time\":\"1468841592\",\"letter\":\"G\"},{\"slot\":\"7\",\"time\":\"1468841592\",\"letter\":\"G\"}]},{\"_id\":\"END\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1468841305\",\"endtime\":\"1468841311\",\"activity\":[{\"slot\":\"2\",\"time\":\"1468841305\",\"letter\":\"E\"},{\"slot\":\"3\",\"time\":\"1468841305\",\"letter\":\" \"},{\"slot\":\"4\",\"time\":\"1468841305\",\"letter\":\"D\"},{\"slot\":\"5\",\"time\":\"1468841305\",\"letter\":\" \"},{\"slot\":\"3\",\"time\":\"1468841309\",\"letter\":\"M\"},{\"slot\":\"3\",\"time\":\"1468841311\",\"letter\":\"E\"},{\"slot\":\"3\",\"time\":\"1468841311\",\"letter\":\"N\"}]},{\"_id\":\"MOON\",\"count\":2,\"gamescore\":\"1\",\"gameAttempts\":[\"1\",\"0\"],\"starttime\":\"1468841653\",\"endtime\":\"1468841653\",\"activity\":[{\"slot\":\"7\",\"time\":\"1468838807\",\"letter\":\" \"},{\"slot\":\"5\",\"time\":\"1468838807\",\"letter\":\" \"},{\"slot\":\"6\",\"time\":\"1468838811\",\"letter\":\" \"},{\"slot\":\"3\",\"time\":\"1468838814\",\"letter\":\" \"},{\"slot\":\"3\",\"time\":\"1468838817\",\"letter\":\"O\"}]},{\"_id\":\"ACT\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1468838985\",\"endtime\":\"1468838993\",\"activity\":[{\"slot\":\"6\",\"time\":\"1468838985\",\"letter\":\" \"},{\"slot\":\"7\",\"time\":\"1468838985\",\"letter\":\" \"},{\"slot\":\"2\",\"time\":\"1468838986\",\"letter\":\" \"},{\"slot\":\"1\",\"time\":\"1468838988\",\"letter\":\" \"},{\"slot\":\"5\",\"time\":\"1468838990\",\"letter\":\" \"},{\"slot\":\"5\",\"time\":\"1468838993\",\"letter\":\"T\"}]},{\"_id\":\"APPLE\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1468841558\",\"endtime\":\"1468841566\",\"activity\":[{\"slot\":\"1\",\"time\":\"1468841558\",\"letter\":\"A\"},{\"slot\":\"2\",\"time\":\"1468841558\",\"letter\":\"P\"},{\"slot\":\"3\",\"time\":\"1468841558\",\"letter\":\"P\"},{\"slot\":\"4\",\"time\":\"1468841558\",\"letter\":\" \"},{\"slot\":\"5\",\"time\":\"1468841558\",\"letter\":\"E\"},{\"slot\":\"3\",\"time\":\"1468841558\",\"letter\":\"T\"},{\"slot\":\"3\",\"time\":\"1468841558\",\"letter\":\"P\"},{\"slot\":\"3\",\"time\":\"1468841558\",\"letter\":\"T\"},{\"slot\":\"3\",\"time\":\"1468841559\",\"letter\":\"P\"},{\"slot\":\"3\",\"time\":\"1468841561\",\"letter\":\"T\"},{\"slot\":\"3\",\"time\":\"1468841564\",\"letter\":\"P\"},{\"slot\":\"4\",\"time\":\"1468841566\",\"letter\":\"L\"}]},{\"_id\":\"ALL\",\"count\":1,\"gamescore\":\"1\",\"gameAttempts\":[\"1\"],\"starttime\":\"1468841142\",\"endtime\":\"1468841142\",\"activity\":[{\"slot\":\"2\",\"time\":\"1468841142\",\"letter\":\" \"}]}]",
+      "Error Response": "ERR23",
+      "Notes": "Real words played by the player for all games."
+    },
+    {
+      "Module": "PLAYERS",
+      "SubModule": "Words-nonsenseWords",
+      "Title": "Player's activity",
+      "URL": "&lt;baseUrl&gt;/word/:childid/nonsensewords",
+      "Method": "GET",
+      "URL Params": "Required: childId = [ObjectID]",
+      "Success Response": "Code: 200, Content:[{\"_id\":\"MOUNIKA\",\"count\":1,\"gamescore\":\"0\",\"gameAttempts\":[\"0\"],\"starttime\":\"1468838555\",\"endtime\":\"1468838773\",\"activity\":[{\"slot\":\"1\",\"time\":\"1468838555\",\"letter\":\" \"},{\"slot\":\"2\",\"time\":\"1468838555\",\"letter\":\" \"},{\"slot\":\"4\",\"time\":\"1468838555\",\"letter\":\" \"},{\"slot\":\"5\",\"time\":\"1468838555\",\"letter\":\" \"},{\"slot\":\"1\",\"time\":\"1468838666\",\"letter\":\"M\"},{\"slot\":\"2\",\"time\":\"1468838673\",\"letter\":\"O\"},{\"slot\":\"3\",\"time\":\"1468838678\",\"letter\":\"U\"},{\"slot\":\"4\",\"time\":\"1468838692\",\"letter\":\"N\"},{\"slot\":\"5\",\"time\":\"1468838696\",\"letter\":\"I\"},{\"slot\":\"6\",\"time\":\"1468838704\",\"letter\":\"K\"},{\"slot\":\"7\",\"time\":\"1468838710\",\"letter\":\"A\"},{\"slot\":\"7\",\"time\":\"1468838770\",\"letter\":\" \"},{\"slot\":\"7\",\"time\":\"1468838773\",\"letter\":\"A\"}]}]",
+      "Error Response": "ERR23",
+      "Notes": "Non sense words played by the player for all games."
+    },
+    {
+      "Module": "PLAYERS",
+      "SubModule": "Words-letters",
+      "Title": "Player's activity",
+      "URL": "&lt;baseUrl&gt;/word/:childid/singleletterwords",
+      "Method": "GET",
+      "URL Params": "Required: childId = [ObjectID]",
+      "Success Response": "Code: 200, Content:[{\"letter\":\"A\",\"arrayLetters\":[\"A\",\"A\",\"A\",\"A\",\"A\",\"A\",\"A\",\"A\",\"A\",\"A\",\"a\",\"a\",\"A\",\"A\",\"A\",\"A\"],\"arrayPlacements\":[\"A\",\"E\",\"R\",\"E\",\"A\"],\"latestPlacedTime\":\"1478086490\"},{\"letter\":\"B\",\"arrayLetters\":[\"B\",\"B\",\"B\",\"B\",\"B\"],\"arrayPlacements\":[],\"latestPlacedTime\":\"1483747922\"},{\"letter\":\"C\",\"arrayLetters\":[\"C\",\"C\",\"C\",\"C\"],\"arrayPlacements\":[\"C\"],\"latestPlacedTime\":\"1478086382\"},{\"letter\":\"D\",\"arrayLetters\":[\"D\",\"D\",\"D\",\"D\",\"D\"],\"arrayPlacements\":[],\"latestPlacedTime\":\"1468841592\"},{\"letter\":\"E\",\"arrayLetters\":[\"E\",\"E\",\"E\",\"E\",\"E\",\"E\",\"E\",\"E\",\"E\",\"E\",\"E\",\"E\",\"E\",\"E\",\"E\",\"E\",\"E\",\"E\",\"E\"],\"arrayPlacements\":[],\"latestPlacedTime\":\"1478086408\"},{\"letter\":\"F\",\"arrayLetters\":[\"F\",\"F\",\"F\",\"F\",\"F\"],\"arrayPlacements\":[],\"latestPlacedTime\":\"1479464207\"},{\"letter\":\"G\",\"arrayLetters\":[\"G\",\"G\"],\"arrayPlacements\":[],\"latestPlacedTime\":\"1468841592\"},{\"letter\":\"H\",\"arrayLetters\":[\"H\",\"H\",\"H\",\"H\",\"H\",\"H\"],\"arrayPlacements\":[\"r\",\"H\"],\"latestPlacedTime\":\"1478086506\"},{\"letter\":\"I\",\"arrayLetters\":[\"I\",\"I\",\"I\",\"I\",\"I\"],\"arrayPlacements\":[],\"latestPlacedTime\":\"1468841653\"},{\"letter\":\"K\",\"arrayLetters\":[\"K\",\"K\",\"K\",\"K\"],\"arrayPlacements\":[],\"latestPlacedTime\":\"1468841535\"},{\"letter\":\"L\",\"arrayLetters\":[\"L\",\"L\",\"L\",\"L\",\"L\",\"l\",\"L\",\"L\",\"L\",\"L\",\"L\",\"L\",\"L\",\"l\"],\"arrayPlacements\":[],\"latestPlacedTime\":\"1479464202\"},{\"letter\":\"M\",\"arrayLetters\":[\"M\",\"M\",\"M\",\"M\",\"M\",\"M\",\"M\",\"M\",\"M\",\"M\",\"M\",\"M\",\"M\",\"M\",\"M\",\"M\",\"M\",\"M\",\"M\",\"M\",\"M\",\"M\"],\"arrayPlacements\":[],\"latestPlacedTime\":\"1479464190\"},{\"letter\":\"N\",\"arrayLetters\":[\"N\",\"N\",\"N\",\"N\",\"N\",\"N\"],\"arrayPlacements\":[],\"latestPlacedTime\":\"1468841512\"},{\"letter\":\"O\",\"arrayLetters\":[\"O\",\"O\",\"O\"],\"arrayPlacements\":[],\"latestPlacedTime\":\"1468841161\"},{\"letter\":\"P\",\"arrayLetters\":[\"P\",\"P\",\"P\",\"P\",\"P\",\"P\",\"P\",\"P\",\"P\"],\"arrayPlacements\":[],\"latestPlacedTime\":\"1468841622\"},{\"letter\":\"R\",\"arrayLetters\":[\"r\",\"R\",\"R\",\"R\",\"r\",\"R\"],\"arrayPlacements\":[],\"latestPlacedTime\":\"1478086506\"},{\"letter\":\"S\",\"arrayLetters\":[\"S\",\"S\",\"S\",\"S\",\"S\",\"S\",\"S\"],\"arrayPlacements\":[],\"latestPlacedTime\":\"1468841535\"},{\"letter\":\"T\",\"arrayLetters\":[\"T\",\"T\",\"T\",\"T\",\"T\",\"T\",\"T\",\"T\",\"T\",\"T\",\"T\",\"T\",\"T\",\"T\",\"T\"],\"arrayPlacements\":[\"W\",\"R\",\"H\",\"T\",\"W\",\"T\"],\"latestPlacedTime\":\"1478086506\"},{\"letter\":\"U\",\"arrayLetters\":[\"U\",\"U\",\"U\",\"U\",\"U\",\"U\",\"U\",\"U\",\"U\"],\"arrayPlacements\":[],\"latestPlacedTime\":\"1479464196\"},{\"letter\":\"V\",\"arrayLetters\":[\"v\",\"v\"],\"arrayPlacements\":[],\"latestPlacedTime\":\"1468838923\"},{\"letter\":\"W\",\"arrayLetters\":[\"W\",\"W\",\"W\",\"W\",\"W\",\"W\"],\"arrayPlacements\":[],\"latestPlacedTime\":\"1478086503\"},{\"letter\":\"X\",\"arrayLetters\":[\"X\"],\"arrayPlacements\":[],\"latestPlacedTime\":\"1468838947\"},{\"letter\":\"Y\",\"arrayLetters\":[\"Y\",\"Y\",\"Y\",\"Y\",\"Y\"],\"arrayPlacements\":[],\"latestPlacedTime\":\"1479464210\"}]",
+      "Error Response": "ERR23",
+      "Notes": "Letters placed by the player."
+    },
+    {
+      "Module": "PLAYERS",
+      "SubModule": "Export Csv",
+      "Title": "Log API",
+      "URL": "&lt;baseUrl&gt;/activity/exportcsv",
+      "Method": "GET",
+      "Notes": "To log how many users view their player activity"
+    },
+    {
+      "Module": "PLAYERS",
+      "SubModule": "Add Player",
+      "Title": "User's specific data",
+      "URL": "&lt;baseUrl&gt;/user/globalvalues/:userId",
+      "Method": "GET",
+      "URL Params": "Required: userId = [ObjectID]",
+      "Success Response": "Code: 200, Content:{\"customWordsLimit\":50,\"playerLimit\":10,\"playerCount\":5}",
+      "Error Response": "ERR19",
+      "Notes": "This api is used to verify player limit. If player limit achieved then user can't add player. "
+    },
+    {
+      "Module": "PLAYERS",
+      "SubModule": "Add Player",
+      "Title": "Application's images",
+      "URL": "&lt;baseUrl&gt;/avatar/:parentId/get-avatars",
+      "Method": "GET",
+      "URL Params": "Required: parentId = [ObjectID]",
+      "Success Response": "Code: 200, Content:[{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"name\":\"bear\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/bear.png\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/bear2x.png\",\"createdAt\":\"2016-04-12T09:14:47.098Z\",\"updatedAt\":\"2016-04-12T09:14:47.098Z\",\"id\":\"570cbc87106eef74010c2e7b\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"name\":\"beaver\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/beaver.png\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/beaver2x.png\",\"createdAt\":\"2016-04-12T09:17:02.390Z\",\"updatedAt\":\"2016-04-12T09:17:02.390Z\",\"id\":\"570cbd0e8f51b10413738a3b\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"name\":\"chick\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/chick1x.png\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/chick2x.png\",\"createdAt\":\"2016-04-12T09:26:10.393Z\",\"updatedAt\":\"2016-04-12T09:26:10.393Z\",\"id\":\"570cbf326953697c16062fd0\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"name\":\"duck\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/duck1x.png\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/duck2x.png\",\"createdAt\":\"2016-04-12T09:36:16.885Z\",\"updatedAt\":\"2016-04-12T09:36:16.885Z\",\"id\":\"570cc190589d5e4c13c43aef\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"name\":\"elephant\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/elephant1x.png\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/elephant2x.png\",\"createdAt\":\"2016-04-12T09:36:53.154Z\",\"updatedAt\":\"2016-04-12T09:36:53.154Z\",\"id\":\"570cc1b5589d5e4c13c43af1\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"name\":\"fox\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/fox1x.png\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/fox2x.png\",\"createdAt\":\"2016-04-12T09:37:16.691Z\",\"updatedAt\":\"2016-04-12T09:37:16.691Z\",\"id\":\"570cc1cc589d5e4c13c43af3\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"name\":\"frog\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/frog1x.png\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/frog2x.png\",\"createdAt\":\"2016-04-12T09:37:48.333Z\",\"updatedAt\":\"2016-04-12T09:37:48.333Z\",\"id\":\"570cc1ec589d5e4c13c43af5\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"name\":\"giraffee\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/giraffee1x.png\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/giraffee2x.png\",\"createdAt\":\"2016-04-12T09:41:36.051Z\",\"updatedAt\":\"2016-04-12T09:41:36.051Z\",\"id\":\"570cc2d0589d5e4c13c43af7\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"name\":\"gorilla\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/gorilla1x.png\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/gorilla2x.png\",\"createdAt\":\"2016-04-12T09:41:56.759Z\",\"updatedAt\":\"2016-04-12T09:41:56.759Z\",\"id\":\"570cc2e4589d5e4c13c43af9\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"name\":\"lynx\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/lynx1x.png\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/lynx2x.png\",\"createdAt\":\"2016-04-12T09:43:35.191Z\",\"updatedAt\":\"2016-04-12T09:43:35.191Z\",\"id\":\"570cc347589d5e4c13c43aff\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"name\":\"monkey\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/monkey1x.png\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/monkey2x.png\",\"createdAt\":\"2016-04-12T09:44:24.575Z\",\"updatedAt\":\"2016-04-12T09:44:24.575Z\",\"id\":\"570cc378589d5e4c13c43b01\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"name\":\"penguin\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/penguin1x.png\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/penguin2x.png\",\"createdAt\":\"2016-04-12T09:44:44.344Z\",\"updatedAt\":\"2016-04-12T09:44:44.344Z\",\"id\":\"570cc38c589d5e4c13c43b03\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"name\":\"platypus\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/platypus1x.png\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/platypus2x.png\",\"createdAt\":\"2016-04-12T09:45:05.808Z\",\"updatedAt\":\"2016-04-12T09:45:05.808Z\",\"id\":\"570cc3a1589d5e4c13c43b05\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"name\":\"pig\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/pig1x.png\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/pig2x.png\",\"createdAt\":\"2016-04-12T09:45:35.186Z\",\"updatedAt\":\"2016-04-12T09:45:35.186Z\",\"id\":\"570cc3bf589d5e4c13c43b07\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"name\":\"rhino\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/rhino1x.png\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/rhino2x.png\",\"createdAt\":\"2016-04-12T09:46:05.227Z\",\"updatedAt\":\"2016-04-12T09:46:05.227Z\",\"id\":\"570cc3dd589d5e4c13c43b09\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"name\":\"sloth\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/sloth1x.png\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/sloth2x.png\",\"createdAt\":\"2016-04-12T09:46:23.105Z\",\"updatedAt\":\"2016-04-12T09:46:23.105Z\",\"id\":\"570cc3ef589d5e4c13c43b0b\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"name\":\"snake\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/snake1x.png\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/snake2x.png\",\"createdAt\":\"2016-04-12T09:46:42.018Z\",\"updatedAt\":\"2016-04-12T09:46:42.018Z\",\"id\":\"570cc402589d5e4c13c43b0d\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"name\":\"tiger\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/tiger1x.png\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/tiger2x.png\",\"createdAt\":\"2016-04-12T09:46:59.422Z\",\"updatedAt\":\"2016-04-12T09:46:59.422Z\",\"id\":\"570cc413589d5e4c13c43b0f\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"name\":\"walrus\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/walrus1x.png\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/walrus2x.png\",\"createdAt\":\"2016-04-12T09:47:18.300Z\",\"updatedAt\":\"2016-04-12T09:47:18.300Z\",\"id\":\"570cc426589d5e4c13c43b11\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"name\":\"hippo-purple\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/hippo-purple1x.png\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/hippo-purple2x.png\",\"createdAt\":\"2016-04-12T09:42:42.059Z\",\"updatedAt\":\"2016-04-12T09:42:42.059Z\",\"id\":\"570cc312589d5e4c13c43afd\"},{\"owner\":\"56ce9d385beb8bc66877a8f4\",\"name\":\"squarepanda\",\"assetURL\":\"https://squarepanda-dev.s3.amazonaws.com/default-avatar.png\",\"2x\":\"https://squarepanda-dev.s3.amazonaws.com/default-avatar2x.png\",\"createdAt\":\"2016-06-08T06:15:47.994Z\",\"updatedAt\":\"2016-06-08T06:15:47.994Z\",\"id\":\"5757b8137c8337141e4e9a3b\"}]",
+      "Error Response": "ERR22",
+      "Notes": "To get application's player images."
+    },
+    {
+      "Module": "PLAYERS",
+      "SubModule": "Add Player",
+      "Title": "Create player",
+      "URL": "&lt;baseUrl&gt;/user/:parentId/child",
+      "Method": "POST",
+      "URL Params": "Required: parentId = [ObjectID]",
+      "Data Params": "Required:['firstname'], Eaxmple:{\"firstName\":\"doc\",\"profileURL\":\"https://squarepanda-dev.s3.amazonaws.com/tiger1x.png\",\"gender\":\"F\",\"dateofBirth\":\"01/17/2001\",\"imgbase64\":\"\"}",
+      "Success Response": "Code: 200, Content:{\"firstName\":\"doc\",\"profileURL\":\"https://squarepanda-dev.s3.amazonaws.com/tiger1x.png\",\"gender\":\"F\",\"dateofBirth\":\"2001-01-17T00:00:00.000Z\",\"imgbase64\":\"\",\"owner\":\"57679cbf2941c3a238b9ae5b\",\"status\":\"ACTIVE\",\"createdAt\":\"2017-01-17T06:51:56.398Z\",\"updatedAt\":\"2017-01-17T06:51:56.398Z\",\"id\":\"587dbf0c895fdf9d662c5f02\"}",
+      "Error Response": "ERR22,ERR28,ERR43,ERR1",
+      "Notes": "To create a player. In this api \"imagebase64\" used if image is choosen from device."
+    },
+    {
+      "Module": "PLAYERS",
+      "SubModule": "Edit Player",
+      "Title": "Single player data",
+      "URL": "&lt;baseUrl&gt;/user/:parentId/child/:childId",
+      "Method": "GET",
+      "URL Params": "Required: parentId = [ObjectID], childId = [ObjectID]",
+      "Data Params": " ",
+      "Success Response": "Code: 200, Content:{\"owner\":\"57679cbf2941c3a238b9ae5b\",\"firstName\":\"doc\",\"profileURL\":\"https://squarepanda-dev.s3.amazonaws.com/tiger1x.png\",\"gender\":\"F\",\"dateofBirth\":\"2001-01-17T00:00:00.000Z\",\"imgbase64\":\"\",\"status\":\"ACTIVE\",\"createdAt\":\"2017-01-17T06:51:56.398Z\",\"updatedAt\":\"2017-01-17T06:51:56.398Z\",\"id\":\"587dbf0c895fdf9d662c5f02\"}",
+      "Error Response": "ERR22,ERR23",
+      "Notes": "To get player details."
+    },
+    {
+      "Module": "PLAYERS",
+      "SubModule": "Edit Player",
+      "Title": "Update player data",
+      "URL": "&lt;baseUrl&gt;/user/:parentId/child/:childId/edit",
+      "Method": "PUT",
+      "URL Params": "Required: parentId = [ObjectID], childId = [ObjectID]",
+      "Data Params": "Required:['firstname'], Eaxmple:{\"firstName\":\"doc\",\"profileURL\":\"https://squarepanda-dev.s3.amazonaws.com/tiger1x.png\",\"gender\":\"F\",\"dateofBirth\":\"01/16/2001\",\"imgbase64\":\"\"}",
+      "Success Response": "Code: 200, Content:{\"message\":\"Data updated successfully.\"}",
+      "Error Response": "ERR22,ERR23,ERR28,ERR43,ERR1,ERR24",
+      "Notes": "To edit player details."
+    },
+    {
+      "Module": "PLAYERS",
+      "SubModule": "Delete Player",
+      "Title": "Remove player data",
+      "URL": "&lt;baseUrl&gt;/user/:parentId/child/:childId",
+      "Method": "DELETE",
+      "URL Params": "Required: parentId = [ObjectID], childId = [ObjectID]",
+      "Data Params": " ",
+      "Success Response": "Code: 200, Content:{\"message\":\"successfully deleted!\"}",
+      "Error Response": "ERR22,ERR23",
+      "Notes": "To delete player. Here we are assigning player to a dummy parent account."
+    },
+    {
+      "Module": "CUSTOMIZE",
+      "Title": "User words",
+      "URL": "&lt;baseUrl&gt;/private/:parentId/listuserwords",
+      "Method": "GET",
+      "URL Params": "Required: parentId = [ObjectID]",
+      "Success Response": "Code: 200, Content:[{\"owner\":\"57679cbf2941c3a238b9ae5b\",\"wordName\":\"WAKAWAK\",\"imageURL\":[\"https://squarepanda-dev.s3.amazonaws.com/images/compressed/4672689214_file.png\"],\"audioURL\":\"\",\"createdAt\":\"2017-01-03T12:06:45.575Z\",\"updatedAt\":\"2017-01-03T12:06:45.575Z\",\"id\":\"586b93d53635a5c077c7ec9a\"}]",
+      "Error Response": "ERR22",
+      "Notes": "To get all user created words."
+    },
+    {
+      "Module": "CUSTOMIZE",
+      "Title": "User's banned words",
+      "URL": "&lt;baseUrl&gt;/wordsettings/:parentId/listbannedwords",
+      "Method": "GET",
+      "URL Params": "Required: parentId = [ObjectID]",
+      "Success Response": "Code: 200, Content:[]",
+      "Error Response": "ERR22",
+      "Notes": "To get all user's banned words."
+    },
+    {
+      "Module": "CUSTOMIZE",
+      "Title": "Anatomy and bathroom words",
+      "URL": "&lt;baseUrl&gt;/word/:parentId/searchCategory/:category",
+      "Method": "GET",
+      "URL Params": "Required: parentId = [ObjectID] , category= 6,8",
+      "Data Params": " ",
+      "Success Response": "Code: 200, Content:{\"anatomy\":[],\"bathroom\":[]}",
+      "Error Response": "ERR22,ERR42",
+      "Notes": "List of all pre-defined anatomy and bathroom words. "
+    },
+    {
+      "Module": "CUSTOMIZE",
+      "SubModule": "Add Custom Word",
+      "Title": "Search user word",
+      "URL": "&lt;baseUrl&gt;/word/:parentId/searchWord/:word",
+      "Method": "GET",
+      "URL Params": "Required: parentId = [ObjectID], word = [string]",
+      "Data Params": " ",
+      "Success Response": "Code: 200, Content:[]",
+      "Error Response": "ERR26,ERR22",
+      "Notes": "To check the user requested word is unique. If same word exits, then response will be the word details."
+    },
+    {
+      "Module": "CUSTOMIZE",
+      "SubModule": "Add Custom Word",
+      "Title": "Bulk image upload to S3 bucket",
+      "URL": "&lt;baseUrl&gt;/private/:parentId/file",
+      "Method": "POST",
+      "URL Params": "Required: parentId = [ObjectID]",
+      "Data Params": "Content-Disposition: form-data; name=\"content\"; filename=\"1p5 (2).jpg\"\nContent-Type: image/jpeg",
+      "Success Response": "Code: 200, Content:{\"files\":[{\"fd\":\"1p5 (2).jpg\",\"size\":1606818,\"type\":\"image/jpeg\",\"filename\":\"1p5 (2).jpg\",\"status\":\"bufferingOrWriting\",\"field\":\"content\",\"url\":\"https://squarepanda-dev.s3.amazonaws.com/images/compressed/1338733935_file.jpg\"}]}",
+      "Error Response": "ERR22,ERR45,ERR46,ERR47,ERR48",
+      "Notes": "Takes image file as form-data and returns aws url."
+    },
+    {
+      "Module": "CUSTOMIZE",
+      "SubModule": "Add Custom Word",
+      "Title": "Create word",
+      "URL": "&lt;baseUrl&gt;/private/:parentId/createword",
+      "Method": "POST",
+      "URL Params": "Required: parentId = [ObjectID]",
+      "Data Params": "Required:['wordName'], Eaxmple:{\"wordName\":\"CUST\",\"imageURL\":[\"https://squarepanda-dev.s3.amazonaws.com/images/compressed/1338735_file.jpg\"],\"audioURL\":\"\"}",
+      "Success Response": "Code: 200, Content:{\"wordName\":\"CUST\",\"imageURL\":[\"https://squarepanda-dev.s3.amazonaws.com/images/compressed/1338735_file.jpg\"],\"audioURL\":\"\",\"owner\":\"57679cbf2941c3a238b9ae5b\",\"createdAt\":\"2017-01-17T07:16:54.059Z\",\"updatedAt\":\"2017-01-17T07:16:54.059Z\",\"id\":\"587dc4e6895fdf9d662c5f5f\"}",
+      "Error Response": "ERR26,ERR22,ERR49,ERR50,ERR51,ERR28,ERR52",
+      "Notes": "To create word with or without aws image url. This api validates the given image url is in proper aws format."
+    },
+    {
+      "Module": "CUSTOMIZE",
+      "SubModule": "Edit Custom Word",
+      "Title": "Update word",
+      "URL": "&lt;baseUrl&gt;/private/:parentId/edituserword/:wordId",
+      "Method": "PUT",
+      "URL Params": "Required: parentId = [ObjectID], wordId = [ObjectID]",
+      "Data Params": "Required:['id','wordName'], Eaxmple:{\"id\":\"587dc4e6895fdf9d662c5f5f\",\"wordName\":\"CUST\",\"audioURL\":\"\",\"imageURL\":[\"https://squarepanda-dev.s3.amazonaws.com/images/compressed/1338733935_file.jpg\"]}",
+      "Success Response": "Code: 200, Content:{\"message\":\"Data updated successfully.\"}",
+      "Error Response": "ERR26,ERR22,ERR49,ERR50,ERR51,ERR28,ERR52,ERR44",
+      "Notes": "To update user word and if user add new image then, \"/private/:parentId/file\" api will be called"
+    },
+    {
+      "Module": "CUSTOMIZE",
+      "SubModule": "Bathroom",
+      "Title": "Update user's bathroom words",
+      "URL": "&lt;baseUrl&gt;/wordsettings/:parentId/wordsettings",
+      "Method": "POST",
+      "URL Params": "Required: parentId = [ObjectID]",
+      "Data Params": "Required:['bathroom_words'], Eaxmple:{\"bathroom_words\":[\"COW PIE\",\"COW PIES\"]}",
+      "Success Response": "Code: 200, Content:{\"owner\":{\"firstName\":\"mounica\",\"lastName\":\"k\",\"email\":\"mounica.kokkerlapati@mtuity.com\",\"role\":\"PARENT\",\"....\"},\"anatomy_words\":[\"CLITORIS\"],\"bathroom_words\":[\"COW PIE\",\"COW PIES\"],\"createdAt\":\"2016-09-20T07:53:37.024Z\",\"updatedAt\":\"2017-01-17T07:24:40.804Z\",\"id\":\"57e0eb013f95c2373d6e1e81\"}",
+      "Error Response": "ERR22,ERR53,ERR54",
+      "Notes": "To save new changes to user's bathroom words."
+    },
+    {
+      "Module": "CUSTOMIZE",
+      "SubModule": "Anatomy",
+      "Title": "Update user's anatomy words",
+      "URL": "&lt;baseUrl&gt;/wordsettings/:parentId/wordsettings",
+      "Method": "POST",
+      "URL Params": "Required: parentId = [ObjectID]",
+      "Data Params": "Required:['anatomy_words'], Eaxmple:{\"anatomy_words\":[\"ANUS\",\"CLITORIS\"]}",
+      "Success Response": "Code: 200, Content:{\"owner\":{\"firstName\":\"mounica\",\"lastName\":\"k\",\"email\":\"mounica.kokkerlapati@mtuity.com\",\"role\":\"PARENT\",\"...\"},\"anatomy_words\":[\"CLITORIS\"],\"bathroom_words\":[\"COW PIE\",\"COW PIES\"],\"createdAt\":\"2016-09-20T07:53:37.024Z\",\"updatedAt\":\"2017-01-17T07:24:40.804Z\",\"id\":\"57e0eb013f95c2373d6e1e81\"}",
+      "Error Response": "ERR22,ERR53,ERR54",
+      "Notes": "To save new changes to user's anatomy words."
+    },
+    {
+      "Module": "MY ACCOUNT",
+      "Title": "Fetch user settings",
+      "URL": "&lt;baseUrl&gt;/usersettings/:parentId/fetchusersettings",
+      "Method": "GET",
+      "URL Params": "Required: parentId = [ObjectID]",
+      "Success Response": "Code: 200, Content:{\"owner\":\"57679cbf2941c3a238b9ae5b\",\"sp_updates\":false,\"educational_updates\":false,\"player_updates\":false,\"createdAt\":\"2016-06-20T07:35:27.881Z\",\"updatedAt\":\"2016-12-29T08:16:12.430Z\",\"id\":\"57679cbf2941c3a238b9ae5f\"}",
+      "Error Response": "ERR22",
+      "Notes": "To get user settings data."
+    },
+    {
+      "Module": "MY ACCOUNT",
+      "Title": "List of missing letters",
+      "URL": "&lt;baseUrl&gt;/playsets/:parentId/listmissings",
+      "Method": "GET",
+      "URL Params": "Required: parentId = [ObjectID]",
+      "Success Response": "Code: 200, Content:[{\"letter\":\"A\",\"id\":\"56f22aead0509f0d046d34d8\",\"missingCharacter\":false},{\"letter\":\"A\",\"id\":\"56f22af1d0509f0d046d34d9\",\"missingCharacter\":false},{\"letter\":\"B\",\"id\":\"56f22afdd0509f0d046d34da\",\"missingCharacter\":false},{\"letter\":\"B\",\"id\":\"56f22b13d0509f0d046d34db\",\"missingCharacter\":false},{\"letter\":\"C\",\"id\":\"56f22b21d0509f0d046d34dc\",\"missingCharacter\":false},{\"letter\":\"C\",\"id\":\"56f22b2cd0509f0d046d34dd\",\"missingCharacter\":false},{\"letter\":\"D\",\"id\":\"56f22b36d0509f0d046d34de\",\"missingCharacter\":false},{\"letter\":\"D\",\"id\":\"56f22b3ed0509f0d046d34df\",\"missingCharacter\":false},{\"letter\":\"E\",\"id\":\"56f22b4bd0509f0d046d34e0\",\"missingCharacter\":false},{\"letter\":\"E\",\"id\":\"56f22b51d0509f0d046d34e1\",\"missingCharacter\":false},{\"letter\":\"E\",\"id\":\"56f22b57d0509f0d046d34e2\",\"missingCharacter\":false},{\"letter\":\"F\",\"id\":\"56f22b63d0509f0d046d34e3\",\"missingCharacter\":false},{\"letter\":\"F\",\"id\":\"56f22b69d0509f0d046d34e4\",\"missingCharacter\":false},{\"letter\":\"G\",\"id\":\"56f22c1bd0509f0d046d34e5\",\"missingCharacter\":false},{\"letter\":\"G\",\"id\":\"56f22c23d0509f0d046d34e6\",\"missingCharacter\":false},{\"letter\":\"H\",\"id\":\"56f22c3bd0509f0d046d34e7\",\"missingCharacter\":false},{\"letter\":\"H\",\"id\":\"56f22c48d0509f0d046d34e8\",\"missingCharacter\":false},{\"letter\":\"I\",\"id\":\"56f22cb9d0509f0d046d34e9\",\"missingCharacter\":false},{\"letter\":\"I\",\"id\":\"56f22cb9d0509f0d046d34ea\",\"missingCharacter\":false},{\"letter\":\"J\",\"id\":\"56fe12b3d0509f06280b0d0b\",\"missingCharacter\":false},{\"letter\":\"K\",\"id\":\"56fe12a3d0509f06280b0d0a\",\"missingCharacter\":false},{\"letter\":\"L\",\"id\":\"56f2356cd0509f0d046d34ed\",\"missingCharacter\":false},{\"letter\":\"L\",\"id\":\"56f2356cd0509f0d046d34ee\",\"missingCharacter\":false},{\"letter\":\"M\",\"id\":\"56f2356cd0509f0d046d34ef\",\"missingCharacter\":false},{\"letter\":\"M\",\"id\":\"56fe1272d0509f06280b0d09\",\"missingCharacter\":false},{\"letter\":\"N\",\"id\":\"56f2356dd0509f0d046d34f1\",\"missingCharacter\":false},{\"letter\":\"N\",\"id\":\"56f2356dd0509f0d046d34f2\",\"missingCharacter\":false},{\"letter\":\"O\",\"id\":\"56f2356dd0509f0d046d34f3\",\"missingCharacter\":false},{\"letter\":\"O\",\"id\":\"56f2356dd0509f0d046d34f4\",\"missingCharacter\":false},{\"letter\":\"P\",\"id\":\"56f2356dd0509f0d046d34f5\",\"missingCharacter\":false},{\"letter\":\"P\",\"id\":\"56f2356dd0509f0d046d34f6\",\"missingCharacter\":false},{\"letter\":\"Q\",\"id\":\"56fe1260d0509f06280b0d08\",\"missingCharacter\":false},{\"letter\":\"R\",\"id\":\"56f2356dd0509f0d046d34f8\",\"missingCharacter\":false},{\"letter\":\"R\",\"id\":\"56f2356dd0509f0d046d34f9\",\"missingCharacter\":false},{\"letter\":\"R\",\"id\":\"56f2356dd0509f0d046d34fa\",\"missingCharacter\":false},{\"letter\":\"S\",\"id\":\"56f2356dd0509f0d046d34fb\",\"missingCharacter\":false},{\"letter\":\"S\",\"id\":\"56f2356dd0509f0d046d34fc\",\"missingCharacter\":false},{\"letter\":\"T\",\"id\":\"56f2356dd0509f0d046d34fd\",\"missingCharacter\":false},{\"letter\":\"T\",\"id\":\"56f2356dd0509f0d046d34fe\",\"missingCharacter\":false},{\"letter\":\"U\",\"id\":\"56f2356dd0509f0d046d34ff\",\"missingCharacter\":false},{\"letter\":\"U\",\"id\":\"56f2356dd0509f0d046d3500\",\"missingCharacter\":false},{\"letter\":\"V\",\"id\":\"56f2356dd0509f0d046d3501\",\"missingCharacter\":false},{\"letter\":\"W\",\"id\":\"56f2356dd0509f0d046d34f0\",\"missingCharacter\":false},{\"letter\":\"W\",\"id\":\"56fd17d3d0509f01144e5205\",\"missingCharacter\":false},{\"letter\":\"X\",\"id\":\"56fd17cad0509f01144e5204\",\"missingCharacter\":false},{\"letter\":\"Y\",\"id\":\"56fd17bdd0509f01144e5203\",\"missingCharacter\":false},{\"letter\":\"Z\",\"id\":\"56fd17a6d0509f01144e5202\",\"missingCharacter\":false}]",
+      "Error Response": "ERR22",
+      "Notes": "To get lost letters data. "
+    },
+    {
+      "Module": "MY ACCOUNT",
+      "SubModule": "Edit Profile",
+      "Title": "Update user details",
+      "URL": "&lt;baseUrl&gt;/user/:userId/edit-profile",
+      "Method": "PUT",
+      "URL Params": "Required: userId = [ObjectID]",
+      "Data Params": "Required:['firstName'], Eaxmple:{\"firstName\":\"mounica\",\"lastName\":\"kokkerlapati\"}",
+      "Success Response": "Code: 200, Content:{\"message\":\"Data updated successfully.\"}",
+      "Error Response": "ERR19,ERR4,ERR55,ERR21",
+      "Notes": "To update user data. This api doesn't accept email and role as input."
+    },
+    {
+      "Module": "MY ACCOUNT",
+      "SubModule": "Change Password",
+      "Title": "User account change password",
+      "URL": "&lt;baseUrl&gt;/user/:userId/change-password",
+      "Method": "POST",
+      "URL Params": "Required: userId = [ObjectID]",
+      "Data Params": "Required:['oldPassword','password','confirmPassword'], Eaxmple:{\"oldPassword\":\"parent1234\",\"password\":\"parent1234\",\"confirmPassword\":\"parent1234\"}",
+      "Success Response": "Code: 200, Content:{\"message\":\"successfully changed your password.\"}",
+      "Error Response": "ERR19,ERR18,ERR2,ERR15,ERR16,ERR20,ERR21",
+      "Notes": "To change password."
+    },
+    {
+      "Module": "MY ACCOUNT",
+      "SubModule": "Lost Letter",
+      "Title": "Update missing letters",
+      "URL": "&lt;baseUrl&gt;/playsets/:parentId/createmissings",
+      "Method": "POST",
+      "URL Params": "Required: parentId = [ObjectID]",
+      "Data Params": "Required:['character'], Eaxmple:{\"character\":[\"56f22b2cd0509f0d046d34dd\",\"56f22b3ed0509f0d046d34df\"]}",
+      "Success Response": "Code: 200, Content:{\"character\":[\"56f22b2cd0509f0d046d34dd\",\"56f22b3ed0509f0d046d34df\"],\"status\":\"ACTIVE\",\"owner\":\"57679cbf2941c3a238b9ae5b\",\"createdAt\":\"2017-01-17T07:32:53.427Z\",\"updatedAt\":\"2017-01-17T07:32:53.427Z\",\"id\":\"587dc8a5895fdf9d662c5ff4\"}",
+      "Error Response": "ERR22,ERR56",
+      "Notes": "To update playset missing letters of user."
+    },
+    {
+      "Module": "MY ACCOUNT",
+      "SubModule": "Notifications",
+      "Title": "Update user settings",
+      "URL": "&lt;baseUrl&gt;/usersettings/:parentId/setusersettings",
+      "Method": "POST",
+      "URL Params": "Required: parentId = [ObjectID]",
+      "Data Params": "Required:['sp_updates','educational_updates','player_updates'], Eaxmple:{\"owner\":\"57679cbf2941c3a238b9ae5b\",\"sp_updates\":true,\"educational_updates\":true,\"player_updates\":false,\"createdAt\":\"2016-06-20T07:35:27.881Z\",\"updatedAt\":\"2016-12-29T08:16:12.430Z\",\"id\":\"57679cbf2941c3a238b9ae5f\"}",
+      "Success Response": "Code: 200, Content:{\"message\":\"Settings updated\"}",
+      "Error Response": "ERR22,ERR57,ERR58,ERR59",
+      "Notes": "To update user settings such as educational news, application's news and player's news."
+    },
+    {
+      "Module": "NEW TOKEN",
+      "Title": "Generate new token",
+      "URL": "&lt;baseUrl&gt;/user/generate/new-token",
+      "Method": "POST",
+      "Data Params": "Required:['refreshToken']",
+      "Success Response": "Code: 200, Content:{\"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpdCI6MTQ4NDY0OTY4MCwiZXhwIjoxNDg0NjUwODgwfQ.5rqJjunRWGEUm01ygIu2xT8numJJ4wmbSzF-yyJuL_0\"}",
+      "Error Response": "ERR60",
+      "Notes": "To generate new token for particular user and takes token as input which is about to expire."
+    }
+  ],
+  "ErrorCodes": [
+    {
+      "Error Name": "ERR1",
+      "Error Code": "400",
+      "Error Message": "error.user.firstName.required"
+    },
+    {
+      "Error Name": "ERR2",
+      "Error Code": "400",
+      "Error Message": "error.user.password.required"
+    },
+    {
+      "Error Name": "ERR3",
+      "Error Code": "400",
+      "Error Message": "error.user.role.required"
+    },
+    {
+      "Error Name": "ERR4",
+      "Error Code": "400",
+      "Error Message": "error.user.date.Invalid"
+    },
+    {
+      "Error Name": "ERR5",
+      "Error Code": "500",
+      "Error Message": "error.user.role.notFound"
+    },
+    {
+      "Error Name": "ERR6",
+      "Error Code": "500",
+      "Error Message": "error.changePassword.oldPassword.mismatch"
+    },
+    {
+      "Error Name": "ERR7",
+      "Error Code": "500",
+      "Error Message": "error.changePassword.user.notFound"
+    },
+    {
+      "Error Name": "ERR8",
+      "Error Code": "400",
+      "Error Message": "error.user.username.required"
+    },
+    {
+      "Error Name": "ERR9",
+      "Error Code": "423",
+      "Error Message": "error.user.loginAttempts.exceeded"
+    },
+    {
+      "Error Name": "ERR10",
+      "Error Code": "401",
+      "Error Message": "error.username.password.mismatch"
+    },
+    {
+      "Error Name": "ERR11",
+      "Error Code": "409",
+      "Error Message": "error.login.user.Invalid"
+    },
+    {
+      "Error Name": "ERR12",
+      "Error Code": "400",
+      "Error Message": "error.user.email.required"
+    },
+    {
+      "Error Name": "ERR13",
+      "Error Code": "500",
+      "Error Message": "error.user.email.notFound"
+    },
+    {
+      "Error Name": "ERR14",
+      "Error Code": "500",
+      "Error Message": "error.user.email.failedtosend"
+    },
+    {
+      "Error Name": "ERR15",
+      "Error Code": "400",
+      "Error Message": "error.user.password.mismatch"
+    },
+    {
+      "Error Name": "ERR16",
+      "Error Code": "400",
+      "Error Message": "error.user.password.small"
+    },
+    {
+      "Error Name": "ERR17",
+      "Error Code": "500",
+      "Error Message": "error.user.token.expired"
+    },
+    {
+      "Error Name": "ERR18",
+      "Error Code": "400",
+      "Error Message": "error.user.oldPassword.required"
+    },
+    {
+      "Error Name": "ERR19",
+      "Error Code": "400",
+      "Error Message": "error.user.userId.required"
+    },
+    {
+      "Error Name": "ERR20",
+      "Error Code": "500",
+      "Error Message": "error.user.oldPassword.wrong"
+    },
+    {
+      "Error Name": "ERR21",
+      "Error Code": "500",
+      "Error Message": "error.user.userId.notExists"
+    },
+    {
+      "Error Name": "ERR22",
+      "Error Code": "400",
+      "Error Message": "error.user.parentId.required"
+    },
+    {
+      "Error Name": "ERR23",
+      "Error Code": "400",
+      "Error Message": "error.user.childId.required"
+    },
+    {
+      "Error Name": "ERR24",
+      "Error Code": "500",
+      "Error Message": "error.user.childId.notExists"
+    },
+    {
+      "Error Name": "ERR25",
+      "Error Code": "424",
+      "Error Message": "error.user.email.NotVerified"
+    },
+    {
+      "Error Name": "ERR26",
+      "Error Code": "500",
+      "Error Message": "error.user.wordName.required"
+    },
+    {
+      "Error Name": "ERR27",
+      "Error Code": "400",
+      "Error Message": "error.user.role.invalid"
+    },
+    {
+      "Error Name": "ERR28",
+      "Error Code": "400",
+      "Error Message": "error.file.url.invalid"
+    },
+    {
+      "Error Name": "ERR29",
+      "Error Code": "400",
+      "Error Message": "error.req.body.invalid"
+    },
+    {
+      "Error Name": "ERR30",
+      "Error Code": "400",
+      "Error Message": "error.user.adminId.required"
+    },
+    {
+      "Error Name": "ERR31",
+      "Error Code": "401",
+      "Error Message": "Token Expired"
+    },
+    {
+      "Error Name": "ERR32",
+      "Error Code": "406",
+      "Error Message": "Email Not Acceptable"
+    },
+    {
+      "Error Name": "ERR33",
+      "Error Code": "200",
+      "Error Message": "Email already verified"
+    },
+    {
+      "Error Name": "ERR34",
+      "Error Code": "424",
+      "Error Message": "Email not verified. Please verify it"
+    },
+    {
+      "Error Name": "ERR35",
+      "Error Code": "412",
+      "Error Message": "Email address is already taken"
+    },
+    {
+      "Error Name": "ERR36",
+      "Error Code": "500",
+      "Error Message": "Your email status not in active. Please contact admin"
+    },
+    {
+      "Error Name": "ERR37",
+      "Error Code": "405",
+      "Error Message": "Email already Activated"
+    },
+    {
+      "Error Name": "ERR38",
+      "Error Code": "400",
+      "Error Message": "Version required"
+    },
+    {
+      "Error Name": "ERR39",
+      "Error Code": "400",
+      "Error Message": "From date required"
+    },
+    {
+      "Error Name": "ERR40",
+      "Error Code": "400",
+      "Error Message": "To date required"
+    },
+    {
+      "Error Name": "ERR41",
+      "Error Code": "400",
+      "Error Message": "Current date required"
+    },
+    {
+      "Error Name": "ERR42",
+      "Error Code": "400",
+      "Error Message": "Category required"
+    },
+    {
+      "Error Name": "ERR43",
+      "Error Code": "400",
+      "Error Message": "Invalid input string"
+    },
+    {
+      "Error Name": "ERR44",
+      "Error Code": "400",
+      "Error Message": "error.user.wordId.required"
+    },
+    {
+      "Error Name": "ERR45",
+      "Error Code": "413",
+      "Error Message": "Files size exceeds 10MB"
+    },
+    {
+      "Error Name": "ERR46",
+      "Error Code": "409",
+      "Error Message": "Error data of student bulk upload sheet"
+    },
+    {
+      "Error Name": "ERR47",
+      "Error Code": "415",
+      "Error Message": "Unsupported Media Type"
+    },
+    {
+      "Error Name": "ERR48",
+      "Error Code": "400",
+      "Error Message": "Files selected should be in the range of 1 to 5"
+    },
+    {
+      "Error Name": "ERR49",
+      "Error Code": "500",
+      "Error Message": "Private words limit exceeded"
+    },
+    {
+      "Error Name": "ERR50",
+      "Error Code": "500",
+      "Error Message": "Private word already exists"
+    },
+    {
+      "Error Name": "ERR51",
+      "Error Code": "409",
+      "Error Message": "Improper value"
+    },
+    {
+      "Error Name": "ERR52",
+      "Error Code": "400",
+      "Error Message": "Files selected should be in the range of 1 to 5"
+    },
+    {
+      "Error Name": "ERR53",
+      "Error Code": "400",
+      "Error Message": "Request body contain either \"bathroom_words\" or \"anatomy_words\""
+    },
+    {
+      "Error Name": "ERR54",
+      "Error Code": "409",
+      "Error Message": "Irrelevant data"
+    },
+    {
+      "Error Name": "ERR55",
+      "Error Code": "405",
+      "Error Message": "Method Not Allowed"
+    },
+    {
+      "Error Name": "ERR56",
+      "Error Code": "400",
+      "Error Message": "Character key required"
+    },
+    {
+      "Error Name": "ERR57",
+      "Error Code": "400",
+      "Error Message": "error.sp_updates.required"
+    },
+    {
+      "Error Name": "ERR58",
+      "Error Code": "400",
+      "Error Message": "error.educational_updates.required"
+    },
+    {
+      "Error Name": "ERR59",
+      "Error Code": "400",
+      "Error Message": "error.player_updates.required"
+    },
+    {
+      "Error Name": "ERR60",
+      "Error Code": "500",
+      "Error Message": "token required"
+    },
+    {
+      "Error Name": "ERR61",
+      "Error Code": "200",
+      "Error Message": "error_expired"
+    },
+    {
+      "Error Name": "ERR_db",
+      "Error Code": "500",
+      "Error Message": "Data error"
+    }
+  ]
+}

@@ -1,0 +1,590 @@
+{
+    "nav": {
+        "home": {
+            "title": "Home",
+            "Header": "Home",
+            "back_home": "Back to Home"
+        },
+        "header": {
+            "dashboard": "Dashboard",
+            "edit_profile": "Edit Profile",
+            "change_password": "Change Password",
+            "subscriptions": "My Subscriptions",
+            "logout": "Logout",
+            "profile":"Profile"
+        },
+        "sidebar": {
+            "dashboard": "Dashboard",
+            "players": "PLAYERS",
+            "curriculum": "MY CURRICULUM",
+            "settings": "MY ACCOUNT",
+            "home": "HOME",
+            "Home": "Home",
+            "Players": "Players",
+            "Curriculum": "Curriculum",
+            "my_account": "My Account",
+            "customize": "Customize",
+            "Customize": "CUSTOMIZE"
+        },
+        "notification": {
+            "notifications": "Notifications"
+        },
+        "missing_letters": {
+            "title": "Order Missing Letters"
+        },
+        "footer": {
+            "glyphicon": "Square Panda",
+            "warranty_info": "Warranty Information",
+            "press": "Press",
+            "support": "Support",
+            "faqs": "FAQ",
+            "website_privacy_policy": "Website Privacy Policy",
+            "childrens_privacy_policy": "Children's Privacy Policy",
+            "terms_service": "Terms of Service",
+            "squarepanda_copyright":"Copyright © 2017 Square Panda Inc.",
+            "rights_reserved":"All Rights Reserved."
+        },
+        "login": {
+            "title": "Log In",
+            "header": "Log In"
+        },
+        "register": {
+            "title": "Register",
+            "header": "Create a Square Panda Account"
+        },
+        "edit_profile": {
+            "title": "Edit Profile",
+            "header": "Edit Profile"
+        },
+        "change_password": {
+            "title": "Change Password",
+            "header": "Change Password",
+            "new_password": "New Password"
+        },
+        "reset_password": {
+            "title": "Reset Password",
+            "header": "Reset Password"
+        },
+        "forgot_password": {
+            "title": "Forgot Password",
+            "header": "Forgot Password"
+        },
+        "press": {
+            "title": "Press",
+            "header": "Press"
+        },
+        "warranty_info": {
+            "title": "Warranty Information",
+            "header": "Warranty Information",
+            "subheader": "(One year limited warranty for parts and labor)"
+        },
+        "privacy_policy": {
+            "title": "Privacy policy ",
+            "header": "Privacy policy "
+        },
+        "terms_services": {
+            "title": "Terms and Services",
+            "header": "Terms and Services"
+        },
+        "add_player": {
+            "title": "Add Player",
+            "header": "Add Player"
+        },
+        "edit_player": {
+            "title": "Edit Player",
+            "header": "Edit Player"
+        },
+        "firmware_update": {
+            "title": "Firmware Update",
+            "header": "Firmware Update"
+        },
+        "add_custom_word": {
+            "title": "Add Custom Word",
+            "header": "Add Custom Word"
+        },
+        "edit_custom_word": {
+            "title": "Edit Custom Word",
+            "header": "Edit Custom Word"
+        },
+        "view_custom_word": {
+            "title": "View Custom Word",
+            "header": "View Custom Word"
+        }
+    },
+    "teacher_navigation": {
+        "classroom_edition":"Classroom Edition or Panda Pass user?",
+        "goto_teacher":"Go to the Teacher Playground!",
+        "upgrade_classroom_edition":"Need to upgrade to the Classroom Edition?",
+        "upgrade_teacher_pandapass":"Upgrade to a Teacher Account with a Panda Pass!"
+    },
+    "common": {
+        "warning": "Warning!",
+        "confirm": "Confirm",
+        "are_you_sure": "Are you sure?",
+        "yipee": "Yipee!",
+        "whoops": "Whoops!",
+        "delete": "Delete",
+        "error": "Error",
+        "edit": "Edit",
+        "filter_by": "Filter by",
+        "export_csv": "Export CSV",
+        "nodata": "No data to display",
+        "return_login": "Return to Log In",
+        "resend_email": "Resend Email",
+        "what_happento_data": "What happens to the data?",
+        "day": "Day",
+        "month": "Month",
+        "week": "Week",
+        "year": "Year",
+        "add_picture": "Add Picture",
+        "months": {
+            "january":"January",
+            "february":"February",
+            "march":"March",
+            "april":"April",
+            "may":"May",
+            "june":"June",
+            "july":"July",
+            "august":"August",
+            "september":"September",
+            "october":"October",
+            "november":"November",
+            "december":"December"
+        },
+        "buttons": {
+            "submit": "Submit",
+            "save": "Save",
+            "edit": "Edit",
+            "cancel": "Cancel",
+            "clear": "Clear",
+            "delete": "Delete",
+            "sign_up": "SIGNUP",
+            "clear_all": "Clear All",
+            "reset": "Reset",
+            "yes": "Yes",
+            "ok": "Ok",
+            "no": "No",
+            "back": "Back",
+            "close": "Close",
+            "select": "Select",
+            "iagree": "I Agree",
+            "read_more": "Read more"
+        },
+        "messages": {
+            "allow_only_letters": "Only alphabetical letters. No spaces, numbers, or special characters.",
+            "error_getting_data": "error in getting data.",
+            "wrong_email_format": "That doesn't look like a valid email. Please check for typos.",
+            "email_already_exit_please_choose_diff_email": "Email already exists. Please choose a different email.",
+            "only_alphabets": "Should not include any special characters and numbers.",
+            "file_type_wrong": "File Type is Wrong.",
+            "word_length": "Must be between 1 and 8 characters.",
+            "file_selection_wrong": "Please select image with 5MB or Lesser size."
+        }
+    },
+    "default_title": "Default Title",
+    "user": {
+        "first_name": "First Name",
+        "last_name": "Last Name",
+        "password": "Password",
+        "email": "Email",
+        "username": "Username",
+        "male": "Male",
+        "female": "Female",
+        "others": "Others",
+        "register": {
+            "confirm_password": "Retype Password",
+            "create_account": "Create a Square Panda Account",
+            "mobile": "Mobile",
+            "gender": "Gender",
+            "role": "Role",
+            "grade": "Grade",
+            "school": "School",
+            "sign_up": "Sign up",
+            "grownup_first_name": "Grown Up's First Name",
+            "grownup_last_name": "Grown Up's Last Name",
+            "grownup_email": "Grown Up's Email",
+            "profile_picture": "Profile Picture",
+            "signIn": "Already have an account? Log in.",
+            "squarepanda_news_confiamtion":"Stay up to date with the latest Square Panda news!",
+            "messages": {
+                "first_name_require": "Please enter your (grown-up's) first name.",
+                "last_name_require": "Please enter your (grown-up's) last name.",
+                "register_success": "Thank you for creating a Square Panda account.",
+                "verificationlink_expire": "Sorry, your verification period has expired. Please create your account again and you'll be sent another verification email.",
+                "register_success_mes": "Thank you for creating a Square Panda account.",
+                "email_require": "Please enter your (grown-up's) Email.",
+                "email_activation_message": "You’re all set to jump into Square Panda's world of reading readiness.",
+                "user_verified_already": "Your account has already been activated.",
+                "email_registered": "That email has already been used to create a Square Panda account. If you've forgotten your password, you can reset it.",
+                "return_login": "Return to Log In",
+                "get_mail": " Soon you will get a confirmation email to verify your account.",
+                "thanks_for_registering": "Thank you for registering with us.",
+                "email_already_activated": "The activation link is expired or your account is already activated.",
+                "security_message": "For security reasons, you'll be prompted to log in again with your email and password."
+            }
+        },
+        "login": {
+            "remember_password": "Remember password",
+            "forgot_password": "Forgot Password",
+            "log_in": "Log In",
+            "forgot_password": "Forgot Password?",
+            "register": "New User? Create an Account.",
+            "login_page": "Go to log In page",
+            "resend_email": "Resend Email"
+        },
+        "forgot_password": {
+            "title": "Forgot Password",
+            "back_to_login": "Back to log In",
+            "request_password": "Request Password",
+            "reset_password": "Request received. You will receive an email shortly that will allow you to reset your password.",
+            "password_changed": "Your password has been reset. You can now use your new password to log In.",
+            "password_change_new_login": "Password changed succesfully."
+        },
+        "validationMessages": {
+            "last_name_require": "Last Name is required.",
+            "no_specialchar_require": "Should not include any special characters and must start with a alphabet letter.",
+            "password_mismatch": "That's not the same password as the first one.",
+            "email_valid": "Please enter a valid email address.",
+            "email_inactive": "Looks like your account has not in active, please contact admin.",
+            "password_require": "Password is required.",
+            "cpassword_require": "Retype Password is required.",
+            "old_password_require": "Old Password is required.",
+            "email_password_mismatch": "The email or password is incorrect. If you have forgotten your password, you can reset it here.",
+            "email_notverified": "Looks like your account has not yet been activated. Check your email for a message from Square Panda.",
+            "password_strength": "Please choose a password between 8 to 20 characters.",
+            "data_updatede_success": "Data updated successfully.",
+            "settings_updated": "Settings updated.",
+            "curriculum_word_notExists": "The word doesn't exists.",
+            "file_type_wrong": "File Type is Wrong.",
+            "age_require": "Age is required.",
+            "user_name_pattern": "Must start with a letter and be alphanumeric.",
+            "user_name_length": "Must be between 2 and 20 characters.",
+            "error_getting_words": "Error in listing Words.",
+            "word_name_require": "Please enter a word to add to custom word list.",
+            "error_selecting-missing_letters": "Error in selecting missing letters.",
+            "error_reset_password": "Error in resetting password.",
+            "invalid_word_deatils": "Invalid word credentials.",
+            "only_alphabets": "Should not include any special characters and numbers.",
+            "session_expire": "Your session has expired."
+        },
+        "change_password": {
+            "old_password": "Old Password",
+            "confirm_new_password": "Confirm New Password",
+            "confirm_password": "Retype Password",
+            "new_password": "New Password"
+        }
+    },
+    "dashboard": {
+        "welcome_feed": {
+            "welcome_feed_description": "We’re delighted that you’re here to take the first steps towards your child’s reading readiness with Square Panda’s Playground!",
+            "read_less": "Read less",
+            "read_more": "Read more",
+            "welcome_feed_details_first": "This is your destination to view the footprints of your child’s newly earned badges and discover more skills that they're ready to learn.",
+            "welcome_feed_details_second": "It’s easy to follow your child’s progress with a quick glance at their collection of earned badges. These badges symbolize the top skills your child needs to become reading ready from letter identification to rhymes to blended letter sounds! To help your child practice, you can view lists of all the letters and words they’ve learned.",
+            "welcome_feed_details_third": "Imagine how thrilled your child will be when they discover the word “Mom” or “Dad” and your photo appears on the screen while they're playing! By adding new words and familiar pictures to your child’s word bank, you'll be able to customize any word imaginable - pets, family members, school logos and even special spelling lists. Just check out the Customize area to create personalized word lists.",
+            "welcome_feed_details_fourth": "Well, we have kept you long enough - it's time to jump into the Playground!",
+            "welcome": "Welcome!",
+            "welcome_name": "Welcome,",
+            "welcome_feed_squarepanda": "Square Panda Team",
+            "help_child": "Help your child",
+            "earn_badge": "earn their 1 st badge",
+            "earn_new_badge": "Earn a New Badge",
+            "spelled_myname": " 'I spelled my name' "
+        },
+        "messages": {
+            "error_get_feeds": "Error in getting feeds.",
+            "error_get_termscondition_privacypolicy": "Error while update the terms & condition.",
+            "feed_notavailable": "This feed no longer available, please refresh the page.",
+            "feed_deleted": "This feed no longer available."
+        }
+    },
+    "admin": {
+        "firmware": {
+            "header": "Firmware update",
+            "firmware_version": "Firmware Version",
+            "version_require": "Version is required."
+        },
+        "messages": {
+            "firmware_upload_error": "Error in file uploading.",
+            "file_require": "File is required.",
+            "firmware_success": "firmware added successfully!",
+            "invalid_firmware": "Invalid firmware credentials."
+        }
+    },
+    "player": {
+        "dob": "Date of Birth",
+        "first_name_label": "First Name",
+        "last_name": "Last Name",
+        "email": "Email",
+        "mobile_num": "Mobile Number",
+        "first_name": "Player's First Name",
+        "last_name": "Last Name",
+        "mobile": "Mobile",
+        "gender": "Gender",
+        "dateOfBirth": "DOB",
+        "age": "Age :",
+        "more": "more",
+        "boy": "Boy",
+        "girl": "Girl",
+        "big_badges": "Big Badges",
+        "mini_badges": "Mini Badges",
+        "words_tab": "Words",
+        "not_prefer": "Prefer not to answer",
+        "add_player": "Add Player",
+        "edit_player": "Edit Player",
+        "view_players": "Back to view Players",
+        "add_new_player": "Add New Player",
+        "add_picture": "Add Picture",
+        "change_picture": "Change Picture",
+        "fav_game1": "Fav game 01,",
+        "fav_game2": "Fav game 02,",
+        "fav_game3": "Fav game 03",
+        "bird": "Bird ",
+        "cat": " Cat.",
+        "learn_words": "learned words like",
+        "word_jumble": "Word Jumble.",
+        "milestone_achieved": " achieved 02 Milestones in",
+        "elit": " elit.",
+        "consectetur": " consectetur adipscing",
+        "delete_modaltitle": "Warning!",
+        "or": "Or, ",
+        "uploadImage_selectavatar": "Please upload image or select Avatar.",
+        "choose_avatar": " Choose a generic avatar",
+        "crop_profile_picture": "Crop profile picture",
+        "no_players": "You don't have any players added. Start adding now.",
+        "no_graph_description": "Your child hasn't played any words in this badge. Check out the description above to see the words covered in this badge and start playing the words to view your child performance graph.",
+        "available_players_desc": "Available",
+        "available_players_desc1": "",
+        "word_headers": {
+            "words": "Words",
+            "correct": "Correct",
+            "incorrect": "Incorrect",
+            "last_attempt": "History",
+            "last_played": "Last Played"
+        },
+        "letter_headers": {
+            "letters": "Letters",
+            "count": "Count",
+            "orientations": "Orientations",
+            "last_played": "Last Played",
+            "last_attempt": "Last Attempt",
+            "placements": "History"
+        },
+        "nonsense_headers": {
+            "nonsense_words": "Nonsense Words",
+            "times": "Times",
+            "last_played": "Last Played"
+        },
+        "real_word_headers": {
+            "real_words": "Real Words",
+            "correct": "Correct",
+            "incorrect": "Incorrect",
+            "last_played": "Last Played",
+            "last_attempt": "Last Attempt"
+        },
+        "words": {
+            "all": "All",
+            "real_words": "Real Words",
+            "nonsense_words": "Nonsense Words",
+            "letters": "Letters"
+        },
+        "playercount":{
+           "playercount_description_one":"You have",
+            "playercount_description_two":"out of",
+            "student_profiles":"player profiles available."
+        },
+        "messages": {
+            "file_type_wrong": "File Type is wrong. Only allows images.",
+            "futuredate_notallowed": "Future dates are not allowed, Please select correct date.",
+            "dob_notvalid": "Date of birth is not valid.",
+            "dob_notnull": "Date of birth is mandatory.",
+            "first_name_require": "Please enter the player's first name.",
+            "error_chart_data": "Chart Data Fetch Error.",
+            "delete_player": "Are you sure do you want to delete player?",
+            "player_limit": "Limit Exceeded",
+            "player_limit_exceeded": "Player limit exceded.",
+            "max_players": "You already have the maximum number of players added.",
+            "add_success": "Player added successfully!",
+            "update_success": "Player updated successfully!",
+            "edit_player_success": "Player edited successfully!",
+            "delete_success": "Player deleted successfully!",
+            "add_error": "Player added successfully!",
+            "update_error": "Player updated successfully!",
+            "delete_error": "Error While deleting Player.",
+            "file_upload_success": "File uploaded successfully!",
+            "error_file_upload": "Error in file uploading.",
+            "invalid_credentials": "Invalid player credentials.",
+            "error_deleting_players": "Error in deleting Player.",
+            "error_getting_players": "Error in getting player.",
+            "error_getting_avatar": "Error getting Avatars.",
+            "error_getting_bigbadges": "Error in getting Big badges.",
+            "error_adding_player": "Error in adding Player.",
+            "error_update_player": "Error in updating Player Details",
+            "error_getting_words": "Error in getting words.",
+            "error_getting_minibadges": "Error in getting mini badges.",
+            "error_getting_player_highlights": "Error in getting Player Highlights",
+            "delete_player_body1": "Deleting this player will wipe curriculum advancement and game progress across all games and will not be recoverable.",
+            "delete_player_body2": "If you would like to know more info about our privacy policies ",
+            "delete_player_body3": "click here to read more.",
+            "delete_player_body4": "When you delete a player, we permanently delete any and all player identifiers from Square Panda servers. This includes the player's name, birthday and picture.",
+            "delete_player_body5": "Square Panda anonymizes and retains the player's educational activity (i.e. what words they spelled, what mistakes they made). We use this information only to help improve our products. For maximum privacy protection, the data is not traceable back to your account or players under your account.",
+            "delete_player_body6": "If you have additional questions, please contact ",
+            "delete_player_body7": "support@squarepanda.com.",
+            "player_not_exist":"Player doesn't exist."
+        },
+        "buttons": {
+            "add_palyer": "Add Player",
+            "upload_picture": "Upload your own picture",
+            "choose_avatar": "Choose a generic avatar"
+        },
+        "badges": {
+            "big_badges": "Big Badges",
+            "mini_badges": "Mini Badges",
+            "activities": "Activities",
+            "nobadge_earned": "No badges earned so far.",
+            "nobadge_earned_days": "badges earned in the past 7 days.",
+            "no_spendtime": "0 min played this week",
+            "last_time_played": "played this week",
+            "recent_word": "Most recent word:",
+            "mark_correct": "marked as Correct.",
+            "noword_correct": "Most recent word: -",
+            "no_fav_word": "Favorite word: –",
+            "maybe_fav_word": "Favorite word:",
+            "spelling": "spelled",
+            "played": "played",
+            "times": "times",
+            "this_week": "This Week",
+            "30days": "30 Days",
+            "1year": "1 Year",
+            "all_time": "All Time"
+        }
+    },
+    "curriculum": {
+        "description": {
+            "text": "Add any word you like into your own personalized Square Panda word bank! In addition to over 4,000 words in our database, be sure your child's very own special words are included in their games! Some ideas are: ",
+            "child_firstname": "your child's first name",
+            "family_pet": "your family pet",
+            "child_fav_food": "your child's favorite food",
+            "upload_mom_dad_pic": "or upload your own picture to MOM or DAD",
+            "option_limitless": "The options are limitless!",
+            "milestone_text": "At Square Panda, parents and teachers rule! Not all parents and teachers want the same things, share the same beliefs, or think the same way. So, we've left it up to you! It's completely within your control as to what words your children can and cannot see. Take a look at our lists of curated 'Bathroom words' and more advanced science 'Anatomy' words. You can turn these entire word lists on and off, or you can look at individual words on the list and decide if you want them excluded from your child's game. Customize away!",
+            "milestone_text_note": " Square Panda will never intentionally display a bad word to your child. However, as your child explores letter combinations, he/she may inadvertently discover a mature word. Here you have the flexibility to allow or disallow these words from your child's game.",
+            "milestone_text_note_head": "Note:",
+            "wordsfilter_description":"The following words are excluded by default. Select the words you would like to allow."
+        },
+        "customword_headers": {
+            "word": "Custom Word",
+            "picture": "Picture",
+            "actions": "Actions",
+            "created_date": "Created date"
+        },
+        "addword": "Add Word",
+        "export_csv": "Export CSV",
+        "type_word": "Type a word to add custom word list",
+        "custom_word_list": "Custom Word List",
+        "wordlabel": "Word",
+        "word": "Word",
+        "pronunciation": "Pronunciation",
+        "picture": "Picture",
+        "add_custom_word": "Add Custom word",
+        "nodata": "No data",
+        "custom_word": "Custom Word",
+        "group_word_list": "Group Word List",
+        "parent_choice": "Parent's Choice - Word Filter",
+        "anatomy": "Anatomy",
+        "bathroom": "Bathroom",
+        "selectall": "Select All",
+        "browse": "Browse",
+        "messages": {
+            "upload_fiveimages": "Upload upto 5 images.",
+            "upload_jpgimages": "Supported formats .jpg, .jpeg and .png",
+            "file_selection_wrong": "Please select image with 5MB or Lesser size.",
+            "file_size_large": "File size is too large, Try to upload below 2mb.",
+            "error_file_upload": "Error in file uploading.",
+            "image_sizelimit_exceeded": "Selected file size exceeds maximum limit 2 MB.",
+            "word_update_msg": "Word updated successfully.",
+            "word_success_msg": "Hurray! Word successfully added.",
+            "word_name_require": "Please enter a word to add to custom word list.",
+            "ban_word_name_require": "Please enter a word to add to ban word list.",
+            "curriculum_word_require": "Word Name is required.",
+            "error_getting_custom_words": "Error in getting Custom words.",
+            "error_adding_custom_words": "Error in adding Custom word.",
+            "error_getting_badwords": "Error in getting Group words.",
+            "error_updatinging_badwords": "Error in updating Group words.",
+            "error_group_words": "Error in submitting group words.",
+            "word_notexist_want_procced": "It’s a new word, do you like to proceed?",
+            "maximum_words": "You already have the maximum number of custom words added.",
+            "word_already_exist": "Word already exist.",
+            "word_exist_want_edit": "Looks like the word already exists. Try adding a new word!",
+            "word_notexist": "The word doesn't exists.",
+            "word_exist": "The word already exists.",
+            "model_delete_word": "Are you sure, you want to delete the word?",
+            "model_delete_word_image": "Are you sure, you want to delete the image?",
+            "delete_success": "Word deleted Successfully.",
+            "error_deleting_word": "Error in deleting Custom word.",
+            "groupword_success_msg": "Changes Saved.",
+            "exit_custom_word": "Word already exists.",
+            "error_update_custom_word": "Error in updating Custom word.",
+            "please_select_png_or_jpg_file_type": "Please select .png or .jpg or .jpeg file type.",
+            "file_size_too_large":"Upload image size is too large",
+            "invalid_file_format":"Invalid file format",
+            "allow_only_five_images":"Files selected should be in the range of 1 to 5",
+            "images_size_exceeded":"Selected images size exceeded 10MB"
+        }
+    },
+    "settings": {
+        "grownup_first_name": "Grown Up's First Name",
+        "grownup_last_name": "Grown Up's Last Name",
+        "grownup_email": "Grown Up's Email",
+        "old_password": "Old Password",
+        "new_password": "New Password",
+        "confirm_new_password": "Confirm New Password",
+        "confirm_password": "Retype Password",
+        "password": "Password",
+        "lost_letters": {
+            "header": "Lost Letter",
+            "data": "   Lost a letter? Let us know here and we'll exclude these letters from your games!",
+            "to_order": "To order the",
+            "character_set": "Character Set ",
+            "visit": "please visit",
+            "spanda_website": "www.squarepanda.com"
+        },
+        "notifications": {
+            "data": "Stay up to date on your child's latest accomplishments, learn new reading readiness tips, and be the first to know about new releases of Square Panda learning apps! Tap on any of the activity notifications to receive email updates.",
+            "player_updates": "Player Updates",
+            "player_updates_data": "As your child discovers new skills and earns badges you'll receive a realtime update of their activity and progress.",
+            "panda_news": "Square Panda News",
+            "panda_news_data": "Be the first to know about the newest Square Panda learning apps (and get special offers too!)",
+            "educational_feeds": "Educational News Feed",
+            "educational_feeds_data": "Amplify learning with reading readiness tips and the latest research, articles and videos to help your child be reading ready!"
+        },
+        "messages": {
+            "get_missing_letters_error": "Error in getting missing letters.",
+            "update_nofifications_error_msg": "Error in updating notifications.",
+            "update_missing_letters_error": "Error in updating missing letters.",
+            "get_nofifications_error_msg": "Error in getting notifications.",
+            "old_passwpord_wrong": "Your old password is incorrect. Please try again!",
+            "error_change_password": "Error in changing password",
+            "password_change_new_login": "Password changed succesfully.",
+            "profile_edit_error": "Error in editing profile.",
+            "profile_edit_success": "Your profile is successfully updated.",
+            "first_name_require": "Please enter your (grown-up's) first name.",
+            "last_name_require": "Please enter your (grown-up's) last name.",
+            "password_strength": "Please choose a password between 8 to 20 characters.",
+            "no_specialchar_require": "Should not include any special characters and must start with a alphabet letter",
+            "old_password_require": "Please enter your old password.",
+            "new_password_require": "Please enter your new password.",
+            "cpassword_require": "Please re-enter your new password.",
+            "password_mismatch": "Please make sure your passwords match.",
+            "missing_letters_updated": "Changes Saved.",
+            "nofifications_success_msg": "Changes Saved."
+        }
+    },
+    "privacy": {
+        "header": "Children's Privacy Policy",
+        "sub_header": "Square Panda Inc."
+    },
+    "terms_conditions": {
+        "header": "Terms of Service"
+    }
+}

@@ -1,0 +1,124 @@
+<!-- ***************************************************************************
+* Copyright (c) 2017 Square Panda Inc.                                         *
+* All Rights Reserved.                                                         *
+* Dissemination, use, or reproduction of this material is strictly forbidden   *
+* unless prior written permission is obtained from Square Panda Inc.           *
+**************************************************************************** -->
+<div class="dashboard-container container-margins">
+    <div set-class-when-at-top="fix-to-top container row">
+        <toaster-container class="custom-toaster-conatiner" toaster-options="{'position-class': 'toast-top-center', 'close-button':true}"></toaster-container>
+    </div>
+    <div class="container container-min-height home-conatiner">
+        <div class="feed-row" data-ng-if="!dashboard.isUserFirstTimeLoggedIn" data-ng-repeat="feedItem in dashboard.data.newsFeedsList.slice(((dashboard.currentPage-1)*dashboard.itemsPerPage), ((dashboard.currentPage)*dashboard.itemsPerPage))">
+            <div class="panel clearfix">
+                <div class="col-md-4 nopadding center-align">
+
+                    <img data-ng-if="!feedItem.image_url" src="assets/images/no-image.png" class="img-responsive feed-img img-radius" image-load-complete-evt/>
+
+                    <img data-ng-if="feedItem.image_url && feedItem.category !== 'Analytics'" data-ng-src="{{feedItem.image_url}}" class="img-responsive feed-img img-radius hide-img" ng-class="{ 'first-imgsize':$index ==0, 'second-imgsize': $index == 1}" image-load-complete-evt="{{feedItem}}"
+                    />
+
+                    <!--<span class="feed-img-loader">
+              <img src="assets/images/img-loader.gif"/>
+          </span>-->
+
+                    <div class="minibadge_feed_bg" data-ng-if="feedItem.category === 'Analytics'">
+                        <img src="assets/images/min-badge-news-item-bg.png" width="180" height="182" class="badge_gliter badge-background" />
+                        <img data-ng-src="{{feedItem.image_url}}" width="158" height="178" class="feeditem-image" />
+                        <img src="assets/images/glitter.png" width="180" height="194" class="badge_gliter" />
+
+                    </div>
+                </div>
+                <div class="col-md-8 nopadding">
+                    <div class="panel-body">
+                        <div class="newsfeed-player-profile-pic" data-ng-if="feedItem.category === 'Analytics'">
+                            <img data-ng-if="feedItem.player_avatar !== null" data-ng-src="{{feedItem.player_avatar}}" image-load-complete-evt="{{feedItem}}" width="35" height="50" />
+                            <img data-ng-if="feedItem.player_avatar === null" src="assets/images/default-avatar.png" image-load-complete-evt="{{feedItem}}" width="35" height="50" />
+                        </div>
+                        <h3 class="reduce-margin text-ellipsiss" title="{{feedItem.title}}">{{feedItem.title}}</h3>
+                        <p class="time-ago" am-time-ago="feedItem.updatedAt"></p>
+                        <p class="feed-description" ng-class="{'first-element':$index ==0,'second-element': $index == 1,'third-element':$index == 2}" title="{{feedItem.description}}">
+                            {{feedItem.description}}</p>
+                    </div>
+                    <div class="panel-footer" data-ng-if="feedItem.category !== 'Analytics' && feedItem.category !== 'GAMES'">
+                        <a href="javascript:;" data-ng-click="dashboard.readMore(feedItem)" title="Read more" data-translate="common.buttons.read_more">
+              Read more >
+            </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="welcome-feed" data-ng-if="(dashboard.data.newsFeedsList.length === 0 && !dashboard.hideWelcomeFeedOnload) || (!dashboard.hideWelcomeFeedOnload && (dashboard.lastPage === dashboard.currentPage)) || (!dashboard.hideWelcomeFeedOnload && dashboard.isUserFirstTimeLoggedIn)">
+            <div class="panel clearfix">
+                <div class="col-md-4 nopadding">
+                    <div class="welcome-feed-description">
+                        <h3 class="welcomename-elipsis"><span data-translate="dashboard.welcome_feed.welcome_name">Welcome,</span>
+                            <span title="{{dashboard.userName.firstName}}"> {{dashboard.userName.firstName}}!</span></h3>
+
+                        <p data-translate="dashboard.welcome_feed.welcome_feed_description">We’re delighted that you’re here to take the first steps towards your child’s reading readiness with Square Panda’s Playground!</p>
+
+
+                        <p data-ng-if="dashboard.data.newsFeedsList.length !== 0">
+                            <a href="javascript:;" data-ng-if="!dashboard.isUserFirstTimeLoggedIn" data-ng-click="dashboard.showWelcomeMessageDetail()">
+                                <span data-ng-if="dashboard.showWelcomeNewsFeedDetails" data-translate="dashboard.welcome_feed.read_less"> Read less </span>
+                                <span data-ng-if="!dashboard.showWelcomeNewsFeedDetails" data-translate="dashboard.welcome_feed.read_more"> Read more </span>
+                            </a>
+                        </p>
+
+                    </div>
+                </div>
+                <div class="col-md-8 nopadding">
+                    <img data-ng-if="!feedItem.image_url" src="assets/images/welcome-feed-img.png" width="100%" />
+                </div>
+                <div class="panel-footer clearfix">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-8">
+                        <img src="assets/images/welcome-feed-footer-img.png" width="100%" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-ng-if="dashboard.isUserFirstTimeLoggedIn || dashboard.showWelcomeNewsFeedDetails || dashboard.data.newsFeedsList.length === 0">
+            <div class="welcome-feed-details">
+                <p data-translate="dashboard.welcome_feed.welcome_feed_details_first">This is your destination to view the footprints of your child’s newly earned badges and discover more skills that they're ready to learn.</p>
+
+                <p data-translate="dashboard.welcome_feed.welcome_feed_details_second">It’s easy to follow your child’s progress with a quick glance at their collection of earned badges. These badges symbolize the top skills your child needs to become reading ready from letter identification to rhymes to blended letter sounds!
+                    To help your child practice, you can view lists of all the letters and words they’ve learned.</p>
+
+                <p data-translate="dashboard.welcome_feed.welcome_feed_details_third">Imagine how thrilled your child will be when she or he discovers the word “Mom” and your photo appears on screen while they’re playing! By adding new words and familiar pictures to your child’s word bank, you'll be able to customize any
+                    word imaginable - pets, family members, school logos and even special spelling lists. Just check out the Customize area to create personalized word lists.</p>
+
+                <p data-translate="dashboard.welcome_feed.welcome_feed_details_fourth">Well we have kept you long enough - it's time to jump into the Playground!</p>
+
+                <p class="welcome-feed-ending" data-translate="dashboard.welcome_feed.welcome"> Welcome!</p>
+
+                <p class="welcome-feed-ending-details-ending" data-translate="dashboard.welcome_feed.welcome_feed_squarepanda">
+                    Square Panda Team</p>
+
+            </div>
+            <div class="earn-badge clearfix">
+                <div class="col-md-6">
+                    <div class="eb-left">
+                        <h3 data-translate="dashboard.welcome_feed.help_child">Help your child</h3>
+                        <h3 data-translate="dashboard.welcome_feed.earn_badge">earn their 1 st badge</h3>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="ed-welcomefeed">
+                        <div class="eb-right-content">
+                            <img src="assets/images/name-badge-welcome-feed.png" width="80" class="center-align" />
+                        </div>
+                        <div class="eb-left-content">
+                            <h4 data-translate="dashboard.welcome_feed.earn_new_badge">Earn a New Badge</h4>
+                            <button ui-sref='account.players' class="btn btn-default welcome-feed-button" data-translate="dashboard.welcome_feed.spelled_myname">"I spelled my name"
+              </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <uib-pagination data-ng-if="(dashboard.data.newsFeedsList.length > dashboard.itemsPerPage) && !dashboard.isUserFirstTimeLoggedIn" class="pull-right margin-top-20-bootom-20" total-items="dashboard.data.newsFeedsList.length" direction-links="true" ng-model="dashboard.currentPage"
+            items-per-page="dashboard.itemsPerPage" max-size="6" boundary-links="true" rotate="false" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></uib-pagination>
+    </div>
+</div>

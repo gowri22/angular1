@@ -1,0 +1,28 @@
+<!-- ***************************************************************************
+* Copyright (c) 2017 Square Panda Inc.                                         *
+* All Rights Reserved.                                                         *
+* Dissemination, use, or reproduction of this material is strictly forbidden   *
+* unless prior written permission is obtained from Square Panda Inc.           *
+**************************************************************************** -->
+<div class="container-fluid user-links user-links-col1" data-ng-if="$state.includes('register')" ng-class="{'user-links-fixed': !globals.currentUser }">
+    <div class="center-align">
+        <a href="#/login" class="text-center nofloat" data-translate="user.register.signIn">
+      Already registered? Sign in</a>
+    </div>
+</div>
+
+<div class="container-fluid user-links user-links-col2" data-ng-if="$state.includes('login')" ng-class="{'user-links-fixed': '!globals.currentUser'}">
+    <div class="col-lg-4 col-md-3 col-sm-2"></div>
+    <div class="col-lg-4 col-md-6 col-sm-8">
+        <a href="#/forgot-password" data-translate="user.login.forgot_password">Forgot password?</a>
+        <a href="#/register" data-translate="user.login.register">Not registered yet? Sign Up</a>
+    </div>
+    <div class="col-lg-4 col-md-3 col-sm-2"></div>
+</div>
+
+<div class="container-fluid user-links user-links-col1" data-ng-if="$state.includes('forgot-password')" ng-class="{'user-links-fixed': '!globals.currentUser'}">
+    <div class="center-align">
+        <a href="#/login" class="text-center nofloat" data-translate="user.forgot_password.back_to_login">
+      Back to login</a>
+    </div>
+</div>

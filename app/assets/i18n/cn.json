@@ -1,0 +1,575 @@
+{
+    "nav": {
+        "home": {
+            "title": "首页",
+            "Header": "首页",
+            "back_home": "回到首页"
+        },
+        "header": {
+            "dashboard": "我的面板",
+            "edit_profile": "编辑个人资料",
+            "change_password": "修改密码",
+            "subscriptions": "我的订阅",
+            "logout": "退出",
+            "profile":"个人资料"
+        },
+        "sidebar": {
+            "dashboard": "我的面板",
+            "players": "用户列表",
+            "curriculum": "我的课程",
+            "settings": "我的账户",
+            "home": "首页",
+            "Home": "首页",
+            "Players": "用户列表",
+            "Curriculum": "课程列表",
+            "my_account": "我的账户",
+            "customize": "自定义",
+            "Customize": "自定义"
+        },
+        "notification": {
+            "notifications": "通知列表"
+        },
+        "missing_letters": {
+            "title": "排列时缺少字母"
+        },
+        "footer": {
+            "glyphicon": "Square Panda",
+            "warranty_info": "服务与支持",
+            "service_support": "服务于支持",
+            "press": "Square Panda",
+            "faqs": "常见问题及解答",
+            "privacy_policy": "隐私政策",
+            "official_site": "官网",
+            "terms_service": "服务条款",
+            "squarepanda_copyright":"Copyright © 2017 Square Panda Inc.",
+            "rights_reserved":"All Rights Reserved."
+        },
+        "login": {
+            "title": "登陆",
+            "header": "登陆"
+        },
+        "register": {
+            "title": "注册",
+            "header": "创建 Square Panda 账户"
+        },
+        "edit_profile": {
+            "title": "账户管理",
+            "header": "账户管理"
+        },
+        "change_password": {
+            "title": "修改密码",
+            "header": "修改密码",
+            "new_password": "新密码"
+        },
+        "reset_password": {
+            "title": "重置密码",
+            "header": "重置密码"
+        },
+        "forgot_password": {
+            "title": "忘记密码",
+            "header": "忘记密码"
+        },
+        "press": {
+            "title": "相关新闻",
+            "header": "相关新闻"
+        },
+        "warranty_info": {
+            "title": "保修信息",
+            "header": "保修信息",
+            "subheader": "（产品零件和人工服务一年有限保修期）"
+        },
+        "privacy_policy": {
+            "title": "隐私政策",
+            "header": "隐私政策"
+        },
+        "terms_services": {
+            "title": "条款和服务",
+            "header": "条款和服务"
+        },
+        "add_player": {
+            "title": "添加玩家",
+            "header": "添加玩家"
+        },
+        "edit_player": {
+            "title": "编辑玩家",
+            "header": "编辑玩家"
+        },
+        "firmware_update": {
+            "title": "系统升级",
+            "header": "系统升级"
+        },
+        "add_custom_word": {
+            "title": "添加自定义单词",
+            "header": "添加自定义单词"
+        },
+        "edit_custom_word": {
+            "title": "编辑自定义单词",
+            "header": "编辑自定义单词"
+        },
+        "view_custom_word": {
+            "title": "查看自定义单词",
+            "header": "查看自定义单词"
+        }
+    },
+    "teacher_navigation": {
+        "classroom_edition":"Classroom Edition or Panda Pass user?",
+        "goto_teacher":"Go to the Teacher Playground!",
+        "upgrade_classroom_edition":"Need to upgrade to the Classroom Edition?",
+        "upgrade_teacher_pandapass":"Upgrade to a Teacher Account with a Panda Pass!"
+    },
+    "common": {
+        "warning": "警告!",
+        "confirm": "确认",
+        "are_you_sure": "您确定吗?",
+        "yipee": "yipee",
+        "whoops": "whoops",
+        "delete": "删除",
+        "error": "错误",
+        "edit": "编辑",
+        "filter_by": "筛选条件",
+        "export_csv": "导出CSV",
+        "nodata": "没有数据显示",
+        "return_login": "返回登录",
+        "resend_email": "重发邮件",
+        "what_happento_data": "数据异常?",
+        "day": "日",
+        "month": "月",
+		"week":"周",
+        "year": "年",
+        "add_picture": "Add Picture",
+        "months": {
+            "january":"一月",
+            "february":"二月",
+            "march":"三月",
+            "april":"四月",
+            "may":"五月",
+            "june":"六月",
+            "july":"七月",
+            "august":"八月",
+            "september":"九月",
+            "october":"十月",
+            "november":"十一月",
+            "december":"十二月"
+        },
+        "buttons": {
+            "submit": "提交",
+            "save": "保存",
+            "edit": "编辑",
+            "cancel": "取消",
+            "clear": "清空",
+            "delete": "删除",
+            "sign_up": "注册",
+            "clear_all": "清除所有",
+            "reset": "重置",
+            "yes": "是",
+            "ok": "好",
+            "no": "否",
+            "back": "返回",
+            "close": "关闭",
+            "select": "选择",
+            "iagree": "我同意",
+            "read_more": "更多"
+        },
+        "messages": {
+            "allow_only_letters": "仅支持字母，不能使用空格、数字以及其他特殊字符。",
+            "error_getting_data": "获取数据出错。",
+            "wrong_email_format": "邮箱地址出错，请检查再输入。",
+            "email_already_exit_please_choose_diff_email": "该邮箱地址已存在，请选择其它邮箱。",
+            "only_alphabets": "不允许使用特殊字符和数字。",
+            "file_type_wrong": "文件类型错误。",
+            "word_length": "必须在1到8个字符之间。",
+            "file_selection_wrong": "请选择5MB或更小的图片。"
+        }
+    },
+    "default_title": "默认标题",
+    "user": {
+        "first_name": "名字",
+        "last_name": "姓氏",
+        "password": "密码",
+        "email": "邮箱",
+        "username": "用户名",
+        "male": "男生",
+        "female": "女生",
+        "others": "保密",
+        "register": {
+            "confirm_password": "重新输入密码",
+            "create_account": "创建 Square Panda 账户",
+            "mobile": "手机号码",
+            "gender": "性别",
+            "role": "角色",
+            "grade": "年级",
+            "school": "学校",
+            "sign_up": "注册",
+            "grownup_first_name": "家长名字",
+            "grownup_last_name": "家长姓氏",
+            "grownup_email": "家长邮箱",
+            "profile_picture": "个人资料图片",
+            "signIn": "已经有账户?去登陆.",
+            "squarepanda_news_confiamtion":"您需要以邮件的形式接收Square Panda新闻以及我们推荐的教育信息吗？",
+            "messages": {
+                "first_name_require": "请输入您的(家长的)名字。",
+                "last_name_require": "请输入您的(家长的)姓氏。",
+                "register_success": "感谢您创建 Square Panda 账户",
+                "register_success_mes": "感谢您创建 Square Panda 账户",
+                "email_require": "请输入您的(家长的)邮箱。",
+                "email_activation_message": "欢迎进入Square Panda的奇妙之旅。",
+                "user_verified_already": "您的账户已经激活",
+                "email_registered": "该邮箱已经被使用，如果您忘记密码了，您可以重置",
+                "return_login": "返回登录",
+                "get_mail": "现在去您的邮箱激活账户",
+                "get_mail_line2": "（如果邮箱中没有发现激活邮件，请查看垃圾邮箱）",
+                "thanks_for_registering": "感谢您的注册",
+                "email_already_activated": "激活链接已过期或您的帐户已激活。",
+                "security_message": "出于安全考虑，请重新登录。"
+            }
+        },
+        "login": {
+            "remember_password": "记住密码",
+            "forgot_password": "忘记密码",
+            "resend_email": "重发邮件",
+            "log_in": "登录",
+            "register": "我是新用户需要创建账户",
+            "login_page": "跳转到登录页"
+        },
+        "forgot_password": {
+            "title": "忘记密码",
+            "back_to_login": "返回登陆页",
+            "request_password": "需要填写密码",
+            "reset_password": "请通过邮件重置密码。",
+            "password_changed": "密码修改成功. 请重新登录",
+            "password_change_new_login": "修改密码成功。"
+        },
+        "validationMessages": {
+            "last_name_require": "请填写姓氏",
+            "no_specialchar_require": "不能包含任何特殊字符，且必须以字母开头。",
+            "password_mismatch": "两次密码不一致",
+            "email_valid": "请输入有效的邮箱地址",
+            "email_inactive": "您的帐户未激活，请联系管理员。",
+            "password_require": "请输入密码。",
+            "cpassword_require": "请再次输入密码",
+            "old_password_require": "请输入旧密码",
+            "email_password_mismatch": "邮箱或密码错误. 如果您忘了密码，可以在这里重置",
+            "email_notverified": "您的帐户尚未激活，请查看您的电子邮件是否有Square Panda的邮件。",
+            "password_strength": "请设置一个介于8到20个字符之间的密码。",
+            "data_updatede_success": "数据已成功更新。",
+            "settings_updated": "设置已更新",
+            "curriculum_word_notExists": "该单词不存在",
+            "file_type_wrong": "文件格式错误",
+            "age_require": "请填写年龄",
+            "user_name_pattern": "必须以字母开头，而且必须是字母和数字的组合",
+            "user_name_length": "必须是介于2到12个字符",
+            "error_getting_words": "展示单词时出错。",
+            "word_name_require": "添加自定义单词",
+            "error_selecting-missing_letters": "选择缺少的字母时出错。",
+            "error_reset_password": "重置密码出错。",
+            "invalid_word_details": "单词凭据无效",
+            "only_alphabets": "不能包含任何特殊字符和数字。",
+            "session_expire": "您的会话已过期。"
+        },
+        "change_password": {
+            "old_password": "旧密码",
+            "confirm_new_password": "确认新密码",
+            "confirm_password": "重新输入密码",
+            "new_password": "新密码"
+        }
+    },
+    "dashboard": {
+        "welcome_feed": {
+            "welcome_feed_description": "太棒了！您为宝宝在Square Panda迈出了成功的第一步",
+            "read_less": "收起",
+            "read_more": "更多",
+            "welcome_name": "欢迎,",
+            "welcome_feed_details_first": "在这里您可以查阅宝宝获得的成就徽章，并发现他已经获得的学习能力。",
+            "welcome_feed_details_second": "您可以及时跟进宝宝学习的进程，查看获得的成就徽章。这些徽章象征着宝宝在学习英语以及自然拼读方面的技能提升，同时您也可以查阅宝宝学到的字母和单词的详细列表。",
+            "welcome_feed_details_third": "想象一下，当您的孩子发现单词“Mom”或者“Dad”时，您的照片在屏幕上出现，她（他）会多么开心啊！您只需通过编辑自定义区域的个性化单词列表就可以往孩子的单词库中添加单词、关联图片以及自定义任何可以想象的词 --比如宠物，家庭成员，学校的标志，甚至特殊意义的字母组合。",
+            "welcome_feed_details_fourth": "好了，现在让我们准备起航吧!",
+            "welcome": "欢迎加入Square Panda家族！",
+            "welcome_feed_squarepanda": "Square Panda 团队",
+            "help_child": "帮您的宝宝",
+            "earn_badge": "获取第一个徽章",
+            "earn_new_badge": "赢得一个新的徽章",
+            "spelled_myname": "我可以拼出我的英文名字"
+        },
+        "messages": {
+            "error_get_feeds": "获取消息出错。",
+            "error_get_termscondition_privacypolicy": "更新条款时出错。",
+            "feed_notavailable": "This feed no longer available, please refresh the page.",
+            "feed_deleted": "This feed no longer available."
+        }
+    },
+    "player": {
+        "dob": "出生日期",
+        "first_name_label": "名字",
+        "last_name": "姓",
+        "email": "邮箱",
+        "mobile_num": "手机号",
+        "first_name": "用户名字",
+        "mobile": "手机",
+        "gender": "性别",
+        "dateOfBirth": "生日",
+        "age": "年龄",
+        "more": "更多",
+        "boy": "男生",
+        "girl": "女生",
+        "big_badges": "大徽章",
+        "mini_badges": "小徽章",
+        "words_tab": "单词",
+        "not_prefer": "保密",
+        "add_player": "添加新玩家",
+        "edit_player": "编辑玩家",
+        "view_players": "返回账号",
+        "add_new_player": "添加新玩家",
+        "add_picture": "添加图片",
+        "change_picture": "更换图片",
+        "fav_game1": "喜爱的游戏一,",
+        "fav_game2": "喜爱的游戏二,",
+        "fav_game3": "喜爱的游戏三",
+        "bird": "鸟",
+        "cat": " 猫",
+        "learn_words": "学习像这样的单词",
+        "word_jumble": "单词混乱",
+        "milestone_achieved": " 完成了第二里程碑",
+        "elit": " elit.",
+        "consectetur": "consectetur adipscing",
+        "delete_modaltitle": "警告!",
+        "or": "或者, ",
+        "uploadImage_selectavatar": "请上传图片或选择头像.",
+        "choose_avatar": " 选择卡通头像",
+        "crop_profile_picture": "编辑图片",
+        "no_players": "您没有添加玩家。 现在开始添加。",
+        "no_graph_description": "您的孩子在此徽章中还未练习任何单词。 请阅读上述说明来查看此徽章中包含的单词，并开始练习字词。这样您才能查看孩子的成绩图表。",
+        "available_players_desc": "还能创建",
+        "available_players_desc1": "个玩家",
+        "word_headers": {
+            "words": "单词",
+            "correct": "正确",
+            "incorrect": "错误",
+            "last_attempt": "历史",
+            "last_played": "最近一次练习"
+        },
+        "letter_headers": {
+            "letters": "字母",
+            "count": "计数",
+            "orientations": "定向",
+            "last_played": "最近一次练习",
+            "last_attempt": "最近一次尝试",
+            "placements": "历史"
+        },
+        "nonsense_headers": {
+            "nonsense_words": "没有意义的单词",
+            "times": "次数",
+            "last_played": "最近一次练习"
+        },
+        "real_word_headers": {
+            "real_words": "正确单词",
+            "correct": "正确",
+            "incorrect": "错误",
+            "last_played": "最近一次练习",
+            "last_attempt": "最近一次尝试"
+        },
+        "words": {
+            "all": "全部",
+            "real_words": "真实单词",
+            "nonsense_words": "没有意义的单词",
+            "letters": "字母"
+        },
+        "playercount":{
+            "playercount_description_one":"您还能创建",
+            "playercount_description_two":"个玩家",
+            "student_profiles":"student profiles available."
+        },
+        "messages": {
+            "file_type_wrong": "文件类型错误。只可以使用图片。",
+            "futuredate_notallowed": "日期不对，请选择一个正确的日期。",
+            "dob_notvalid": "出生日期无效。",
+            "dob_notnull": "请选择出生日期",
+            "first_name_require": "请输入玩家的名字。",
+            "error_chart_data": "图表数据提取错误。",
+            "delete_player": "您确定要删除玩家吗？",
+            "player_limit": "超过限制",
+            "player_limit_exceeded": "Player limit exceded.",
+            "max_players": "您添加的玩家数量已达上限.",
+            "add_success": "玩家已成功添加!",
+            "update_success": "更新成功!",
+            "edit_player_success": "玩家编辑成功!",
+            "delete_success": "用户删除成功!",
+            "add_error": "用户已成功添加!",
+            "update_error": "用户已成功更新!",
+            "delete_error": "删除用户时错误。",
+            "file_upload_success": "文件上传成功!",
+            "error_file_upload": "文件上传时出错。",
+            "invalid_credentials": "用户凭据无效。",
+            "error_deleting_players": "删除玩家出错.",
+            "error_getting_players": "获取玩家出错.",
+            "error_getting_avatar": "获取头像出错.",
+            "error_getting_bigbadges": "获取大徽章出错.",
+            "error_adding_player": "添加玩家出错。",
+            "error_update_player": "更新玩家信息出错",
+            "error_getting_words": "获取单词出错。",
+            "error_getting_minibadges": "获取小徽章出错.",
+            "error_getting_player_highlights": "获取玩家亮点出错",
+            "delete_player_body1": "删除此玩家同时会删除该玩家所有相关的游戏成就与游戏进度，且无法恢复。",
+            "delete_player_body2": "如果您想知道更多关于我们的隐私政策的信息",
+            "delete_player_body3": "点击这里以了解更多。",
+            "delete_player_body4": "当您删除用户时，会永久删除Square Panda服务器中的任何和该用户有关的信息。包括用户的名字，生日和图片。",
+            "delete_player_body5": "Square Panda会匿名保留用户在这里有关教育的行为（即他们拼写的单词，他们犯的错误）。我们仅仅使用此信息来帮助改进我们的产品。为了最大限度地保护隐私，数据将不可追溯到您的帐户或您帐户下的用户。",
+            "delete_player_body6": "如果您有其他问题，请联系",
+            "delete_player_body7": "support@squarepanda.com.",
+            "player_not_exist":"Player doesn't exist."
+        },
+        "buttons": {
+            "add_palyer": "添加用户",
+            "upload_picture": "上传您自己的图片",
+            "choose_avatar": "选择通用头像"
+        },
+        "badges": {
+            "big_badges": "大徽章",
+            "mini_badges": "小徽章",
+            "activities": "活动",
+            "nobadge_earned": "目前还未获得的徽章",
+            "nobadge_earned_days": "最近7天内获得的徽章",
+            "no_spendtime": "本周共玩0分钟",
+            "last_time_played": "上次玩的时间",
+            "recent_word": "最近学习的字母或者单词:",
+            "mark_correct": "标记为正确的词.",
+            "noword_correct": "最近的词: -",
+            "no_fav_word": "最喜欢的词: –",
+            "maybe_fav_word": "最喜欢的字母或者单词:",
+            "spelling": "拼出来的词",
+            "played": "练习过",
+            "times": "次",
+            "this_week": "这一周",
+            "30days": "30天",
+            "1year": "一年",
+            "all_time": "总计"
+        }
+    },
+    "curriculum": {
+        "description": {
+            "text": "添加任何您喜欢的单词到自己的个性化的 Square Panda单词库！在我们的数据库里有4000到4500个英语单词，可以确保宝宝喜欢的单词都可以出现在所有的游戏中！例如:",
+            "child_firstname": "您孩子的英文名字",
+            "family_pet": "家里的宠物",
+            "child_fav_food": "宝宝最喜欢的食物",
+            "upload_mom_dad_pic": "或将您自己的图片上传到MOM或DAD",
+            "option_limitless": "快动手吧！我们可以一起创造很多美妙的惊喜！",
+            "milestone_text": "在Square Panda，家长和老师可以制定个性化规则！由于家长和老师之间的思考方式， 教育理念和期望值可能会存在差异，所以我们把这个决定权留给您了！由您来决定宝宝的学习内容，决定他／她可以学习或者不能接触的单词范围。这也正如我们所策划的“敏感词汇”和更科学的“身体器官词汇”的列表，您可以决定是否屏蔽全部，或者选择性地屏蔽部分词汇，让它们不出现在所有的游戏中。",
+            "milestone_text_note": "注: Square Panda绝对不会显示一个不适当的单词给宝宝们学习。 然而，当宝宝探索字母组合时，他/她可能会不经意地发现成人使用的单词。 在这里您可以在孩子的游戏里方便灵活地禁止或解禁这些单词",
+            "milestone_text_note_head": "笔记:",
+            "wordsfilter_description":"下面的单词是从您的孩子的游戏中默认禁止的，但是在你选择并且保存后将会被解禁。"
+        },
+        "customword_headers": {
+            "word": "自定义单词",
+            "picture": "图片",
+            "actions": "操作",
+            "created_date": "创建日期"
+        },
+        "addword": "添加单词",
+        "export_csv": "导出 CSV文件",
+        "type_word": "添加单词至自定义单词列表",
+        "custom_word_list": "自定义单词列表",
+        "wordlabel": "单词",
+        "word": "单词",
+        "pronunciation": "发音",
+        "picture": "图片",
+        "add_custom_word": "添加自定义单词",
+        "nodata": "没有数据",
+        "custom_word": "自定义单词",
+        "group_word_list": "分组单词列表",
+        "parent_choice": "家长的选择-单词过滤器",
+        "anatomy": "身体器官词汇",
+        "bathroom": "敏感词汇",
+        "selectall": "选择全部",
+        "browse": "浏览",
+        "messages": {
+            "upload_fiveimages": "最多上传5个图片",
+            "upload_jpgimages": "支持格式.jpg, .jpeg , .png",
+            "file_selection_wrong": "请选择5MB或更小的图片.",
+            "image_sizelimit_exceeded": "文件太大，请选择2兆一下文件。",
+            "file_size_large": "文件太大，请上传低于2MB的图片.",
+            "error_file_upload": "上传出错.",
+            "word_update_msg": "单词已成功更新.",
+            "word_success_msg": "太好了，单词添加成功",
+            "word_name_require": "添加到自定义词汇表.",
+            "ban_word_name_require": "请输入要添加的单词.",
+            "curriculum_word_require": "输入词汇.",
+            "error_getting_custom_words": "获取自定义词时出错。",
+            "error_adding_custom_words": "添加自定义词出错.",
+            "error_getting_badwords": "获取组词出错.",
+            "error_updatinging_badwords": "更新组词出错。",
+            "error_group_words": "提交组词出错。",
+            "word_notexist_want_procced": "这是一个新词，您要继续吗？",
+            "maximum_words": "添加自定义单词已经到达上限",
+            "word_already_exist": "该单词已经存在。",
+            "word_exist_want_edit": "该单词已经存在。请尝试添加新单词!",
+            "word_notexist": "该单词不存在",
+            "word_exist": "该单词已经存在",
+            "model_delete_word": "您确定要删除该单词吗？",
+            "model_delete_word_image": "您确定要删除图片吗？",
+            "delete_success": "单词删除成功.",
+            "error_deleting_word": "删除自定义词时出错。",
+            "groupword_success_msg": "修改已保存.",
+            "exit_custom_word": "单词已经存在.",
+            "error_update_custom_word": "更新自定义单词时出错.",
+            "please_select_png_or_jpg_file_type": "请选择.png或.jpg或.jpeg文件类型。",
+            "file_size_too_large":"Upload image size is too large",
+            "invalid_file_format":"Invalid file format",
+            "allow_only_five_images":"Files selected should be in the range of 1 to 5",
+            "images_size_exceeded":"Selected images size exceeded 10MB"
+        }
+    },
+    "settings": {
+        "grownup_first_name": "家长姓氏",
+        "grownup_last_name": "家长名字",
+        "grownup_email": "家长邮箱",
+        "old_password": "旧密码",
+        "new_password": "新密码",
+        "confirm_new_password": "确认新密码",
+        "confirm_password": "重新输入密码",
+        "password": "密码",
+        "lost_letters": {
+            "header": "字母帮助",
+            "data": "如果在游戏的时候发现有字母遗失或者暂时找不到了，那么您可以通过售后电话或者微信客服联系我们补给或者购买字母；同时为了不影响游戏进程，那么以下的字母表可以帮助您，点击字母然后提交，那么这些字母在游戏中可以自动被识别，而不需要实体的字母积木，可以使游戏继续进行。",
+            "to_order": "订购",
+            "character_set": "字符设置",
+            "visit": "请访问",
+            "spanda_website": "www.squarepanda.com"
+        },
+        "notifications": {
+            "data": "如果您想了解孩子学习的最新动态以及掌握的知识要点，或者了解最新的app信息，或者相关的一些教育信息，请点击以下的信息通知，我们将以邮件形式推送给您：",
+            "player_updates": "玩家更新",
+            "player_updates_data": "当您的宝宝掌握了新的技能和获得徽章时，您会及时收到学习成就与进程。",
+            "panda_news": "SquarePanda新闻",
+            "panda_news_data": "及时获取SquarePanda发布的最新app信息",
+            "educational_feeds": "教育信息",
+            "educational_feeds_data": "推送与英语阅读相关的资讯来帮助你的宝宝做好阅读准备！"
+        },
+        "messages": {
+            "get_missing_letters_error": "获取缺少的字母信息出错。",
+            "update_nofifications_error_msg": "更新通知时发生错误。",
+            "update_missing_letters_error": "更新缺少的字母时出错。",
+            "get_nofifications_error_msg": "接收通知出错。",
+            "old_passwpord_wrong": "您的旧密码不正确。请再试一次！",
+            "error_change_password": "更改密码时出错",
+            "password_change_new_login": "密码已更改成功。",
+            "profile_edit_error": "编辑个人资料时出错。",
+            "profile_edit_success": "您的个人资料已更改成功。",
+            "first_name_require": "请输入您的（家长的）名字。",
+            "last_name_require": "请输入您的（家长的）姓氏。",
+            "password_strength": "请选择介于8到20个字符之间的密码。",
+            "no_specialchar_require": "不能包含任何特殊字符，且必须以字母开头",
+            "old_password_require": "请输入您的旧密码。",
+            "new_password_require": "请输入您的新密码。",
+            "cpassword_require": "请重新输入您的新密码。",
+            "password_mismatch": "请确保您的密码一致。",
+            "missing_letters_updated": "更改已保存。",
+            "nofifications_success_msg": "更改已保存。"
+        }
+    },
+    "privacy": {
+        "header": "儿童隐私政策",
+        "sub_header": "小方熊猫公司"
+    },
+    "terms_conditions": {
+        "header": "服务条款"
+    }
+}

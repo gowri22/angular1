@@ -1,0 +1,65 @@
+<!-- ***************************************************************************
+* Copyright (c) 2017 Square Panda Inc.                                         *
+* All Rights Reserved.                                                         *
+* Dissemination, use, or reproduction of this material is strictly forbidden   *
+* unless prior written permission is obtained from Square Panda Inc.           *
+**************************************************************************** -->
+<div class="footer" ng-class="{'footer-fixed': !isFooterFix}" data-ng-if="$root.ajaxProgress === 0">
+    <!-- CN Footer template -->
+    <div class="container footer-container">
+        <ul class="footer-left" data-ng-if="ENV.language === 'en'">
+            <li><a target="_blank" href="https://support.squarepanda.com" data-translate="nav.footer.support">Support</a></li>
+            <!--<li><a target="_blank" href="https://squarepanda.com/pages/support" data-translate="nav.footer.support">Support</a></li>-->
+            <li><a target="_blank" href="http://squarepanda.com/pages/press" data-translate="nav.footer.press">Press</a></li>
+            <li><a ui-sref="page.warrantyinfo" data-translate="nav.footer.warranty_info">Warranty Information</a></li>
+            <li><a ui-sref="page.terms-services" data-translate="nav.footer.terms_service">Terms of Service</a></li>
+            <li><a  target="_blank" href="https://squarepanda.com/pages/privacy-policy-1" data-translate="nav.footer.website_privacy_policy">Website Privacy Policy</a></li>
+            <li><a ui-sref="page.privacy-policy" data-translate="nav.footer.childrens_privacy_policy" class="highlight">Children's Privacy Policy</a></li>
+        </ul>  
+        <ul class="footer-left" data-ng-if="ENV.language === 'cn'">
+                <li><a target="_blank" href="http://www.squarepanda.cn" data-translate="nav.footer.official_site">官网</a></li> 
+                <li><a target="_blank" href="http://support.squarepanda.com" data-translate="nav.footer.service_support">服务于支持</a></li> 
+                <li><a ui-sref="page.terms-services" data-translate="nav.footer.terms_service" href="#/page/terms-services">服务条款</a></li>
+                <li><a ui-sref="page.privacy-policy" data-translate="nav.footer.privacy_policy" class="highlight" href="#/page/privacy-policy">隐私政策</a></li>
+            </ul>
+      <ul class="footer-right">
+            <li>
+                <div class="copy-right">
+                    <div>Copyright © 2017 Square Panda Inc.</div>
+                    <div>All rights reserved</div>
+                </div>
+            </li>
+            <li>
+                <div id="vs_seal"></div>
+                <script type="text/javascript">
+                    r(function() {
+                        var div = document.getElementById('vs_seal');
+                        writebackup = document.write;
+                        document.write = function(markup) {
+                            div.innerHTML = markup;
+                            document.write = writebackup;
+                        }
+                        var script= document.createElement('script');
+                        script.type= 'text/javascript';
+                        var domain = document.domain;
+                        script.src= 'https://seal.geotrust.com/getgeotrustsslseal?host_name='+ domain +'&amp;size=S&amp;lang=en';
+                        document.body.appendChild(script);  
+                        });
+                        function r(f){/in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
+                </script>           
+                <a href="http://www.geotrust.com/ssl/" target="_blank"  style="color:#000000; text-decoration:none; font:bold 7px verdana,sans-serif; letter-spacing:.5px; text-align:center; margin:0px; padding:0px;"></a>
+            </li>
+            <li>
+                <a href="http://www.squarepanda.cn" class="clearfix" target="_blank" data-ng-if="ENV.language === 'cn'">
+                    <img src="assets/images/footer-logo.png" class="non-retina imgmargin" />
+                    <img src="assets/images/footer-logo@2x.png" class="retina-display imgmargin" width="88" />
+                </a>
+               <a href="http://squarepanda.com" class="clearfix" target="_blank" data-ng-if="ENV.language === 'en'">
+                    <img src="assets/images/footer-logo.png" class="non-retina imgmargin" />
+                    <img src="assets/images/footer-logo@2x.png" class="retina-display imgmargin" width="88" />
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div data-ng-include=" 'layout/footer-links.html' " data-ng-if="!globals.currentUser"></div>
+</div>

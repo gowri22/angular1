@@ -1,0 +1,179 @@
+/********************************************************************************
+* Copyright (c) 2017 Square Panda Inc.                                          *
+* All Rights Reserved.                                                          *
+* Dissemination, use, or reproduction of this material is strictly forbidden    *
+* unless prior written permission is obtained from Square Panda Inc.            *
+*********************************************************************************/
+.warrenty-container {
+    margin-bottom: 50px;
+    .warranty-header {
+        font-size: 28px;
+        text-align: center;
+    }
+    .warranty-semiheader {
+        margin-top: 3px;
+        margin-bottom: 20px;
+    }
+    p.p-font {
+        line-height: 21px;
+        color: #676767;
+        margin-top: -3px;
+        margin-bottom: 30px;
+    }
+}
+
+.child-privacy-heading {
+    font-family: AvertaStd-Semibold;
+    font-size: 28px;
+    line-height: 23px;
+    color: #676767;
+    margin-bottom: 4px;
+    margin-top: 20px;
+}
+
+.child-privacy-semi-heading {
+    font-family: AvertaStd-Regular;
+    margin-top: 14px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    color: #888383;
+}
+
+.privacy-conatiner {
+    margin-top: 25px;
+    margin-bottom: 50px;
+    p.p-font {
+        font-family: AvertaStd-Regular;
+        line-height: 20px;
+        margin-bottom: 26px;
+        color: #676767;
+    }
+    .privacy-data-heading {
+        font-family: AvertaStd-Bold;
+        font-size: 18px;
+        color: #676767;
+    }
+    .privacy-data-sub-heading {
+        color: #f26383;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-family: AvertaStd-Semibold
+    }
+    ul {
+        li {
+            margin-bottom: 10px;
+            margin-top: 10px;
+            line-height: 12px;
+            color: #676767;
+        }
+    }
+    .privacy-address {
+        margin-top: 20px;
+        list-style-type: none;
+        font-family: AvertaStd-Semibold;
+        color: #676767;
+    }
+    .privacy-data-sub-heading-one {
+        margin-top: 10px;
+        font-family: AvertaStd-Regular;
+        color: #676767;
+    }
+    .privacy-data-sub-heading-two {
+        margin-top: 15px;
+        margin-bottom: 10px;
+        font-family: AvertaStd-Semibold;
+        color: #676767;
+    }
+    .privacy-data-sub-heading-four {
+        margin-top: 26px;
+        font-family: AvertaStd-Regular;
+        color: #676767;
+        margin-bottom: 10px;
+    }
+}
+
+.termservice-heading {
+    margin-bottom: 15px;
+    font-family: AvertaStd-Semibold;
+    color: #676767;
+    font-size: 28px;
+}
+
+.termservice-container {
+    margin-bottom: 50px;
+    margin-top: 25px;
+    p.p-font {
+        font-family: AvertaStd-Regular;
+        line-height: 20px;
+        margin-bottom: 26px;
+        color: #676767;
+    }
+    .terms-sub-heading {
+        font-family: AvertaStd-Semibold;
+        line-height: 20px;
+        margin-bottom: 13px;
+        color: #676767;
+        font-size: 18px;
+    }
+    .terms-sub-heading-one {
+        font-family: AvertaStd-Regular;
+        line-height: 18px;
+        margin-bottom: 13px;
+        color: #676767;
+    }
+    .purchase-li {
+        margin-bottom: 26px;
+        li {
+            line-height: 18px;
+            list-style-type: lower-roman;
+            font-family: AvertaStd-Regular;
+            color: #676767;
+        }
+    }
+    .terms-sub-heading-two {
+        font-family: AvertaStd-Semibold;
+        margin-bottom: 13px;
+        color: #676767;
+    }
+    .terms-sub-heading-three {
+        color: #f26383;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-family: AvertaStd-Semibold;
+        font-size: 18px;
+    }
+    ul li {
+        line-height: 18px;
+        font-family: AvertaStd-Regular;
+        color: #676767;
+    }
+    .terms-address {
+        margin-top: 16px;
+        li {
+            list-style-type: none;
+            font-family: AvertaStd-Bold;
+            color: #676767;
+        }
+    }
+    .terms-data-sub-heading-four {
+        margin-top: 26px;
+        font-family: AvertaStd-Regular;
+        color: #676767;
+        margin-bottom: 10px;
+    }
+    .disclimer-para {
+        font-family: AvertaStd-Regular;
+        line-height: 20px;
+        margin-bottom: 10px !important;
+        color: #676767;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .static-container-minheight {
+        min-height: 500px;
+    }
+    .static-container-minheight-300 {
+        min-height: 300px;
+    }
+}

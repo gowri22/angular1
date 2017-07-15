@@ -1,0 +1,63 @@
+# This is a sample build configuration for Javascript (Node.js).
+# Check our guides at https://confluence.atlassian.com/x/14UWN for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: danggrianto/docker-node-compass
+pipelines:
+  custom:
+   prod_release:
+    - step:
+        script: # Modify the commands below to build your repository.
+          - npm install 
+          - bower install -F --allow-root
+          - grunt build:prod
+          - export FILENAME=$(ls builds/)
+          - echo $FILENAME
+          - cd builds && tar -czf $FILENAME.tar.gz $FILENAME 
+          - ssh build@buildstore.squarepanda.com mkdir -p build/sp-parent-portal/${BITBUCKET_COMMIT}
+          - scp $FILENAME.tar.gz  build@buildstore.squarepanda.com:build/sp-parent-portal/${BITBUCKET_COMMIT}
+   qa_release:
+    - step:
+        script: # Modify the commands below to build your repository.
+          - npm install 
+          - bower install -F --allow-root
+          - grunt build:qa
+          - export FILENAME=$(ls builds/)
+          - echo $FILENAME
+          - cd builds && tar -czf $FILENAME.tar.gz $FILENAME 
+          - ssh build@buildstore.squarepanda.com mkdir -p build/sp-parent-portal/${BITBUCKET_COMMIT}
+          - scp $FILENAME.tar.gz  build@buildstore.squarepanda.com:build/sp-parent-portal/${BITBUCKET_COMMIT}
+   dev_release:
+    - step:
+        script: # Modify the commands below to build your repository.
+          - npm install 
+          - bower install -F --allow-root
+          - grunt build:dev
+          - export FILENAME=$(ls builds/)
+          - echo $FILENAME
+          - cd builds && tar -czf $FILENAME.tar.gz $FILENAME 
+          - ssh build@buildstore.squarepanda.com mkdir -p build/sp-parent-portal/${BITBUCKET_COMMIT}
+          - scp $FILENAME.tar.gz  build@buildstore.squarepanda.com:build/sp-parent-portal/${BITBUCKET_COMMIT}
+   devCn_release:
+    - step:
+        script: # Modify the commands below to build your repository.
+          - npm install 
+          - bower install -F --allow-root
+          - grunt build:devCn
+          - export FILENAME=$(ls builds/)
+          - echo $FILENAME
+          - cd builds && tar -czf $FILENAME.tar.gz $FILENAME 
+          - ssh build@buildstore.squarepanda.com mkdir -p build/sp-parent-portal/${BITBUCKET_COMMIT}
+          - scp $FILENAME.tar.gz  build@buildstore.squarepanda.com:build/sp-parent-portal/${BITBUCKET_COMMIT}
+   qaCn_release:
+    - step:
+        script: # Modify the commands below to build your repository.
+          - npm install 
+          - bower install -F --allow-root
+          - grunt build:qaCn
+          - export FILENAME=$(ls builds/)
+          - echo $FILENAME
+          - cd builds && tar -czf $FILENAME.tar.gz $FILENAME 
+          - ssh build@buildstore.squarepanda.com mkdir -p build/sp-parent-portal/${BITBUCKET_COMMIT}
+          - scp $FILENAME.tar.gz  build@buildstore.squarepanda.com:build/sp-parent-portal/${BITBUCKET_COMMIT}

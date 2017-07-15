@@ -1,0 +1,35 @@
+<!-- ***************************************************************************
+* Copyright (c) 2017 Square Panda Inc.                                         *
+* All Rights Reserved.                                                         *
+* Dissemination, use, or reproduction of this material is strictly forbidden   *
+* unless prior written permission is obtained from Square Panda Inc.           *
+**************************************************************************** -->
+<div class="sp-confirm-modal">
+    <div class='modal-header' data-ng-if="modalTitle">
+        <h3 class='modal-title text-center' ng-if="clickedOnReadmore">{{modalTitle}}</h3>
+        <h3 class='modal-title text-center' ng-if="!clickedOnReadmore" data-translate="common.what_happento_data">What happens to the data?</h3>
+    </div>
+    <div class='modal-body'>
+        <div ng-if="clickedOnReadmore">
+            <p data-translate="player.messages.delete_player_body1"></p>
+            <br/>
+            <p>
+                <span data-translate="player.messages.delete_player_body2"></span>
+                <a href="" ng-click="readMore()" class="delelte-payer-link" data-translate="player.messages.delete_player_body3"></a>
+            </p>
+        </div>
+        <div ng-if="!clickedOnReadmore">
+            <p data-translate="player.messages.delete_player_body4">When you delete a player, we permanently delete any and all player identifiers from Square Panda servers. This includes the player's name, birthday and picture.</p>
+            <p data-translate="player.messages.delete_player_body5"></p>
+            <p>
+                <span data-translate="player.messages.delete_player_body6">If you have additional questions, please contact </span>
+                <a data-translate="player.messages.delete_player_body7" href="mailto:support@squarepanda.com">support@squarepanda.com.</a>
+            </p>
+        </div>
+    </div>
+    <div class='modal-footer'>
+        <button class='btn btn-default sp-cancel-common-btn' data-ng-if="clickedOnReadmore" ng-click='cancel()' data-translate='common.buttons.cancel'>Cancel</button>
+        <button class='btn btn-default sp-purple-common-btn' data-ng-if="clickedOnReadmore" ng-click='ok()' data-translate='common.buttons.delete'>Delete</button>
+        <button class='btn btn-default sp-purple-common-btn' data-ng-if="!clickedOnReadmore" ng-click='readLess()' data-translate='common.buttons.back'>Back</button>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+/********************************************************************************
+* Copyright (c) 2017 Square Panda Inc.                                          *
+* All Rights Reserved.                                                          *
+* Dissemination, use, or reproduction of this material is strictly forbidden    *
+* unless prior written permission is obtained from Square Panda Inc.            *
+*********************************************************************************/
+$font-stack: Helvetica,
+sans-serif;
+$primary-color: #552f91;
+$sp-yellow: #f9a61a;
+$sp-green: #4cbc96;
+$sp-pink: #ee486f;
+$sp-purlple: #99669b;
+$white-color: #ffffff;
+$black-color: #000000;
+$account-bg-color: #f6f6f6;
+$bg-color: #7e49e9;
+$sp-gray: #a5a5a5;
+
+@font-face {
+    font-family: 'SquarePanda';
+    src: url('../webfonts/SquarePanda.eot?#iefix') format('embedded-opentype'), url('../webfonts/SquarePanda.otf') format('opentype'), url('../webfonts/SquarePanda.woff') format('woff'), url('../webfonts/SquarePanda.ttf') format('truetype'), url('../webfonts/SquarePanda.svg#SquarePanda') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AvertaStd-Regular';
+    src: url('../webfonts/AvertaStd-Regular.eot?#iefix') format('embedded-opentype'), url('../webfonts/AvertaStd-Regular.otf') format('opentype'), url('../webfonts/AvertaStd-Regular.woff') format('woff'), url('../webfonts/AvertaStd-Regular.ttf') format('truetype'), url('../webfonts/AvertaStd-Regular.svg#AvertaStd-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AvertaStd-Bold';
+    src: url('../webfonts/AvertaStd-Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AvertaStd-Thin';
+    src: url('../webfonts/AvertaStd-Thin.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AvertaStd-Extrathin';
+    src: url('../webfonts/AvertaStd-Extrathin.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AvertaStd-Semibold';
+    src: url('../webfonts/AvertaStd-Semibold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Averta-Light';
+    src: url('../webfonts/Averta-Light.ttf') format('truetype'), url('../webfonts/Averta-Light.eot?#iefix') format('embedded-opentype'), url('../webfonts/Averta-Light.svg#Averta-Light') format('svg'), url('../webfonts/Averta-Light.html') format('html'), url('../webfonts/Averta-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

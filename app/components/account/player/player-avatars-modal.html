@@ -1,0 +1,28 @@
+<!-- ***************************************************************************
+* Copyright (c) 2017 Square Panda Inc.                                         *
+* All Rights Reserved.                                                         *
+* Dissemination, use, or reproduction of this material is strictly forbidden   *
+* unless prior written permission is obtained from Square Panda Inc.           *
+**************************************************************************** -->
+<div class="sp-avatars-modal">
+    <div class='modal-header sp-common-panel-header' data-translate="player.choose_avatar">
+        Choose Avatar
+    </div>
+    <div class='modal-body clearfix'>
+        <div class="avatars-items">
+            <div class="item" data-ng-repeat="item in avatarsList" data-ng-click="selectAvatar(item, $index)">
+                <img data-ng-src="{{item.assetURL}}" class="non-retina" width="50" height="50" ng-class="{active: isAvatarClicked($index)}" image-load-complete-evt>
+                <img data-ng-src="{{item['2x']}}" class="retina-display" width="50" height="50" ng-class="{active: isAvatarClicked($index)}" image-load-complete-evt>
+                <span class="item-loader">
+              <img src="assets/images/img-loader.gif" width="20" height="20"/>
+          </span>
+            </div>
+        </div>
+    </div>
+    <div class='modal-footer'>
+        <button class='btn btn-default sp-cancel-btn' ng-click='onCancel()' data-translate="common.buttons.cancel">Cancel
+    </button>
+        <button class='btn btn-default btn-primary' ng-click='onSubmit()' data-translate="common.buttons.select">Select
+    </button>
+    </div>
+</div>

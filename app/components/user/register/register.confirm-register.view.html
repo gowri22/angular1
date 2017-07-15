@@ -1,0 +1,33 @@
+<!-- ***************************************************************************
+* Copyright (c) 2017 Square Panda Inc.                                         *
+* All Rights Reserved.                                                         *
+* Dissemination, use, or reproduction of this material is strictly forbidden   *
+* unless prior written permission is obtained from Square Panda Inc.           *
+**************************************************************************** -->
+<div class="messages-container content-min-height">
+    <div class="container">
+        <div class="col-md-2"></div>
+        <div class=" col-md-8">
+            <div class="panel panel-default messages-panel">
+                <div class="panel-body">
+                    <div data-ng-if=" confirmRegister.message === 'success' ">
+                        <p data-translate="user.register.messages.register_success_mes"> Thank you for creating a Square Panda account. </p>
+                        <p data-translate="user.register.messages.email_activation_message">You’re all set to jump into Square Panda's world of reading readiness.</p>
+                        <p data-translate="user.register.messages.security_message">For security reasons, you'll be prompted to log in again with your email and password.</p>
+                    </div>
+                    <div data-ng-if=" confirmRegister.message === 'error' ">
+                        <p data-translate="user.register.messages.user_verified_already">Your account has already been activated.</p>
+                        <p data-translate="user.register.messages.email_activation_message">You’re all set to jump into Square Panda's world of reading readiness.</p>
+                        <p data-translate="user.register.messages.security_message">For security reasons, you'll be prompted to log in again with your email and password.</p>
+                    </div>
+                    <div data-ng-if="confirmRegister.message === 'error_expired' ">
+                        <p data-translate="user.register.messages.verificationlink_expire">Sorry, your verification period has expired. Please create your account again and you'll be sent another verification email.</p>
+                    </div>
+
+                </div>
+            </div>
+            <button ui-sref="login" class="btn sp-pur-btn center-block" data-translate="common.return_login">Return to logn In</button>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>

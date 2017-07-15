@@ -1,0 +1,19 @@
+<!-- ***************************************************************************
+* Copyright (c) 2017 Square Panda Inc.                                         *
+* All Rights Reserved.                                                         *
+* Dissemination, use, or reproduction of this material is strictly forbidden   *
+* unless prior written permission is obtained from Square Panda Inc.           *
+**************************************************************************** -->
+<div class="sp-confirm-modal">
+    <div class='modal-header' data-ng-if="modalTitle">
+        <h3 class='modal-title'>{{modalTitle}}</h3>
+    </div>
+    <div class='modal-body'>
+        {{modalBody}}
+    </div>
+    <div class='modal-footer'>
+        <button class='btn btn-default sp-cancel-common-btn' ng-click='cancel()' data-translate='common.buttons.no' data-ng-if="modalType !== 'Error'">No</button>
+        <button class='btn btn-default sp-purple-common-btn' ng-click='ok()' data-translate='common.buttons.yes' data-ng-if="modalType !== 'Error'">Yes</button>
+        <button class='btn btn-default sp-purple-common-btn' ng-click='close()' data-translate='common.buttons.close' data-ng-if="modalType === 'Error'">Close</button>
+    </div>
+</div>

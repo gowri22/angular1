@@ -1,0 +1,153 @@
+<!-- ***************************************************************************
+* Copyright (c) 2017 Square Panda Inc.                                         *
+* All Rights Reserved.                                                         *
+* Dissemination, use, or reproduction of this material is strictly forbidden   *
+* unless prior written permission is obtained from Square Panda Inc.           *
+**************************************************************************** -->
+<div class="col-lg-2"></div>
+<div class="container container-min-height addpalyer-container">
+
+    <div set-class-when-at-top="fix-to-top container row">
+        <toaster-container class="custom-toaster-conatiner" toaster-options="{'position-class': 'toast-top-center', 'close-button':true}"></toaster-container>
+    </div>
+
+    <div class="panel">
+        <div class="panel-heading sp-common-panel-header text-center">
+            <span data-translate="nav.add_player.header" data-ng-if="!playerAction.isUpdate">Add Player</span>
+            <span data-translate="nav.edit_player.header" data-ng-if="playerAction.isUpdate">Edit Profile</span>
+        </div>
+        <div class="text-center players-count" data-ng-if="!playerAction.isUpdate && ENV.language === 'en'">
+            <span data-translate="player.playercount.playercount_description_one">You have</span> <h3 class="display-inline"><b>{{availableplayers}}</b></h3> <span data-translate="player.playercount.playercount_description_two">out of</span> <h3 class="display-inline"><b>{{playerLimit}}</b></h3> <span data-translate="player.playercount.student_profiles">student profiles available.</span>
+        </div>
+        <div class="text-center players-count" data-ng-if="!playerAction.isUpdate && ENV.language === 'cn'">
+            <span data-translate="player.playercount.playercount_description_one">您还能创建</span><h3 class="display-inline"><b>{{availableplayers}}</b></h3><span data-translate="player.playercount.playercount_description_two">个玩家</span>
+        </div>
+        <div class="panel-body">
+            <form name="playerForm" ng-submit="playerAction.submitForm(playerForm)" novalidate>
+                <div class="form-horizontal">
+
+                    <div class="form-group" ng-class="{ 'has-error' : (submitted && !playerForm.firstName) || (playerForm.firstName.$invalid && !playerForm.firstName.$pristine) }">
+                        <div class="col-md-3"></div>
+                        <label class="col-md-1 col-sm-2 control-label player-label" data-translate="player.first_name_label">First
+              Name</label>
+
+                        <div class="col-md-5">
+                            <input type="text" name="firstName" class="form-control" data-ng-model="playerAction.model.playerItem.firstName" placeholder="{{ 'player.first_name' | translate }}" required autocomplete="off" title="{{playerAction.model.playerItem.firstName}}">
+
+                            <div ng-show="playerForm.$submitted && playerForm.firstName.$error.required" class="error-mesasage">
+                                <i class="fa fa-exclamation-circle"></i>
+                                <span data-translate="player.messages.first_name_require">First Name is required.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <div class="col-md-3"></div>
+                        <label class="col-md-1  control-label player-label" data-translate="player.dob">Date of Birth</label>
+
+                        <div class="col-md-5">
+                            <dob birth-date="playerAction.model.playerItem.dateofBirth" player-obj='playerAction'></dob>
+                            <div ng-if="playerForm.$submitted && !playerAction.IsFutureDate" class="error-mesasage" data-translate="player.messages.futuredate_notallowed">Future dates are not allowed, Please select correct date.
+                            </div>
+                            <div ng-if="playerForm.$submitted && playerAction.IsFutureDate && playerAction.dobInvalid" class="error-mesasage" data-translate="player.messages.dob_notvalid">Date of birth is not valid.
+                            </div>
+                            <div ng-if="playerForm.$submitted && playerAction.dobNull" class="error-mesasage" data-translate="player.messages.dob_notnull">Date of birth is mandatory.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group gender-align">
+                        <div class="col-md-3"></div>
+                        <label class="col-md-1 col-sm-2 control-label player-label" data-translate="player.gender">Gender :</label>
+
+                        <div class="col-md-5">
+
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2">
+                                    <label class="radio-inline radio-label-sizes"><input type="radio" name="gender" value="F"
+                                                                       data-ng-model="playerAction.model.playerItem.gender"
+                                                                       class="radio-button-sizes"/><span
+                    data-translate="player.girl">Girl</span></label>
+                                </div>
+                                <div class="col-md-2 col-sm-2">
+                                    <label class="radio-inline radio-label-sizes"><input type="radio" name="gender" value="M"
+                                                                       data-ng-model="playerAction.model.playerItem.gender"
+                                                                       class="radio-button-sizes"/><span
+                    data-translate="player.boy">Boy</span></label>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <label class="radio-inline"><input type="radio" name="gender" value="O"
+                                                     data-ng-model="playerAction.model.playerItem.gender"
+                                                     class="radio-button-sizes"/><span
+                    data-translate="player.not_prefer">Prefer not to answer</span></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-3 "></div>
+                        <label class="col-md-1 col-sm-2 control-label add-profile-pic player-label" data-translate="player.add_picture">Add Picture</label>
+
+                        <div class="col-md-5 col-sm-8">
+
+                            <div class="avatar-container clearfix">
+                                <div class="avatar-seletion">
+
+                                    <img data-ng-src="{{playerAction.model.playerItem.imgbase64 || playerAction.model.playerItem.profileURL}}" width="117" height="117" data-ng-if="playerAction.model.playerItem.imgbase64 || playerAction.model.playerItem.profileURL" />
+                                    <img data-ng-if="!playerAction.model.playerItem.imgbase64 && !playerAction.model.playerItem.profileURL" src="assets/images/default-avatar@2x.png" width="117" height="117" class='retina-display' />
+                                    <img data-ng-if="!playerAction.model.playerItem.imgbase64 && !playerAction.model.playerItem.profileURL " src="assets/images/default-avatar.png" width="117" height="117" class='non-retina' />
+
+                                </div>
+                                <div class="avatar-actions">
+                                    <div class="browse-btn">
+                                        <input type="file" name="file" file-model="playerAction.myFile" class="img-rectangle img-border-radius " accept='image/*' onchange="angular.element(this).scope().photoChanged(this)" />
+                                        <button class='btn btn-default btn-primary' data-translate="player.buttons.upload_picture">
+                      Upload your own picture
+                    </button>
+                                    </div>
+
+
+                                    <div class="orText">
+                                        <span>
+                        <span data-translate="player.or">Or,</span>
+                                        <a href="javascript:;" data-translate="player.buttons.choose_avatar" data-ng-click="playerAction.showAvatars()">Choose a generic avatar</a>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div ng-show="!playerAction.fileError" class="error-mesasage clearfix">
+                                <i class="fa fa-exclamation-circle"></i>
+                                <span data-translate="player.messages.file_type_wrong"> File Type is wrong. Only allows images. </span>
+                            </div>
+                            <div ng-show="playerAction.showSizeLimitError" class="error-mesasage clearfix">
+                                <i class="fa fa-exclamation-circle"></i>
+                                <span data-translate="common.messages.file_selection_wrong"> Please select image with 5MB or Lesser size </span>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-3 "></div>
+                        <div class="col-md-1 col-sm-2 player-label"></div>
+                        <div class="col-md-5 col-sm-5 save-cancel-parent">
+                            <button type="submit" class="btn btn-primary player-button-padding save-cancel-player" data-translate="common.buttons.save"> Save
+                            </button>
+
+                            <a ui-sref="account.players.details({ id: playerAction.model.playerItem.id })" type="button" class="btn btn-secondary cancel-button save-cancel-player" data-translate="common.buttons.cancel">Cancel</a>
+
+                            <a class="pull-right player-delete-button btn-primary" data-ng-click="playerAction.deleteListener(playerAction.model.playerItem)" data-ng-if="playerAction.isUpdate" title="Delete Player">
+                                <i class="fa fa-trash-o"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

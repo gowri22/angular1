@@ -1,0 +1,9 @@
+/node_modules
+/builds
+/build
+/.tmp
+/.sass-cache
+/app/assets/libs
+.idea/
+/app/common/env-config.js
+/test

@@ -1,0 +1,33 @@
+<!-- ***************************************************************************
+* Copyright (c) 2017 Square Panda Inc.                                         *
+* All Rights Reserved.                                                         *
+* Dissemination, use, or reproduction of this material is strictly forbidden   *
+* unless prior written permission is obtained from Square Panda Inc.           *
+**************************************************************************** -->
+<div class="container container-min-height players-container">
+    <div set-class-when-at-top="fix-to-top container row">
+        <toaster-container class="custom-toaster-conatiner" toaster-options="{'position-class': 'toast-top-center', 'close-button':true}"></toaster-container>
+    </div>
+    <div class="players-panel" data-ng-if="player.data.playersList.length > 0">
+        <div data-ng-include=" 'components/account/player/players-list.html' "></div>
+        <div ui-view></div>
+    </div>
+    <div class="col-md-2"></div>
+    <div class="noplayer-container col-md-8" data-ng-if="!player.data.playersList.length > 0">
+        <div>
+            <h4 class="center-align" data-translate="player.no_players">You don't have any players added.Start adding now..</h4>
+            <div class="center-align margin-top20">
+                <a class="add-player-link non-retina" href="javascript:;" data-ng-click="player.addPlayer()" title="Add Player">
+                    <img src="assets/images/add-player-noplayers.png" width="81" />
+                    <span data-translate="player.add_player"> Add Player </span>
+                </a>
+                <a class="add-player-link retina-display" href="javascript:;" data-ng-click="player.addPlayer()" title="Add Player">
+                    <img src="assets/images/add-player-noplayers@2x.png" width="81" title="Add Player" />
+
+                    <span data-translate="player.add_player"> Add Player </span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>

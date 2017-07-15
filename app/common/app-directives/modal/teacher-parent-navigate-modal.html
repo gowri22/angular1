@@ -1,0 +1,22 @@
+<!-- ***************************************************************************
+* Copyright (c) 2017 Square Panda Inc.                                         *
+* All Rights Reserved.                                                         *
+* Dissemination, use, or reproduction of this material is strictly forbidden   *
+* unless prior written permission is obtained from Square Panda Inc.           *
+**************************************************************************** -->
+<div class="sp-confirm-modal">
+    <div class='modal-body p-l-50'>
+        
+        <p><div><b data-translate="teacher_navigation.classroom_edition">Classroom Edition or Panda Pass user?</b></div>
+            <a ng-if="ENV.name==='development'" href="https://teacher-dev.squarepanda.com/" target="_blank" class="text-decoration" data-translate="teacher_navigation.goto_teacher">Go to the Teacher Playground!</a>
+            <a ng-if="ENV.name==='qa'" href="https://teacher-qa.squarepanda.com/" target="_blank" class="text-decoration" data-translate="teacher_navigation.goto_teacher">Go to the Teacher Playground!</a>
+            <a ng-if="ENV.name==='prod'" href="https://teacher.squarepanda.com/" target="_blank" class="text-decoration" data-translate="teacher_navigation.goto_teacher">Go to the Teacher Playground!</a>             
+        </p>
+        <p>
+        <div><b data-translate="teacher_navigation.upgrade_classroom_edition">Need to upgrade to the Classroom Edition?</b></div>
+        <a href="https://squarepanda.com/collections/shop-collection/products/panda-pass-annual-subscription" target="_blank" class="text-decoration" data-translate="teacher_navigation.upgrade_teacher_pandapass">Upgrade to a Teacher Account with a Panda Pass!</a></p>
+    </div>
+    <div class='modal-footer'>
+        <button class='btn btn-default sp-purple-common-btn' ng-click='close()' data-translate='common.buttons.close'>Close</button>
+    </div>
+</div>

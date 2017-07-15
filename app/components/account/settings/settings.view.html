@@ -1,0 +1,274 @@
+<!-- ***************************************************************************
+* Copyright (c) 2017 Square Panda Inc.                                         *
+* All Rights Reserved.                                                         *
+* Dissemination, use, or reproduction of this material is strictly forbidden   *
+* unless prior written permission is obtained from Square Panda Inc.           *
+**************************************************************************** -->
+<div class="settings-container">
+    <div class="container container-min-height">
+        <div set-class-when-at-top="fix-to-top container row">
+            <toaster-container class="custom-toaster-conatiner" toaster-options="{'position-class': 'toast-top-center', 'close-button':true}"></toaster-container>
+        </div>
+
+        <div class="panel settiings-panel">
+            <div class="panel-heading sp-common-panel-header" data-ng-if="!settings.isEditClicked" data-translate="nav.header.profile">
+                Profile
+            </div>
+            <div class="panel-heading sp-common-panel-header" data-ng-if="settings.isEditClicked" data-translate="nav.header.edit_profile">
+                Edit Profile
+            </div>
+            <div class="panel-body settiings-panel-body editprofile-panel-padding">
+                <form name="settingsForm" ng-submit="settings.submitForm(settingsForm)" novalidate>
+                    <div class="form-horizontal">
+
+                        <div class="form-group">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-2 settings-label">
+                                <label class="control-label" data-translate="settings.grownup_first_name">Grown Up's First Name:</label>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" name="firstName" class="form-control" data-ng-model="settings.model.userData.firstName" placeholder="{{ 'settings.grownup_first_name' | translate }}" required ng-disabled="!settings.isEditClicked"
+                                    autocomplete="off" title="{{settings.model.userData.firstName}}">
+
+                                <div class="error-mesasage" ng-show="settingsForm.firstName.$error.required">
+                                    <i class="fa fa-exclamation-circle"></i>
+                                    <span data-translate="settings.messages.first_name_require">  Please enter your (grown-up's) first name. </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-2 settings-label">
+                                <label class="control-label " data-translate="settings.grownup_last_name">Grown Up's Last Name:</label>
+                            </div>
+
+                            <div class="col-md-3">
+                                <input type="text" name="lastName" class="form-control" data-ng-model="settings.model.userData.lastName" placeholder="{{ 'settings.grownup_last_name' | translate }}" required ng-disabled="!settings.isEditClicked"
+                                    autocomplete="off" title="{{settings.model.userData.lastName}}">
+
+                                <div class="error-mesasage" ng-show="settingsForm.lastName.$error.required">
+                                    <i class="fa fa-exclamation-circle"></i>
+                                    <span data-translate="settings.messages.last_name_require">Please enter your (grown-up's) last name.</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-2 settings-label">
+                                <label class="control-label" data-translate="settings.grownup_email">Grown Up's Emai:</label></div>
+
+                            <div class="col-md-3">
+                                <span class="settings-email-style">{{settings.model.userData.email}}</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-5"></div>
+
+                            <div class="col-md-6">
+                                <button class="btn btn-primary settings-edit-button edit-submit-btn" type="button" data-translate="common.buttons.edit" data-ng-click="settings.edit()" data-ng-if="!settings.isEditClicked"> Edit
+                                </button>
+                                <button class="btn btn-primary notification-submit-button submit-clear-all-padding" data-translate="common.buttons.save" data-ng-if="settings.isEditClicked" type="submit">Save
+                                </button>
+                                <button class="btn btn-secondary cancel-button submit-clear-all-padding" type="button" data-translate="common.buttons.cancel" data-ng-if="settings.isEditClicked" ng-click="settings.cancel()">Cancel
+                                </button>
+                            </div>
+                        </div>
+                </form>
+            </div>
+        </div>
+        <div class="panel settiings-panel">
+            <div class="panel-heading sp-common-panel-header" data-translate="nav.header.change_password"> Change Password
+            </div>
+            <div class="panel-body settiings-panel-body changepassword-panel-padding">
+                <form name="changepasswordForm" ng-submit="settings.submitchangepassword(changepasswordForm)" novalidate>
+                    <div class="form-horizontal">
+
+                        <div class="form-group">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-2 nopadding settings-label">
+                                <label class="control-label " data-translate="settings.old_password">Old
+                  password:</label>
+                            </div>
+
+                            <div class="col-md-3">
+                                <input type="password" class="form-control " name="oldPassword" ng-model="settings.model.passwordData.oldPassword" placeholder="{{ 'settings.old_password' | translate }}" required>
+
+                                <div class="error-mesasage" ng-show="changepasswordForm.$submitted && changepasswordForm.oldPassword.$error.required">
+                                    <i class="fa fa-exclamation-circle"></i>
+                                    <span data-translate="settings.messages.old_password_require">Please enter old password.</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-2 nopadding settings-label">
+                                <label class=" control-label" data-translate="settings.new_password">New
+                  Password:</label>
+                            </div>
+                            <div class="col-md-3">
+
+                                <input type="password" class="form-control " name="password" ng-model="settings.model.passwordData.password" pattern="[A-Za-z0-9\W]{8,20}" placeholder="{{ 'settings.password' | translate }}" required>
+
+                                <div class="error-mesasage" ng-show="changepasswordForm.$submitted && changepasswordForm.password.$error.required">
+                                    <i class="fa fa-exclamation-circle"></i>
+                                    <span data-translate="settings.messages.new_password_require">Please enter new password.</span>
+                                </div>
+
+                                <div class="error-mesasage" ng-show='changepasswordForm.password.$error.pattern && changepasswordForm.password.$dirty'>
+                                    <i class="fa fa-exclamation-circle"></i>
+                                    <span data-translate="settings.messages.password_strength">Password must be between 8 and 20 characters.</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-2 nopadding settings-label">
+                                <label class=" control-label" data-translate="settings.confirm_new_password">Confirm
+                  Newe Password:</label>
+                            </div>
+                            <div class="col-md-3">
+
+                                <input type="password" name="confirmPassword" data-ng-model="settings.model.passwordData.confirmPassword" placeholder="{{ 'settings.confirm_password' | translate }}" class="form-control" required>
+
+                                <div class="error-mesasage" ng-show="!changepasswordForm.confirmPassword.$error.required && settings.model.passwordData.password !== settings.model.passwordData.confirmPassword">
+                                    <i class="fa fa-exclamation-circle"></i>
+                                    <span data-translate="settings.messages.password_mismatch"> Please make sure, your new and retype password match.</span>
+                                </div>
+
+                                <div class="error-mesasage" ng-show="(changepasswordForm.$submitted && changepasswordForm.confirmPassword.$error.required )">
+                                    <i class="fa fa-exclamation-circle"></i>
+                                    <span data-translate="settings.messages.cpassword_require">Please retype new password.</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            <div class="col-md-5"></div>
+                            <div class="col-md-3">
+                                <button type="submit" class="btn btn-primary settings-submit-button edit-submit-btn" data-translate="common.buttons.submit">
+                                Submit
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="panel settiings-panel">
+            <div class="panel-heading sp-common-panel-header"><span data-translate="settings.lost_letters.header">Lost Letters</span>
+                <span>
+                ({{settings.selectedCount}})
+            </span>
+            </div>
+            <div class="panel-body settiings-panel-body">
+                <form name="notificationsForm" role="form" data-ng-submit="settings.updateMissingLetters()" novalidate>
+                    <p class="col-md-12 notification-text-missing-letters" data-translate="settings.lost_letters.data">
+                        Lost a letter? Let us know here and we'll exclude these letters from your games!
+                    </p>
+
+                    <div class="missing-letter-keyboard clearfix">
+                        <div class="clearfix mlk-margin">
+                            <div data-ng-repeat="item in settings.missingLetters_row_2" class="letters_set" data-ng-init="rowInd = $index">
+                                <div data-ng-repeat="letters in item" class="ml-letter" ng-class="{'active': settings.isMissilingLetterSelected(rowInd, $index, 1 ), 'vowel': settings.isLetterVowel(letters.letter)}" data-ng-click="settings.selectCharacter(rowInd, $index, 1)">
+                                    {{letters.letter}}
+                                </div>
+                                <div class="ml-letter no-visible" data-ng-if="item.length === 2">A</div>
+                            </div>
+                        </div>
+
+                        <div class="clearfix mlk-margin">
+                            <div data-ng-repeat="item in settings.missingLetters" data-ng-init="rowInd1 = $index" class="letters_set">
+                                <div data-ng-repeat="letters in item" class="ml-letter" ng-class="{'active': settings.isMissilingLetterSelected(rowInd1, $index, 2 ), 'vowel': settings.isLetterVowel(letters.letter)}" data-ng-click="settings.selectCharacter(rowInd1, $index, 2)">
+                                    {{letters.letter}}
+                                </div>
+                                <div class="ml-letter no-visible" data-ng-if="item.length === 2">A</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 margin-top20 center-align submit-clear-parent-div">
+                        <button class="btn btn-primary notification-submit-button submit-clear-all-padding" type="submit" data-translate="common.buttons.submit">SUBMIT
+            </button>
+                        <button class="btn btn-secondary cancel-button submit-clear-all-padding" type="button" data-translate="common.buttons.reset" data-ng-click="settings.clearAllAlphabets()">Reset
+            </button>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+
+        <div class="panel settiings-panel">
+            <div class="panel-heading sp-common-panel-header" data-translate="nav.notification.notifications">Notifications
+            </div>
+            <div class="panel-body settiings-panel-body">
+                <form name="notificationsForm" role="form" data-ng-submit="settings.submitNotifications(notificationsForm)" novalidate>
+
+                    <p class="notfication-updates-text  notification-text-missing-letters col-md-12 text-left" data-translate="settings.notifications.data">
+                        Stay up to date on your child's latest accomplishments, learn new reading readiness tips, and be the first to know about new releases of Square Panda learning apps! Tap on any of the activity notifications to receive email updates.
+                    </p>
+
+
+                    <!--<div class="col-md-4  clearfix">-->
+                    <!--<div class="checkbox checkbox-class">-->
+                    <!--<label>-->
+                    <!--<input type="checkbox" class="settings-custom-checkbox"-->
+                    <!--data-ng-model="settings.model.notificationObj.player_updates">-->
+                    <!--<span data-translate="settings.notifications.player_updates">Player Updates</span>-->
+                    <!--</label>-->
+                    <!--</div>-->
+                    <!--<p class="notification-checkbox-text" data-translate="settings.notifications.player_updates_data">-->
+                    <!--As your child discovers new skills and earns badges you'll receive a realtime update of their activity and-->
+                    <!--progress.-->
+                    <!--</p>-->
+                    <!--</div>-->
+
+                    <div class="col-md-6  clearfix">
+                        <div class="checkbox checkbox-class">
+                            <label>
+                <input type="checkbox" class="settings-custom-checkbox"
+                       data-ng-model="settings.model.notificationObj.sp_updates"/>
+                <span data-translate="settings.notifications.panda_news">Square Panda News</span>
+              </label>
+                        </div>
+                        <p class="notification-checkbox-text" data-translate="settings.notifications.panda_news_data">
+                            Be the first to know about the newest Square Panda learning apps (and get special offers too!)
+                        </p>
+                    </div>
+
+                    <div class="col-md-6  clearfix">
+                        <div class="checkbox checkbox-class">
+                            <label>
+                <input type="checkbox" class="settings-custom-checkbox"
+                       data-ng-model="settings.model.notificationObj.educational_updates">
+                <span data-translate="settings.notifications.educational_feeds">Educational News Feed</span>
+              </label>
+                        </div>
+                        <p class="notification-checkbox-text" data-translate="settings.notifications.educational_feeds_data">
+                            Amplify learning with reading readiness tips and the latest research, articles and videos to help your child be reading ready!
+                        </p>
+                    </div>
+
+
+                    <div class="col-md-12 margin-top20">
+                        <button class="btn btn-primary notification-submit-button center-block" type="submit" data-translate="common.buttons.submit">SUBMIT
+            </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

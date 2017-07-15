@@ -1,0 +1,148 @@
+/********************************************************************************
+* Copyright (c) 2017 Square Panda Inc.                                          *
+* All Rights Reserved.                                                          *
+* Dissemination, use, or reproduction of this material is strictly forbidden    *
+* unless prior written permission is obtained from Square Panda Inc.            *
+*********************************************************************************/
+#account-nav-wrapper {
+    background: #4CBC96;
+    display: none;
+    overflow: auto;
+    border-top: solid 1px #f6f6f6;
+}
+
+#page-content-wrapper {
+    width: 100%;
+}
+
+nav {
+    width: 100%;
+    background: #4CBC96;
+    border-right: none;
+}
+
+nav .account-nav {
+    @extend .reset-padding-margin;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    li {
+        list-style: none;
+        a {
+            color: #fff;
+            display: block;
+            float: left;
+            text-decoration: none;
+            padding: 0 9px;
+            list-style: none;
+            width: 25%;
+            text-align: center;
+            font-size: 15px;
+            border-right: solid 1px #f6f6f6;
+            line-height: 36px;
+        }
+        .nav-border-left {
+            border-left: solid 1px #f6f6f6;
+        }
+        a:hover,
+        .active {
+            text-decoration: none;
+            background: darken(#4CBC96, 10%);
+        }
+    }
+}
+
+.sidebar-transitions {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#sidebar.sidebar-toggle {
+    left: 0px;
+}
+
+.slidebar-overlay {
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 56px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 99;
+    display: none;
+}
+
+.slide-overlay-toggle.slidebar-overlay {
+    display: block;
+}
+
+#sidebar {
+    width: 170px;
+    position: fixed;
+    top: 56px;
+    left: -100%;
+    background: $primary-color;
+    color: white;
+    height: 100%;
+    overflow: auto;
+    z-index: 999;
+    @extend .sidebar-transitions;
+    .sidebarheader {
+        border-bottom: 1px solid #502D88;
+    }
+    .active {
+        background-color: lighten($primary-color, 10%);
+    }
+    a {
+        color: white;
+        text-decoration: none;
+        padding-left: 10%;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        li {
+            a {
+                display: block;
+                color: white;
+                line-height: 1em;
+                text-decoration: none;
+                padding: 10px 30px;
+                font-size: 15px;
+                a:hover {
+                    background: lighten($primary-color, 10%);
+                }
+            }
+        }
+    }
+    .sidebarfooter {
+        border-top: 1px solid #502D88;
+        position: absolute;
+        width: 100%;
+        bottom: 50px;
+        a {
+            text-transform: uppercase;
+            line-height: 50px;
+        }
+        i {
+            line-height: 50px;
+            margin-right: 10px;
+        }
+    }
+}
+
+@media(min-width: 768px) {
+    #account-nav-wrapper {
+        display: block;
+    }
+    #sidebar.sidebar-toggle {
+        left: -70%;
+    }
+    .slide-overlay-toggle.slidebar-overlay {
+        display: none;
+    }
+}

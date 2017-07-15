@@ -1,0 +1,24 @@
+<!-- ***************************************************************************
+* Copyright (c) 2017 Square Panda Inc.                                         *
+* All Rights Reserved.                                                         *
+* Dissemination, use, or reproduction of this material is strictly forbidden   *
+* unless prior written permission is obtained from Square Panda Inc.           *
+**************************************************************************** -->
+<div id="{{handler}}" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">{{header}}</h4>
+            </div>
+            <div class="modal-body">
+                <p class="text-info">{{body}}</p>
+            </div>
+            <div class="modal-footer">
+                <h4 class="text-warning">{{footer}}</h4>
+                <button type="button" class="btn btn-default" data-dismiss="modal" data-translate='common.buttons.close'>Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" data-ng-click="callbackbuttonright(); " data-translate="common.buttons.ok">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>

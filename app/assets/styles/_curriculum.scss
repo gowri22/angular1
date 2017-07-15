@@ -1,0 +1,620 @@
+/********************************************************************************
+* Copyright (c) 2017 Square Panda Inc.                                          *
+* All Rights Reserved.                                                          *
+* Dissemination, use, or reproduction of this material is strictly forbidden    *
+* unless prior written permission is obtained from Square Panda Inc.            *
+*********************************************************************************/
+.curriculum-container {
+    .curriculum-customword-panel {
+        .add-customword-panle-body {
+            padding: 20px;
+            .add-custom-word {
+                padding: 0px;
+                color: #9a9a9a;
+                .custom-word-add-form {
+                    .cw-content {
+                        background-color: #FAFAFA;
+                        border-radius: 5px;
+                        padding: 20px 0px;
+                        margin-bottom: 10px;
+                        .cw-images {
+                            margin-bottom: 10px;
+                            .add-img {
+                                margin: 10px 10px 0 0;
+                                border-radius: 4px;
+                                padding: 8px 5px;
+                                width: 65px;
+                                background: #DDD;
+                                display: inline-block;
+                                float: left;
+                                border: 1px dashed gray;
+                                font-size: 11px;
+                                position: relative;
+                                text-align: center;
+                                i {
+                                    display: block;
+                                    margin-bottom: 5px;
+                                }
+                                input[type="file"] {
+                                    opacity: 0;
+                                    position: absolute;
+                                    width: 54px;
+                                    margin-top: -5px;
+                                    height: 55px;
+                                    cursor: pointer;
+                                }
+                            }
+                            .add-img-note {
+                                margin-top: 10px;
+                                float: left;
+                                padding: 15px 0px;
+                                font-size: 11px;
+                            }
+                            .cw-sel-img {
+                                float: left;
+                                margin-top: 10px;
+                                position: relative;
+                                img {
+                                    width: 65px;
+                                    height: 64px;
+                                    margin-right: 5px;
+                                    border-radius: 4px;
+                                }
+                                .delet-img {
+                                    margin: 2px 9px !important;
+                                }
+                            }
+                        }
+                    }
+                }
+                .form-control {
+                    height: 45px;
+                    font-size: 17px;
+                }
+                .word-label {
+                    margin-top: 3px;
+                }
+                input::-webkit-input-placeholder {
+                    color: #DADADA;
+                }
+                input:-moz-placeholder {
+                    color: #DADADA;
+                }
+                input::-moz-placeholder {
+                    color: #DADADA;
+                }
+                input:-ms-input-placeholder {
+                    color: #DADADA;
+                }
+                .add-custom-word-button {
+                    padding: 5px 45px;
+                }
+                .thumbnail {
+                    .apply-margin-bottom {
+                        margin-bottom: -64px;
+                    }
+                }
+                /***** Example custom styling *****/
+                .myLabel:active {
+                    background: #CCF;
+                }
+                .myLabel :invalid+span {
+                    color: #A44;
+                }
+                .myLabel :valid+span {
+                    color: #4A4;
+                }
+                .image-style {
+                    margin-top: 25px;
+                }
+                .add-custom-word-cancel-button {
+                    width: 49%;
+                    padding: 6px 82px;
+                    background-color: #7E7E7E !important;
+                    color: white !important;
+                }
+                .add-custom-word-cancel-button:hover {
+                    background-color: darken(#7E7E7E, 10%) !important;
+                }
+                .add-custom-word-save-button {
+                    padding: 5px 62px;
+                    width: 45%;
+                }
+                .add-word-button-class {
+                    margin-top: 0px;
+                }
+            }
+            .custom-word-list {
+                background-color: #FAFAFA;
+                .customword-accordion {
+                    .panel-group {
+                        margin-bottom: 0px;
+                    }
+                }
+                .panel-default {
+                    box-shadow: none;
+                    -webkit-box-shadow: none;
+                    .panel-heading {
+                        background-color: #ececec;
+                        padding: 12px;
+                    }
+                }
+                .panel-title {
+                    color: #767575;
+                    a {
+                        text-decoration: none;
+                        border: none;
+                        i {
+                            margin-right: 7px;
+                        }
+                    }
+                    a:focus {
+                        text-decoration: none;
+                        outline: none;
+                        outline-offset: none;
+                    }
+                }
+                .panel-body {
+                    background-color: #FAFAFA;
+                    padding: 0px;
+                    td {
+                        padding-top: 15px;
+                        padding-bottom: 15px
+                    }
+                }
+            }
+            .table {
+                border: 1px solid #C7C7C7;
+                background-color: white;
+                margin-bottom: 0px;
+                border-top: 0px;
+                .player-words {
+                    vertical-align: middle !important;
+                    img {
+                        border-radius: 4px;
+                    }
+                }
+                .word-icon-colors {
+                    color: #ffffff;
+                    padding: 8px 10px;
+                    background-color: #7E7E7E;
+                    border-radius: 4px;
+                }
+                .word-icon-colors:hover {
+                    background-color: darken(#7E7E7E, 10%);
+                }
+                thead th {
+                    background-color: #9B9B9B;
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                    color: $white-color;
+                    font-weight: normal;
+                    border-bottom: none;
+                    a {
+                        color: $white-color;
+                        text-decoration: none;
+                    }
+                    &:first-child,
+                    &:nth-child(2) {
+                        text-align: left;
+                        padding-left: 25px;
+                        width: 33%;
+                    }
+                    &:last-child {
+                        text-align: right;
+                        padding-right: 25px;
+                    }
+                }
+            }
+            tr,
+            th {
+                text-align: center;
+            }
+            td {
+                border-top: none;
+                color: lighten(#000, 30%);
+                .last-attempt-green {
+                    color: $sp-green;
+                }
+                .last-attempt-blue {
+                    color: #6E4D9F;
+                }
+                a {
+                    text-decoration: none;
+                    color: black;
+                }
+                &:first-child,
+                &:nth-child(2) {
+                    text-align: left;
+                    padding-left: 25px;
+                }
+                &:last-child {
+                    text-align: right;
+                    padding-right: 25px;
+                }
+                a:focus {
+                    outline: none;
+                }
+            }
+            .left-padding {
+                padding-left: 20px;
+            }
+            .custom-word-edit-button {
+                background-color: #7E7E7E !important;
+                color: #ffffff;
+                padding: 5px 21px;
+                margin-right: 10px;
+                vertical-align: middle;
+            }
+            .custom-word-delete-button {
+                vertical-align: middle;
+            }
+            .custom-word-edit-button:hover {
+                background-color: darken(#7E7E7E, 10%) !important;
+            }
+            label.addpicturelabel input[type="file"] {
+                position: fixed;
+                top: -1000px;
+            }
+            .addpicturelabel {
+                border-radius: 4px;
+                padding: 13px 5px;
+                width: 47px;
+                background: #DDD;
+                display: inline-block;
+                border: 1px dashed gray;
+            }
+            .addpicturelabel:hover {
+                background: #CCC;
+            }
+            .addpicturelabel:active {
+                background: #CCF;
+            }
+            .addpicturelabel :invalid+span {
+                color: #A44;
+            }
+            .addpicturelabel :valid+span {
+                color: #4A4;
+            }
+            .edit-word-text {
+                border: none;
+                border-bottom: 1px solid gray;
+                width: 70%;
+                background-color: transparent;
+                border-radius: 0px;
+            }
+            .edit-word-text:focus {
+                outline: none;
+                box-shadow: none;
+            }
+            .edit-word-text:active {
+                outline: none;
+                box-shadow: none;
+            }
+            .custom-word-save-button {
+                padding: 5px 37px;
+            }
+            .custom-word-picture {
+                border-radius: 4px;
+            }
+            .image {
+                float: left;
+                position: relative;
+                margin-right: 10px;
+                img {
+                    border-radius: 4px;
+                }
+            }
+            .delete {
+                cursor: pointer;
+                position: absolute;
+                top: -9px;
+                right: -6px;
+                color: #F26383;
+                border: 1px solid #F26383;
+                padding: 1px;
+                border-radius: 50px;
+                background-color: white;
+                font-size: 10px;
+                font-weight: normal;
+            }
+        }
+         .edit-custom-word-cancel-buuton{
+                    padding: 5px 4px !important;
+                    font-size: 14px;
+        }
+        .edit-custom-word-save-button{
+                    padding: 5px 14px !important;
+                    font-size: 14px;
+        }
+    }
+    .curriculum-groupword-panel {
+        .curriculum-groupwordpanel-body {
+            padding: 20px;
+            .panel-default {
+                box-shadow: none;
+                -webkit-box-shadow: none;
+            }
+            .panel-title {
+                color: #767575;
+                a {
+                    text-decoration: none;
+                    border: none;
+                }
+                a:focus {
+                    text-decoration: none;
+                    outline: none;
+                    outline-offset: none;
+                }
+            }
+            .panel-heading {
+                background-color: #ececec;
+                padding: 12px;
+                i {
+                    margin-right: 7px;
+                }
+            }
+            .panel-body {
+                background-color: #FAFAFA;
+            }
+            .curriculum-milestone-text {
+                color: #9a9a9a;
+            }
+        }
+        .curriculum-groupword-data {
+            color: #A6A5A5;
+            .checkbox-selectlabel {
+                margin-left: 13px;
+            }
+            label {
+                text-transform: capitalize;
+            }
+        }
+        .badword-accordion .panel-group .panel .panel-body {
+            background-color: #ffffff !important;
+            padding: 0px !important;
+        }
+        .badword-accordion .panel-group {
+            margin-bottom: 0px;
+        }
+        .horizontal-line {
+            margin-top: 25px;
+            margin-bottom: 25px
+        }
+        .noword-display {
+            color: #B0B0B0;
+            padding-bottom: 22px
+        }
+        .badword-container {
+            background-color: #FAFAFA;
+            padding: 25px;
+            padding-bottom: 4px;
+        }
+        .badword-list {
+            background-color: #FAFAFA;
+            .fa {
+                color: #7e7e7e;
+                cursor: pointer;
+            }
+            .banword {
+                text-transform: capitalize;
+                text-align: left;
+            }
+        }
+    }
+}
+
+.left-inner-addon input {
+    padding-left: 30px;
+}
+
+.bad-words {
+    background-color: whitesmoke;
+    padding: 1%;
+    margin-bottom: 2%;
+}
+
+.banword-width {
+    margin-bottom: 20px;
+}
+
+.badword-jumbotron {
+    padding-bottom: 0px;
+}
+
+.curriculum-custom-checkbox-span {
+    padding-left: 8px;
+    margin: 3px 0 15px;
+    font-size: 15px;
+    color: #C3C3C3;
+}
+
+.curriculum-custom-word-button {
+    padding: 10px 95px 10px 97px;
+}
+
+.custom-search-button {
+    color: white;
+    background-color: #7E7E7E;
+    border-color: #adadad;
+    margin-left: 5px;
+}
+
+.custom-add-button {
+    background-color: $sp-green;
+    color: #ffffff;
+    &:hover {
+        background-color: darken($sp-green, 10%) !important;
+        color: #ffffff;
+    }
+    &:active {
+        background-color: darken($sp-green, 10%) !important;
+        color: #ffffff;
+    }
+}
+
+.delete-bad-word {
+    color: #EE486F;
+    padding-left: 12px;
+}
+
+.custom-searchs-button {
+    color: white;
+    background-color: #7E7E7E;
+    border-color: #adadad;
+    margin-left: 2%;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+.custom-search-button:hover {
+    color: white;
+    background-color: #7E7E7E;
+    border-color: #adadad;
+}
+
+.custom-audio-button {
+    color: white;
+    background-color: #4cbc96;
+    margin-right: 20px;
+}
+
+.display-flex {
+    display: inline-flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+}
+
+.custom-volume-button {
+    background-color: #4cbc96 !important;
+}
+
+.custom-volume-button :hover {
+    background-color: #4cbc96 !important;
+}
+
+.curriculum-custom-audio {
+    display: inline-flex;
+    .custom-audio-button {
+        position: relative;
+    }
+    .custom-audio-button input {
+        position: absolute;
+        z-index: 2;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        right: 0px !important;
+    }
+    .custom-audio-file {
+        padding: 5px 45px 5px 45px !important;
+        margin-right: 5px;
+        background-color: #7E7E7E;
+    }
+    .custom-audio-button:hover {
+        background: #7E7E7E;
+    }
+    .custom-audio-button:active {
+        background: #7E7E7E;
+    }
+}
+
+.custom-audio-button:hover {
+    color: white;
+    background-color: #4cbc96;
+}
+
+.repeat-button {
+    background-color: #7E7E7E;
+}
+
+.add-word-button {
+    padding: 5px 37px 5px 37px;
+    margin-right: 15px;
+}
+
+.addword-submit-button {
+    padding: 5px 56px;
+}
+
+.add-cancel-button {
+    padding: 5px 50px 5px 50px;
+}
+
+.thumbnail {
+    .apply-margin-bottom {
+        margin-bottom: -64px;
+    }
+}
+
+.custom-message-color {
+    color: lighten(#000, 50%);
+}
+
+.add-word-cancel-margin :hover {
+    padding: 8px 63px;
+    margin-top: 45px;
+    background-color: #7E7E7E !important;
+    color: black !important;
+}
+
+.add-word-cancel-margin {
+    padding: 8px 63px;
+    margin-top: 45px;
+    background-color: #7E7E7E !important;
+    color: black !important;
+}
+
+.add-save-button {
+    padding: 5px 60px;
+}
+
+.add-word-cancel-button {
+    padding: 6px 55px;
+    margin-left: 5px;
+    background-color: #7E7E7E !important;
+    color: white !important;
+    font-size: 16px;
+}
+
+.add-word-cancel-button :hover {
+    padding: 6px 55px;
+    margin-left: 5px;
+    background-color: #7E7E7E !important;
+    color: white !important;
+}
+
+.add-word-save-button {
+    padding: 5px 41px;
+}
+
+.export-btn {
+    color: #9B9B9B;
+    float: right;
+}
+
+.notification-submit-button {
+    padding: 5px 56px;
+}
+
+.notification-submit-button-margin {
+    margin-top: 30px;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 1024px) {
+    .add-word-cancel-margin {
+        margin-left: 10px;
+    }
+    .add-word-btn-padding {
+        padding: 6px 12px;
+    }
+    .add-word-cancel-btn-padding {
+        padding: 5px 30px 5px 30px;
+    }
+}
+
+@media only screen and (max-device-width: 480px) {
+    .add-custom-word-button {
+        padding: 5px 13px !important;
+    }
+}

@@ -1,0 +1,222 @@
+/********************************************************************************
+* Copyright (c) 2017 Square Panda Inc.                                          *
+* All Rights Reserved.                                                          *
+* Dissemination, use, or reproduction of this material is strictly forbidden    *
+* unless prior written permission is obtained from Square Panda Inc.            *
+*********************************************************************************/
+.error-mesasage {
+    color: #E07C72;
+}
+
+.content-bg {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.bg-img {
+    background: url('../images/bg.jpg') no-repeat top;
+    background-size: cover;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    top: 0px;
+    z-index: -999;
+    height: 100%;
+}
+
+.register-error-message {
+    color: #E07C72;
+    text-align: center;
+    width: 100%;
+}
+
+.login-error-message {
+    color: #E07C72;
+    text-align: center;
+    width: 100%;
+    padding: 0px 10px;
+}
+
+.register-form-heading {
+    color: $white-color;
+}
+
+.login-form-heading {
+    color: $white-color;
+    margin-top: 40px;
+}
+
+.user-form-container {
+    position: relative;
+    h2 {
+        color: $white-color;
+        text-align: center;
+        margin-bottom: 28px;
+        font-size: 27px;
+    }
+    input {
+        border: 0px;
+        background-color: rgba(255, 255, 255, 0.5);
+        color: black;
+    }
+    .error-mesasage {
+        position: absolute;
+        font-size: 11px;
+    }
+    .has-feedback {
+        margin-bottom: 30px;
+    }
+    .form-group {
+        margin-bottom: 30px;
+    }
+    input::-webkit-input-placeholder {
+        color: rgba(0, 0, 0, 0.6);
+    }
+    input:-moz-placeholder {
+        color: rgba(0, 0, 0, 0.6);
+    }
+    input::-moz-placeholder {
+        color: rgba(0, 0, 0, 0.6);
+    }
+    input:-ms-input-placeholder {
+        color: rgba(0, 0, 0, 0.6);
+    }
+    label {
+        color: #fff;
+    }
+    .signin-button {
+        margin-bottom: 18px;
+    }
+    .login-button {
+        padding: 5px 60px;
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 1;
+    }
+    .forgotpassword-button {
+        padding: 5px 30px;
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 1;
+    }
+    input[type="email"],
+    input[type="password"],
+    input[type="text"],
+    .btn-primary {
+        height: 40px;
+    }
+}
+
+.reset-password-container {
+    input {
+        color: black;
+    }
+}
+
+.remember-me {
+    margin-top: -17px;
+    margin-bottom: 20px !important;
+    input[type="checkbox"] {
+        margin-top: 4px;
+        float: left;
+    }
+    span {
+        font-weight: normal;
+        margin-left: 7px;
+        display: block;
+        float: left;
+    }
+}
+
+.apply-margin {
+    margin-bottom: 17px;
+}
+
+.user-links-col1 {
+    top: -70px;
+}
+
+.user-links-col2 {
+    top: -102px;
+}
+
+.user-links {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: absolute;
+    width: 100%;
+    .pull-right,
+    .pull-left {
+        float: none !important;
+    }
+    a {
+        font-size: 15px;
+        color: $white-color;
+        text-decoration: underline;
+        display: block;
+        text-align: center;
+        line-height: 30px;
+    }
+}
+
+.login-top-margin {
+    margin-top: 30px;
+    margin-bottom: 150px;
+    padding: 0 5%;
+}
+
+.resetpassword-form-margin {
+    margin-top: 30px;
+    margin-bottom: 200px;
+    padding: 0 5%;
+}
+
+.forgot-form-margin {
+    margin-top: 30px;
+    margin-bottom: 280px;
+    padding: 0 5%;
+}
+
+.signup-btn {
+    margin-top: 30px;
+}
+
+.terms-condition-privacy-policy-model-popup-style {
+    width: 100%;
+    height: 400px !important;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding: 5px 15px;
+    font-family: AvertaStd-Regular !important;
+    background-color: #f4f4f4;
+    border-radius: 25px;
+}
+
+@-moz-document url-prefix() {
+    .custom-checkbox-span {
+        margin: 2px 0px 10px;
+    }
+}
+
+@media(min-width: 768px) {
+    .user-links {
+        a {
+            display: inline !important;
+            text-align: left;
+            line-height: normal;
+            &:nth-child(1) {
+                float: left;
+            }
+            &:nth-child(2) {
+                float: right;
+            }
+        }
+    }
+    .user-links-col1 {
+        top: -60px !important;
+    }
+    .user-links-col2 {
+        top: -59px !important;
+    }
+}

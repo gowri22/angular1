@@ -1,0 +1,111 @@
+<!-- ***************************************************************************
+* Copyright (c) 2017 Square Panda Inc.                                         *
+* All Rights Reserved.                                                         *
+* Dissemination, use, or reproduction of this material is strictly forbidden   *
+* unless prior written permission is obtained from Square Panda Inc.           *
+**************************************************************************** -->
+<div class="bg-img"></div>
+<div class="content clearfix padding-top30">
+    <div class="text-center">
+        <!--<div class="teacher-link-class desktop-view">
+            <button class="btn btn-transarent" ng-click="navigateTeacher()">
+                <div class="teacher-link-text">TEACHERS!</div>
+                <span class="teacher-link">Click here</span>
+            </button>
+        </div>-->
+        <h2 class="register-form-heading" data-translate="user.register.create_account">Create a Square Panda Account</h2>
+        <div class="register-error-message" data-ng-if="globals.flash && globals.flash.type !== 'success'">
+            {{globals.flash.message}}
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-3 col-sm-3"></div>
+    <div class="col-lg-4 col-md-6 col-sm-6 login-top-margin">
+        <form name="userForm" class="user-form-container" data-ng-submit="register.submitForm(userForm)" novalidate>
+
+            <div class="form-group has-feedback">
+                <input type="text" name="firstName" class="form-control" data-ng-model="register.model.firstName" placeholder="{{ 'user.register.grownup_first_name' | translate }}" required autocomplete="off">
+                <div ng-show="userForm.$submitted && userForm.firstName.$error.required" class="error-mesasage">
+                    <i class="fa fa-exclamation-circle"></i>
+                    <span data-translate="user.register.messages.first_name_require">Please enter your (grown-up's) first name.</span>
+                </div>
+                <i class="fa fa-user form-control-feedback "></i>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="text" name="lastName" class="form-control" data-ng-model="register.model.lastName" placeholder="{{ 'user.register.grownup_last_name' | translate }}" required autocomplete="off">
+                <div ng-show="userForm.$submitted && userForm.lastName.$error.required" class="error-mesasage">
+                    <i class="fa fa-exclamation-circle"></i>
+                    <span data-translate="user.register.messages.last_name_require">Please enter your (grown-up's) last name.</span>
+                </div>
+                <i class="fa fa-user form-control-feedback "></i>
+            </div>
+
+            <div class="form-group has-feedback">
+                <input type="email" name="email" class="form-control" data-ng-model="register.model.email" placeholder="{{ 'user.register.grownup_email' | translate }}" ng-pattern="/^[a-zA-Z0-9._]+[+]?[a-zA-Z0-9._]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/" required>
+                <div ng-show="userForm.$submitted && userForm.email.$error.required" class="error-mesasage">
+                    <i class="fa fa-exclamation-circle"></i>
+                    <span data-translate="user.register.messages.email_require">Please enter your (grown-up's) Email.</span>
+                </div>
+                <div class="error-mesasage" ng-show='userForm.email.$error.pattern && userForm.email.$dirty'>
+                    <i class="fa fa-exclamation-circle"></i>
+                    <span data-translate="common.messages.wrong_email_format">That doesn't look like a valid email. Please check for typos.</span>
+                </div>
+                <div class="error-mesasage" ng-show='userForm.$valid && register.isEmailAlreadyExit'>
+                    <i class="fa fa-exclamation-circle"></i>
+                    <span data-translate="common.messages.email_already_exit_please_choose_diff_email">
+            Email already exists. Please choose a different email
+          </span>
+                </div>
+                <i class="fa fa-envelope form-control-feedback"></i>
+            </div>
+
+            <div class="form-group has-feedback">
+                <input type="password" class="form-control " name="password" ng-model="register.model.password" pattern="[A-Za-z0-9\W]{8,20}" placeholder="{{ 'user.password' | translate }}" required>
+
+                <div class="error-mesasage" ng-show='userForm.password.$error.pattern && userForm.password.$dirty'>
+                    <i class="fa fa-exclamation-circle"></i>
+                    <span data-translate="user.validationMessages.password_strength">Password must be between 8 and 20 characters.</span>
+                </div>
+
+                <div ng-show="userForm.$submitted && userForm.password.$error.required" class="error-mesasage">
+                    <i class="fa fa-exclamation-circle"></i>
+                    <span data-translate="user.validationMessages.password_require">Password is required</span>
+                </div>
+                <i class="fa fa-lock form-control-feedback"></i>
+            </div>
+
+
+            <div class="form-group has-feedback">
+                <input type="password" name="confirmPassword" data-ng-model="register.model.confirmPassword" placeholder="{{ 'user.register.confirm_password' | translate }}" class="form-control" required>
+
+                <div ng-show=" register.model.confirmPassword && (register.model.password !== register.model.confirmPassword) " class="help-block error-mesasage">
+                    <i class="fa fa-exclamation-circle"></i>
+                    <span data-translate="user.validationMessages.password_mismatch">Please make sure your passwords match.</span>
+                </div>
+                <div ng-show="(userForm.$submitted && userForm.confirmPassword.$error.required )" class="help-block error-mesasage">
+                    <i class="fa fa-exclamation-circle"></i>
+                    <span data-translate="user.validationMessages.cpassword_require">Confirm Password is required.</span>
+                </div>
+                <i class="fa fa-lock form-control-feedback"></i>
+            </div>
+
+            <div class="form-group">
+                <label class="normal-font">
+                    <input type="checkbox" class="settings-custom-checkbox"
+                       data-ng-model="register.model.sp_news"/>
+                    <span data-translate="user.register.squarepanda_news_confiamtion">Square Panda NewsStay up to date with the latest Square Panda news!</span>
+                </label>
+            </div>
+
+
+            <div class="center-align">
+                <button type="submit" class="btn btn-large  btn-primary apply-margin login-button" 
+                data-ng-disabled="!register.model.firstName || !register.model.lastName || !register.model.email || !register.model.password || !register.model.confirmPassword" 
+                data-ng-class="{'custom-disabled-button': (!register.model.firstName || !register.model.lastName || !register.model.email || !register.model.password || !register.model.confirmPassword)}"
+                data-translate="common.buttons.submit">Submit
+        </button>
+            </div>
+
+        </form>
+    </div>
+    <div class="col-lg-4 col-md-3 col-sm-3"></div>
+</div>

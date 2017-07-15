@@ -1,0 +1,246 @@
+/********************************************************************************
+* Copyright (c) 2017 Square Panda Inc.                                          *
+* All Rights Reserved.                                                          *
+* Dissemination, use, or reproduction of this material is strictly forbidden    *
+* unless prior written permission is obtained from Square Panda Inc.            *
+*********************************************************************************/
+.settings-container {
+    background-color: #F6F6F6;
+    .settiings-panel {
+        border: none;
+        .settiings-panel-body {
+            border: 1px solid #E9E9E9;
+            padding: 24px 15px;
+            .settings-email-style {
+                color: grey;
+                font-weight: normal;
+                cursor: not-allowed;
+                background-color: #eeeeee;
+                opacity: 1;
+                display: block;
+                width: 100%;
+                height: 34px;
+                padding: 6px 12px;
+                font-size: 14px;
+                line-height: 1.428571429;
+                color: #808080;
+                overflow: hidden;
+                background-color: #eeeeee;
+                background-image: none;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+                box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+                -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+                -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+                transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+            }
+            .nopadding {
+                padding-left: 16px !important;
+            }
+            .settings-edit-button {
+                padding: 5px 72px;
+            }
+            .settings-cancel-button {
+                background-color: #7E7E7E !important;
+                padding: 5px 50px;
+            }
+            .settings-save-button {
+                padding: 5px 55px;
+                margin-right: 10px;
+            }
+            .settings-submit-button {
+                padding: 5px 56px;
+            }
+            .form-horizontal input,
+            label {
+                color: grey;
+                font-weight: normal;
+            }
+            .settings-custom-checkbox {
+                width: 20px;
+                height: 20px;
+            }
+            .settings-custom-span {
+                margin-left: 10px;
+                vertical-align: -30%;
+            }
+            .notification-submit-button {
+                @extend .settings-submit-button;
+            }
+            .notification-cancel-button {
+                padding: 5px 66px;
+                margin-left: 10px;
+                background-color: #7E7E7E;
+            }
+            .notification-cancel-button:hover {
+                background-color: #7E7E7E !important;
+            }
+            .checkbox {
+                margin-bottom: 0px;
+                label {
+                    color: gray;
+                    line-height: 28px;
+                    span {
+                        margin-left: 10px;
+                        font-size: 16px;
+                    }
+                }
+            }
+            .notification-text {
+                font-size: 18px;
+                color: lighten(gray, 10%);
+                a {
+                    color: #f7ab31;
+                    text-decoration: underline;
+                }
+            }
+            .notfication-updates-text {
+                text-align: left !important;
+            }
+            .notification-text-missing-letters {
+                color: lighten(gray, 10%);
+                text-align: center;
+                padding: 0px;
+                margin-bottom: 15px;
+                font-size: 16px;
+            }
+            .notification-checkbox-text {
+                padding: 0px 0px 0px 30px;
+                color: lighten(gray, 10%);
+            }
+            .notification-checkbox-texts {
+                color: lighten(gray, 10%);
+            }
+        }
+        .editprofile-panel-padding {
+            padding: 10px 45px !important;
+        }
+        .changepassword-panel-padding {
+            padding: 10px 45px !important;
+        }
+    }
+    .missing-letter-keyboard {
+        padding: 0px;
+        width: auto;
+        max-width: 969px;
+        margin: 0 auto;
+        .letters_set {
+            float: left;
+            padding: 0px 5px;
+            &:first-child {
+                padding-left: 0px;
+            }
+            &:last-child {
+                padding-right: 0px;
+            }
+            .ml-letter {
+                font-family: 'SquarePanda' !important;
+                font-size: 17px;
+                color: $primary-color;
+                padding: 5px 7px;
+                border-radius: 5px;
+                border: solid 1px #cccccc;
+                margin-bottom: 10px;
+                cursor: pointer;
+            }
+            .active {
+                background-color: #cccccc!important;
+                color: #ffffff!important;
+            }
+            .vowel {
+                color: #f7ab31;
+            }
+        }
+    }
+}
+
+@media (min-width: 1300px) {
+    .missing-letter-keyboard {
+        width: 969px!important;
+    }
+}
+
+@media(min-width: 768px) {
+    .settings-container .missing-letter-keyboard .letters_set .ml-letter {
+        font-size: 21px;
+        padding: 10px 15px;
+    }
+    .settings-container .missing-letter-keyboard .letters_set {
+        padding: 0px 13px;
+    }
+    .settings-container .settiings-panel .settiings-panel-body {
+        padding: 30px 45px;
+    }
+    .settings-container .settiings-panel .settiings-panel-body .notification-text-missing-letters,
+    .missing-letter-keyboard {
+        padding: 0 15px;
+    }
+    .settiings-panel-body .nopadding {
+        padding-left: 0px !important;
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .settings-container .missing-letter-keyboard .letters_set {
+        padding: 0 5px;
+    }
+    .settiings-panel-body .nopadding {
+        padding-left: 16px !important;
+    }
+    .settings-container .missing-letter-keyboard .letters_set .ml-letter {
+        padding: 5px 9px;
+        font-size: 18px;
+    }
+    .settings-container .missing-letter-keyboard {
+        width: 587px !important;
+        margin: 0px auto;
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .settings-container .missing-letter-keyboard .letters_set .ml-letter {
+        padding: 5px 9px;
+        font-size: 18px;
+    }
+    .settings-container .missing-letter-keyboard {
+        max-width: 587px !important;
+        margin: 0px auto;
+    }
+    .settings-container .missing-letter-keyboard .letters_set {
+        padding: 0 5px;
+    }
+    .settiings-panel-body .settings-label {
+        width: 30%;
+    }
+    .nopadding {
+        padding-left: 16px !important;
+    }
+    .settings-edit-button {
+        margin-left: 38px !important;
+    }
+    .notification-submit-button {
+        margin-left: 37px !important;
+    }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 1024px) {
+    .edit-submit-btn {
+        margin: 0 auto;
+        display: block;
+    }
+    .submit-clear-all-padding {
+        padding: 6px 12px !important;
+        width: 45%;
+    }
+    .submit-clear-parent-div {
+        display: inline;
+    }
+}
+
+@media only screen and (max-device-width: 375px) {
+    .settings-cancel-button {
+        margin-top: 10px;
+        padding: 5px 46px !important;
+    }
+}

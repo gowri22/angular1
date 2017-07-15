@@ -1,0 +1,29 @@
+<!-- ***************************************************************************
+* Copyright (c) 2017 Square Panda Inc.                                         *
+* All Rights Reserved.                                                         *
+* Dissemination, use, or reproduction of this material is strictly forbidden   *
+* unless prior written permission is obtained from Square Panda Inc.           *
+**************************************************************************** -->
+<div class="players-tab-list">
+    <ul>
+        <li>
+            <a href="javascript:;" data-ng-click="player.addPlayer()" title="Add Player">
+                <img data-ng-if="!playerItem.profileURL" src="assets/images/add-player.png" class="non-retina add-player" alt="player" width="31" height="31" />
+                <img data-ng-if="!playerItem.profileURL" src="assets/images/add-player@2x.png" class="retina-display add-player" alt="player" width="31" height="31" />
+                <span class="add-player-span" data-translate="player.add_player"> Add Player </span>
+                <div class="add-player-div" data-ng-if="ENV.language === 'cn'">
+                    <span class="add-player-text" data-translate="player.available_players_desc">还能创建</span><span class="add-player-text">{{availableplayers}}</span><span class="add-player-text" data-translate="player.available_players_desc1">个玩家</span>
+                </div>
+                <span class="add-player-text" data-ng-if="ENV.language === 'en'">{{availableplayers}} <span data-translate="player.available_players_desc">Available</span></span>
+            </a>
+        </li>
+        <li data-ng-repeat="playerItem in player.data.playersList" data-ng-init="playerItem.croppedImage = ''">
+            <a ui-sref="account.players.details({ id: playerItem.id })" title='{{ playerItem.firstName }}' ng-class="{ active: $state.includes('account.players.details', { id: playerItem.id })}">
+                <img data-ng-if="!playerItem.profileURL && !playerItem.imgbase64" src="assets/images/default-avatar.png" class="img-circle" alt="player" width="55" height="55">
+                <img data-ng-if="playerItem.imgbase64" data-ng-src="{{playerItem.imgbase64}}" class="img-circle" alt="player" width="55" height="55" />
+                <img data-ng-if="!playerItem.imgbase64 && playerItem.profileURL" data-ng-src="{{playerItem.profileURL}}" class="img-circle" alt="player" width="55" height="55" />
+                <span class="text-ellipsis add-player-span" title='{{ playerItem.firstName }}'>{{ playerItem.firstName }}</span>
+            </a>
+        </li>
+    </ul>
+</div>

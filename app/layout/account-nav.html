@@ -1,0 +1,59 @@
+<!-- ***************************************************************************
+* Copyright (c) 2017 Square Panda Inc.                                         *
+* All Rights Reserved.                                                         *
+* Dissemination, use, or reproduction of this material is strictly forbidden   *
+* unless prior written permission is obtained from Square Panda Inc.           *
+**************************************************************************** -->
+<div id="account-nav-wrapper">
+    <nav class="container">
+        <ul class="account-nav">
+            <li>
+                <a class="nav-border-left" ui-sref="account.dashboard" ng-class="{active: $state.includes('account.dashboard')}">
+                    <span data-translate="nav.sidebar.home">HOME</span>
+                </a>
+            </li>
+            <li>
+                <a ui-sref='account.players' ui-sref-opts="{reload: true}" ng-class="{active: $state.includes('account.players')}">
+                    <span data-translate="nav.sidebar.players"> PLAYERS </span>
+                </a>
+            </li>
+            <li>
+                <a ui-sref="account.curriculum" ng-class="{active: $state.includes('account.curriculum')}">
+                    <span data-translate="nav.sidebar.Customize"> CUSTOMIZE </span>
+                </a>
+            </li>
+            <li>
+                <a ui-sref="account.settings" ng-class="{active: $state.includes('account.settings')}">
+                    <span data-translate="nav.sidebar.settings"> My ACCOUNT </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+</div>
+<div class="slidebar-overlay">
+</div>
+<div id="sidebar" side-bar>
+    <div data-ng-if="globals.currentUser">
+        <!--<h4 class="text-center sidebarheader" type="button" data-toggle="dropdown" >{{globals.currentUser.firstName}}
+      {{globals.currentUser.lastName}}
+      </h4>-->
+    </div>
+    <ul>
+        <li>
+            <a ui-sref="account.dashboard" ng-class="{active: $state.includes('account.dashboard')}" data-translate="nav.sidebar.Home">Home</a>
+        </li>
+        <li>
+            <a ui-sref="account.players" ng-class="{active: $state.includes('account.players')}" data-translate="nav.sidebar.Players">Players</a>
+        </li>
+        <li>
+            <a ui-sref="account.curriculum" ng-class="{active: $state.includes('account.curriculum')}" data-translate="nav.sidebar.customize">Customize</a>
+        </li>
+        <li><a ui-sref="account.settings" ng-class="{active: $state.includes('account.settings')}" data-translate="nav.sidebar.my_account">My Account</a></li>
+    </ul>
+    <div class="sidebarfooter">
+        <a href="javascript:;" data-translate="nav.header.logout" id="side-bar-logout" data-ng-click="logout()">LOGOUT</a>
+        <i class="fa fa-sign-out fa-2x pull-right"></i>
+    </div>
+</div>
+<div class="clearfix bg-light-gray" data-ng-class="{'bg-color-white': ($state.is('page.terms-services') || $state.is('page.privacy-policy') || $state.is('page.warrentyinfo')) }" ui-view></div>

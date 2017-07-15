@@ -1,0 +1,27 @@
+<!-- ***************************************************************************
+* Copyright (c) 2017 Square Panda Inc.                                         *
+* All Rights Reserved.                                                         *
+* Dissemination, use, or reproduction of this material is strictly forbidden   *
+* unless prior written permission is obtained from Square Panda Inc.           *
+**************************************************************************** -->
+<div class="sp-confirm-modal">
+    <div class='modal-header' data-ng-if="modalTitle">
+        <h3 class='modal-title text-center'>{{modalTitle}}</h3>
+    </div>
+    <div class='modal-body' style="padding: 10px;">
+        <div id="extrnalHtmlViewId" external-html-page-loader-dir html-page-url="fullHtmlViewURL" is-external-html-data-loaded="isExternalHtmlDataLoaded" class="terms-condition-privacy-policy-model-popup-style">
+
+            <span style="padding: 40% 45%; display: block;">
+        <img src="assets/images/img-loader.gif"/>
+      </span>
+        </div>
+
+    </div>
+    <div class='modal-footer'>
+        <button class='btn btn-default sp-cancel-common-btn' data-translate="common.buttons.cancel" ng-click='cancel()'>Cancel</button>
+        <button class='btn btn-default sp-purple-common-btn' data-ng-disabled="!isExternalHtmlDataLoaded" ng-click='ok()'>
+      <span data-translate="common.buttons.iagree" data-ng-if="!isSubmit">I Agree {{isPrivacy}}</span>
+      <span data-translate="common.buttons.submit" data-ng-if="isSubmit">Submit</span>
+    </button>
+    </div>
+</div>

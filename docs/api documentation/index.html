@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sqaure Panda | Parent Portal</title>
+    <script src="jquery.min.js"></script>
+    <style type="text/css">
+    body {
+        background-color: #f1f1f1;
+        font-family: 'Montserrat', sans-serif;
+        width: 100%;
+        margin: 0px 0px;
+    }
+    
+    header {
+        background-color: #fff;
+        padding: 0.5em 0em 0.5em 0em;
+        width: 100%;
+    }
+    
+    footer {
+        background-color: #fff;
+        padding: 0em 0em 1em 0em;
+        width: 100%;
+        position: relative;
+    }
+    
+    main {
+        width: 100%;
+        margin: 0px 0px;
+        background-color: #fff;
+        margin: 0 auto;
+    }
+    
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        color: #532d91;
+        background-color: #fff;
+        overflow-x: hidden;
+        padding-top: 30px;
+        transition: 0.5s;
+    }
+    
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 18px;
+        color: #5d4b7b;
+        display: block;
+        transition: 0.3s
+    }
+    
+    .sidenav a:hover,
+    .offcanvas a:focus {
+        color: #1d0742;
+    }
+    
+    .sidenav .closebtn {
+        position: absolute;
+        color: #532d91;
+        top: 0;
+        right: 0;
+        left: 75px;
+        font-size: 26px;
+        padding-left: 46%;
+    }
+    
+    .main-header,
+    .main-content {
+        width: 80%;
+        margin: 0 auto;
+    }
+    
+    .header-title {
+        margin: 0 auto;
+        background: rgba(23, 4, 56, 0.8) url(banner-blog.png);
+        width: auto;
+    }
+    
+    span {
+        width: auto;
+        color: #532d91;
+        padding: .45em .75em .375em;
+        position: fixed;
+    }
+    
+    .header-image {
+        padding-left: 80%;
+    }
+    
+    h3 {
+        color: #532d91;
+        font-size: 24px;
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+    }
+    
+    h4 {
+        padding-top: 8px;
+        color: #532d91;
+    }
+    
+    .main-header {
+        height: 30%;
+        color: #372f3c;
+        padding-top: 3%;
+        font-size: 18px;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    .main-date {
+        background: rgba(83, 47, 143, 0.8);
+        -webkit-border-radius: 7px;
+        color: #fff;
+        font-size: .9em;
+        padding: .25em .5em;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    
+    table,
+    th,
+    td {
+        border: 1px solid #dadada;
+        box-sizing: border-box;
+        border-collapse: collapse;
+        margin: auto auto;
+    }
+    
+    table {
+        width: 90%;
+    }
+    
+    th {
+        background-color: #f1f1f1;
+    }
+    
+    a {
+        display: block;
+        width: 100%;
+    }
+    
+    footer {
+        text-align: center;
+        background-color: #532d91;
+        color: #fff;
+        font-size: 14px;
+    }
+    
+    .header-blog {
+        line-height: 7;
+        color: white;
+        text-align: center;
+        font-size: 30px;
+    }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <span style="font-size:26px;cursor:pointer; float: left;" onclick="openNav()">&#9776;</span>
+        <img class="header-image" src="logo.png">
+    </header>
+    <div class="header-title">
+        <h3 class="header-blog">Parent Portal</h3>
+    </div>
+    <div class="sidenav" id="mySidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#sign-up-p">Sign Up</a>
+        <a href="#forgot-password-p">Forgot Password</a>
+        <a href="#resend-email-p">Resend Email</a>
+        <a href="#confirmation-link-p">Confirmation Link</a>
+        <a href="#reset-password-p">Reset Password Link</a>
+        <a href="#sign-in-p">Sign In</a>
+        <a href="#terms-p">Terms of Service</a>
+        <a href="#privacy-p">Privacy Policy</a>
+        <a href="#warranty-p">Warranty Information</a>
+        <a href="#sign-out-p">Sign Out</a>
+        <a href="#dashboard-p">Dashboard</a>
+        <a href="#players-p">Players</a>
+        <a href="#customize-p">Customize</a>
+        <a href="#account-p">My Account</a>
+        <a href="#token-p">New Token</a>
+        <a href="#error-p">Error</a>
+    </div>
+    <main id="main">
+        <div class="main-header">
+            <time class="main-date"> Jan 23, 2017</time>
+            <p><b> REST API Documentation </b>
+                <br>
+                <br> Building a back-end API layer introduces a whole new layer of coordination between server and client code. While there are many aspects to this delicate dance of communication, one key ingredient to minimizing back-and-forth-confusion-about what-call-does-what, is consistently communicating about your API endpoints.</p>
+        </div> <p class="main-content"><b> baseUrl:</b> https://services.squarepanda.com</p>
+		
+        <div class="main-content" id="main-div">
+            <h4 id="sign-up-p">Sign Up</h4>
+            <div id="sign-up-div">
+            </div>
+            <h4 id="forgot-password-p">Forgot Password</h4>
+            <div id="forgot-password-div">
+            </div>
+            <h4 id="resend-email-p">Resend Mail</h4>
+            <div id="resend-email-div">
+            </div>
+            <h4 id="confirmation-link-p">Confirmation Link</h4>
+            <div id="confirmation-link-div">
+            </div>
+            <h4 id="reset-password-p">Reset Password Link</h4>
+            <div id="reset-password-div">
+            </div>
+            <h4 id="sign-in-p">Sign In</h4>
+            <div id="sign-in-div">
+            </div>
+            <h4 id="terms-p">Terms of Service</h4>
+            <div id="terms-div">
+            </div>
+            <h4 id="privacy-p">Privacy Policy</h4>
+            <div id="privacy-div">
+            </div>
+            <h4 id="warranty-p">Warranty Information</h4>
+            <div id="warranty-div">
+            </div>
+            <h4 id="sign-out-p">Sign Out</h4>
+            <div id="sign-out-div">
+            </div>
+            <h4 id="dashboard-p">Dashboard</h4>
+            <div id="dashboard-div">
+            </div>
+            <h4 id="players-p">Players</h4>
+            <div id="players-div">
+            </div>
+            <h4 id="customize-p">Customize</h4>
+            <div id="customize-div">
+            </div>
+            <h4 id="account-p">My Account</h4>
+            <div id="account-div">
+            </div>
+            <h4 id="token-p">New Token</h4>
+            <div id="token-div">
+            </div>
+            <h4 id="error-p">Error</h4>
+            <div id="error-div">
+                <table id="error"></table>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <img src="logo-white.png" width="300px">
+        <p> © 2017 Square Panda. All Rights Reserved </p>
+    </footer>
+    <script type="text/javascript">
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.width = "88%";
+        document.getElementById("main").style.marginLeft = "150px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.width = "100%";
+        document.getElementById("main").style.margin = "0 auto";
+    }
+    $(document).ready(function() {
+        $('html, body').scrollTop(0);
+
+        $(window).on('load', function() {
+            setTimeout(function(){
+                $('html, body').scrollTop(0);
+            }, 0);
+        });
+        var uri = "Portal_data.json";
+        $.getJSON(uri, function(data) {
+            var complete = [],
+                doc = [];
+            $.each(data, function(index, value) {
+                complete.push(value);
+            });
+            doc = complete[0];
+            errors = complete[1];
+
+            if (errors) {
+                var table = document.getElementById("error");
+                var col = [];
+                for (var i = 0; i < errors.length; i++) {
+                    for (var key in errors[i]) {
+                        if (col.indexOf(key) === -1) {
+                            col.push(key);
+                        }
+                    }
+                }
+                var tr = table.insertRow(-1); // TABLE ROW.
+
+                for (var i = 0; i < col.length; i++) {
+                    var th = document.createElement("th"); // TABLE HEADER.
+                    th.innerHTML = col[i];
+                    tr.appendChild(th);
+                }
+
+                // ADD JSON DATA TO THE TABLE AS ROWS.
+                for (var i = 0; i < errors.length; i++) {
+
+                    tr = table.insertRow(-1);
+
+                    for (var j = 0; j < col.length; j++) {
+                        var tabCell = tr.insertCell(-1);
+                        tabCell.innerHTML = errors[i][col[j]];
+                    }
+                }
+
+                $('#error-div').append(table);
+            }
+
+            for (var i = 0; i < doc.length; i++) {
+                for (j in doc[i]) {
+                    if (doc[i].Module === "SIGN UP") {
+                        if (doc[i][j] == "SIGN UP") {
+                            var ul = document.createElement("ul");
+                            var li = document.createElement("li");
+                            li.innerHTML = doc[i].Title;
+                            ul.appendChild(li);
+                            $('#sign-up-div').append(ul);
+                            var table = document.createElement("table");
+                            continue;
+                        }
+                        if (j == "Title") {
+                            continue;
+                        }
+                        var tr = table.insertRow(-1);
+                        var th = document.createElement("th");
+                        var td = document.createElement("td");
+                        th.innerHTML = j;
+                        if (j == "Success Response") {
+                            var code = document.createElement("code");
+                            code.innerHTML = doc[i][j];
+                            td.appendChild(code);
+                            tr.appendChild(th);
+                            tr.appendChild(td);
+                        } else {
+                            td.innerHTML = doc[i][j];
+                            tr.appendChild(th);
+                            tr.appendChild(td);
+                        }
+                        $('#sign-up-div').append(table);
+                    } else if (doc[i].Module === "FORGOT PASSWORD") {
+                        if (doc[i][j] == "FORGOT PASSWORD") {
+                            var ul = document.createElement("ul");
+                            var li = document.createElement("li");
+                            li.innerHTML = doc[i].Title;
+                            ul.appendChild(li);
+                            $('#forgot-password-div').append(ul);
+                            var table = document.createElement("table");
+                            continue;
+                        }
+                        if (j == "Title") {
+                            continue;
+                        }
+                        var tr = table.insertRow(-1);
+                        var th = document.createElement("th");
+                        var td = document.createElement("td");
+                        th.innerHTML = j;
+                        if (j == "Success Response") {
+                            var code = document.createElement("code");
+                            code.innerHTML = doc[i][j];
+                            td.appendChild(code);
+                            tr.appendChild(th);
+                            tr.appendChild(td);
+                        } else {
+                            td.innerHTML = doc[i][j];
+                            tr.appendChild(th);
+                            tr.appendChild(td);
+                        }
+                        $('#forgot-password-div').append(table);
+                    } else if (doc[i].Module === "RESEND EMAIL") {
+                        if (doc[i][j] == "RESEND EMAIL") {
+                            var ul = document.createElement("ul");
+                            var li = document.createElement("li");
+                            li.innerHTML = doc[i].Title;
+                            ul.appendChild(li);
+                            $('#resend-email-div').append(ul);
+                            var table = document.createElement("table");
+                            continue;
+                        }
+                        if (j == "Title") {
+                            continue;
+                        }
+                        var tr = table.insertRow(-1);
+                        var th = document.createElement("th");
+                        var td = document.createElement("td");
+                        th.innerHTML = j;
+                        if (j == "Success Response") {
+                            var code = document.createElement("code");
+                            code.innerHTML = doc[i][j];
+                            td.appendChild(code);
+                            tr.appendChild(th);
+                            tr.appendChild(td);
+                        } else {
+                            td.innerHTML = doc[i][j];
+                            tr.appendChild(th);
+                            tr.appendChild(td);
+                        }
+                        $('#resend-email-div').append(table);
+                    } else if (doc[i].Module === "CONFIRMATION LINK") {
+                        if (doc[i][j] == "CONFIRMATION LINK") {
+                            var ul = document.createElement("ul");
+                            var li = document.createElement("li");
+                            li.innerHTML = doc[i].Title;
+                            ul.appendChild(li);
+                            $('#confirmation-link-div').append(ul);
+                            var table = document.createElement("table");
+                            continue;
+                        }
+                        if (j == "Title") {
+                            continue;
+                        }
+                        var tr = table.insertRow(-1);
+                        var th = document.createElement("th");
+                        var td = document.createElement("td");
+                        th.innerHTML = j;
+                        if (j == "Success Response") {
+                            var code = document.createElement("code");
+                            code.innerHTML = doc[i][j];
+                            td.appendChild(code);
+                            tr.appendChild(th);
+                            tr.appendChild(td);
+                        } else {
+                            td.innerHTML = doc[i][j];
+                            tr.appendChild(th);
+                            tr.appendChild(td);
+                        }
+                        $('#confirmation-link-div').append(table);
+                    } else if (doc[i].Module === "RESET PASSWORD LINK") {
+                        if (doc[i][j] == "RESET PASSWORD LINK") {
+                            var ul = document.createElement("ul");
+                            var li = document.createElement("li");
+                            li.innerHTML = doc[i].Title;
+                            ul.appendChild(li);
+                            $('#reset-password-div').append(ul);
+                            var table = document.createElement("table");
+                            continue;
+                        }
+                        if (j == "Title") {
+                            continue;
+                        }
+                        var tr = table.insertRow(-1);
+                        var th = document.createElement("th");
+                        var td = document.createElement("td");
+                        th.innerHTML = j;
+                        if (j == "Success Response") {
+                            var code = document.createElement("code");
+                            code.innerHTML = doc[i][j];
+                            td.appendChild(code);
+                            tr.appendChild(th);
+                            tr.appendChild(td);
+                        } else {
+                            td.innerHTML = doc[i][j];
+                            tr.appendChild(th);
+                            tr.appendChild(td);
+                        }
+                        $('#reset-password-div').append(table);
+                    } else if (doc[i].Module === "SIGN IN") {
+                        if (doc[i][j] == "SIGN IN") {
+                            var ul = document.createElement("ul");
+                            var li = document.createElement("li");
+                            li.innerHTML = doc[i].Title;
+                            ul.appendChild(li);
+                            $('#sign-in-div').append(ul);
+                            var table = document.createElement("table");
+                            continue;
+                        }
+                        if (j == "Title") {
+                            continue;
+                        }
+                        var tr = table.insertRow(-1);
+                        var th = document.createElement("th");
+                        var td = document.createElement("td");
+                        th.innerHTML = j;
+                        if (j == "Success Response") {
+                            var code = document.createElement("code");
+                            code.innerHTML = doc[i][j];
+                            td.appendChild(code);
+                            tr.appendChild(th);
+                            tr.appendChild(td);
+                        } else {
+                            td.innerHTML = doc[i][j];
+                            tr.appendChild(th);
+                            tr.appendChild(td);
+                        }
+                        $('#sign-in-div').append(table);
+                    } else if (doc[i].Module === "TERMS OF SERVICE") {
+                        if (doc[i][j] == "TERMS OF SERVICE") {
+                            var ul = document.createElement("ul");
+                            var li = document.createElement("li");
+                            li.innerHTML = doc[i].Title;
+                            ul.appendChild(li);
+                            $('#terms-div').append(ul);
+                            var table = document.createElement("table");
+                            continue;
+                        }
+                        if (j == "Title") {
+                            continue;
+                        }
+                        var tr = table.insertRow(-1);
+                        var th = document.createElement("th");
+                        var td = document.createElement("td");
+                        th.innerHTML = j;
+                        if (j == "Success Response") {
+                            var code = document.createElement("code");
+                            code.innerHTML = doc[i][j];
+                            td.appendChild(code);
+                            tr.appendChild(th);
+                            tr.appendChild(td);
+                        } else {
+                            td.innerHTML = doc[i][j];
+                            tr.appendChild(th);
+                            tr.appendChild(td);
+                        }
+                        $('#terms-div').append(table);
+                    } else if (doc[i].Module === "PRIVACY POLICY") {
+                        if (doc[i][j] == "PRIVACY POLICY") {
+                            var ul = document.createElement("ul");
+                            var li = document.createElement("li");
+                            li.innerHTML = doc[i].Title;
+                            ul.appendChild(li);
+                            $('#privacy-div').append(ul);
+                            var table = document.createElement("table");
+                            continue;
+                        }
+                        if (j == "Title") {
+                            continue;
+                        }
+                        var tr = table.insertRow(-1);
+                        var th = document.createElement("th");
+                        var td = document.createElement("td");
+                        th.innerHTML = j;
+                        if (j == "Success Response") {
+                            var code = document.createElement("code");
+                            code.innerHTML = doc[i][j];
+                            td.appendChild(code);
+                            tr.appendChild(th);
+                            tr.appendChild(td);
+                        } else {
+                            td.innerHTML = doc[i][j];
+                            tr.appendChild(th);
+                            tr.appendChild(td);
+                        }
+                        $('#privacy-div').append(table);
+                    } else if (doc[i].Module === "WARRANTY INFORMATION") {
+                        if (doc[i][j] == "WARRANTY INFORMATION") {
+                            var ul = document.createElement("ul");
+                            var li = document.createElement("li");
+                            li.innerHTML = doc[i].Title;
+                            ul.appendChild(li);
+                            $('#warranty-div').append(ul);
+                            var table = document.createElement("table");
+                            continue;
+                        }
+                        if (j == "Title") {
+                            continue;
+                        }
+                        var tr = table.insertRow(-1);
+                        var th = document.createElement("th");
+                        var td = document.createElement("td");
+                        th.innerHTML = j;
+                        if (j == "Success Response") {
+                            var code = document.createElement("code");
+                            code.innerHTML = doc[i][j];
+                            td.appendChild(code);
+                            tr.appendChild(th);
+                            tr.appendChild(td);
+                        } else {
+                            td.innerHTML = doc[i][j];
+                            tr.appendChild(th);
+                            tr.appendChild(td);
+                        }
+                        $('#warranty-div').append(table);
+                    } else if (doc[i].Module === "SIGN OUT") {
+                        if (doc[i][j] == "SIGN OUT") {
+                            var ul = document.createElement("ul");
+                            var li = document.createElement("li");
+                            li.innerHTML = doc[i].Title;
+                            ul.appendChild(li);
+                            $('#sign-out-div').append(ul);
+                            var table = document.createElement("table");
+                            continue;
+                        }
+                        if (j == "Title") {
+                            continue;
+                        }
+                        var tr = table.insertRow(-1);
+                        var th = document.createElement("th");
+                        var td = document.createElement("td");
+                        th.innerHTML = j;
+                        if (j == "Success Response") {
+                            var code = document.createElement("code");
+                            code.innerHTML = doc[i][j];
+                            td.appendChild(code);
+                            tr.appendChild(th);
+                            tr.appendChild(td);
+                        } else {
+                            td.innerHTML = doc[i][j];
+                            tr.appendChild(th);
+                            tr.appendChild(td);
+                        }
+                        $('#sign-out-div').append(table);
+                    } else if (doc[i].Module === "DASHBOARD") {
+                        if (doc[i][j] == "DASHBOARD") {
+                            var ul = document.createElement("ul");
+                            var li = document.createElement("li");
+                            li.innerHTML = doc[i].Title;
+                            ul.appendChild(li);
+                            $('#dashboard-div').append(ul);
+                            var table = document.createElement("table");
+                            continue;
+                        }
+                        if (j == "Title") {
+                            continue;
+                        }
+                        var tr = table.insertRow(-1);
+                        var th = document.createElement("th");
+                        var td = document.createElement("td");
+                        th.innerHTML = j;
+                        if (j == "Success Response") {
+                            var code = document.createElement("code");
+                            code.innerHTML = doc[i][j];
+                            td.appendChild(code);
+                            tr.appendChild(th);
+                            tr.appendChild(td);
+                        } else {
+                            td.innerHTML = doc[i][j];
+                            tr.appendChild(th);
+                            tr.appendChild(td);
+                        }
+                        $('#dashboard-div').append(table);
+                    } else if (doc[i].Module === "PLAYERS") {
+                        if (doc[i][j] == "PLAYERS") {
+                            var h5 = document.createElement("h5");
+                            var ul = document.createElement("ul");
+                            var li = document.createElement("li");
+                            if (doc[i].SubModule) {
+                                h5.innerHTML = doc[i].SubModule;
+                                $('#players-div').append(h5);
+                            }
+                            li.innerHTML = doc[i].Title;
+                            ul.appendChild(li);
+                            $('#players-div').append(ul);
+                            var table = document.createElement("table");
+                            continue;
+                        }
+                        if (j == "Title" || j == "SubModule") {
+                            continue;
+                        }
+                        var tr = table.insertRow(-1);
+                        var th = document.createElement("th");
+                        var td = document.createElement("td");
+                        th.innerHTML = j;
+                        if (j == "Success Response") {
+                            var code = document.createElement("code");
+                            code.innerHTML = doc[i][j];
+                            td.appendChild(code);
+                            tr.appendChild(th);
+                            tr.appendChild(td);
+                        } else {
+                            td.innerHTML = doc[i][j];
+                            tr.appendChild(th);
+                            tr.appendChild(td);
+                        }
+                        $('#players-div').append(table);
+                    } else if (doc[i].Module === "CUSTOMIZE") {
+                        if (doc[i][j] == "CUSTOMIZE") {
+                            var h5 = document.createElement("h5");
+                            var ul = document.createElement("ul");
+                            var li = document.createElement("li");
+                            if (doc[i].SubModule) {
+                                h5.innerHTML = doc[i].SubModule;
+                                $('#customize-div').append(h5);
+                            }
+                            li.innerHTML = doc[i].Title;
+                            ul.appendChild(li);
+                            $('#customize-div').append(ul);
+                            var table = document.createElement("table");
+                            continue;
+                        }
+                        if (j == "Title" || j == "SubModule") {
+                            continue;
+                        }
+                        var tr = table.insertRow(-1);
+                        var th = document.createElement("th");
+                        var td = document.createElement("td");
+                        th.innerHTML = j;
+                        if (j == "Success Response") {
+                            var code = document.createElement("code");
+                            code.innerHTML = doc[i][j];
+                            td.appendChild(code);
+                            tr.appendChild(th);
+                            tr.appendChild(td);
+                        } else {
+                            td.innerHTML = doc[i][j];
+                            tr.appendChild(th);
+                            tr.appendChild(td);
+                        }
+                        $('#customize-div').append(table);
+                    } else if (doc[i].Module === "MY ACCOUNT") {
+                        if (doc[i][j] == "MY ACCOUNT") {
+                            var h5 = document.createElement("h5");
+                            var ul = document.createElement("ul");
+                            var li = document.createElement("li");
+                            if (doc[i].SubModule) {
+                                h5.innerHTML = doc[i].SubModule;
+                                $('#account-div').append(h5);
+                            }
+                            li.innerHTML = doc[i].Title;
+                            ul.appendChild(li);
+                            $('#account-div').append(ul);
+                            var table = document.createElement("table");
+                            continue;
+                        }
+                        if (j == "Title" || j == "SubModule") {
+                            continue;
+                        }
+                        var tr = table.insertRow(-1);
+                        var th = document.createElement("th");
+                        var td = document.createElement("td");
+                        th.innerHTML = j;
+                        if (j == "Success Response") {
+                            var code = document.createElement("code");
+                            code.innerHTML = doc[i][j];
+                            td.appendChild(code);
+                            tr.appendChild(th);
+                            tr.appendChild(td);
+                        } else {
+                            td.innerHTML = doc[i][j];
+                            tr.appendChild(th);
+                            tr.appendChild(td);
+                        }
+                        $('#account-div').append(table);
+                    } else if (doc[i].Module === "NEW TOKEN") {
+                        if (doc[i][j] == "NEW TOKEN") {
+                            var ul = document.createElement("ul");
+                            var li = document.createElement("li");
+                            li.innerHTML = doc[i].Title;
+                            ul.appendChild(li);
+                            $('#token-div').append(ul);
+                            var table = document.createElement("table");
+                            continue;
+                        }
+                        if (j == "Title") {
+                            continue;
+                        }
+                        var tr = table.insertRow(-1);
+                        var th = document.createElement("th");
+                        var td = document.createElement("td");
+                        th.innerHTML = j;
+                        if (j == "Success Response") {
+                            var code = document.createElement("code");
+                            code.innerHTML = doc[i][j];
+                            td.appendChild(code);
+                            tr.appendChild(th);
+                            tr.appendChild(td);
+                        } else {
+                            td.innerHTML = doc[i][j];
+                            tr.appendChild(th);
+                            tr.appendChild(td);
+                        }
+                        $('#token-div').append(table);
+                    }
+                }
+            }
+        });
+    });
+    </script>
+</body>
+
+</html>

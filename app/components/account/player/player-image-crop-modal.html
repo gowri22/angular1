@@ -1,0 +1,22 @@
+<!-- ***************************************************************************
+* Copyright (c) 2017 Square Panda Inc.                                         *
+* All Rights Reserved.                                                         *
+* Dissemination, use, or reproduction of this material is strictly forbidden   *
+* unless prior written permission is obtained from Square Panda Inc.           *
+**************************************************************************** -->
+<div class="sp-avatars-modal">
+    <div class='modal-header sp-common-panel-header' data-translate="player.crop_profile_picture">
+        Crop profile picture
+    </div>
+    <div class='modal-body clearfix'>
+        <div class="cropArea">
+            <img-crop image="selectedImage" result-image="croppedImage" class="img-crop-class"></img-crop>
+        </div>
+    </div>
+    <div class='modal-footer'>
+        <button class='btn btn-default sp-cancel-btn' ng-click='onCancel()' data-translate="common.buttons.cancel">Cancel
+    </button>
+        <button class='btn btn-default btn-primary' ng-click='onSubmit()' data-translate="common.buttons.select">Select
+    </button>
+    </div>
+</div>
